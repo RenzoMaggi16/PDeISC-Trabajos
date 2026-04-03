@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EL FARO INFORME</title>
+    <meta name="description" content="Portada de un diario digital moderno con noticias de Mar del Plata y Argentina." />
+    <!-- Enlace a estilos -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- Accesibilidad: enlace para saltar al contenido principal -->
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+    
+    <!-- Header: logo centrado, fecha, redes, nav -->
+    <header class="header" role="banner">
+      <div class="container header__top">
+        <!-- Logo -->
+        <div class="header__logo">
+          <a href="#" aria-label="Inicio EL FARO INFORME">
+            <img src="images/Logo.png" alt="EL FARO INFORME - Logo" class="logo-img" />
+          </a>
+        </div>
+        <!-- Fecha -->
+        <time class="header__date" datetime="2026-03-16">Lunes 16 de marzo de 2026</time>
+        <!-- Redes sociales -->
+        <div class="header__social" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/lacapitalmdp/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <!-- Ícono Facebook (SVG) -->
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M22 12.07C22 6.49 17.52 2 12 2S2 6.49 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.02H7.9V12.07h2.54V9.86c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.88h2.74l-.44 2.91h-2.3v7.02C18.34 21.2 22 17.06 22 12.07z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/diariolacapitalmdp" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <!-- Ícono Instagram (SVG) -->
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.51 1.48.96.45.45.73.88.96 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4-.23.6-.51 1.03-.96 1.48-.45.45-.88.73-1.48.96-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4-.6-.23-1.03-.51-1.48-.96-.45-.45-.73-.88-.96-1.48-.16-.45-.35-1.23-.4-2.4C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.51-1.03.96-1.48.45-.45.88-.73 1.48-.96.45-.16 1.23-.35 2.4-.4C8.42 2.17 8.8 2.16 12 2.16zm0 1.84c-3.14 0-3.51.01-4.75.07-1.02.05-1.58.22-1.95.37-.49.19-.83.41-1.2.78-.37.37-.59.71-.78 1.2-.15.37-.32.93-.37 1.95-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.02.22 1.58.37 1.95.19.49.41.83.78 1.2.37.37.71.59 1.2.78.37.15.93.32 1.95.37 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.02-.05 1.58-.22 1.95-.37.49-.19.83-.41 1.2-.78.37-.37.59-.71.78-1.2.15-.37.32-.93.37-1.95.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.02-.22-1.58-.37-1.95-.19-.49-.41-.83-.78-1.2-.37-.37-.71-.59-1.2-.78-.37-.15-.93-.32-1.95-.37-1.24-.06-1.61-.07-4.75-.07zM12 5.84a6.16 6.16 0 1 1 0 12.32A6.16 6.16 0 0 1 12 5.84zm0 10.16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5.1-10.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/lacapitalmdq" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+            <!-- Ícono X (SVG) -->
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M17.75 3H20l-6.43 7.34L21 21h-5.27l-4.14-4.98L7.78 21H4.75l6.76-7.72L4 3h5.27l3.83 4.6L17.75 3zM9.3 5h-2.2l3.94 4.73 1.1-1.25L9.3 5zm8.37 14h2.2l-6.06-7.28-1.12 1.25L17.67 19z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- Navegación principal -->
+      <nav class="nav" aria-label="Navegación principal">
+        <div class="container nav-container">
+          <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <ul class="nav__list">
+            <li><a href="#ciudad">LA CIUDAD</a></li>
+            <li><a href="#provincia">PROVINCIA</a></li>
+            <li><a href="#deportes">DEPORTES</a></li>
+            <li><a href="#arte">ARTE Y ESPECTÁCULOS</a></li>
+            <li><a href="#policiales">POLICIALES</a></li>
+            <li><a href="#tecnologia">TECNOLOGÍA</a></li>
+            <li><a href="#pais">EL PAÍS</a></li>
+            <li><a href="#mundo">EL MUNDO</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main layout: hero + grid a la izquierda, sidebar/ds -->
+
+    <main id="contenido-principal" class="main">
+      <div id="main-view">
+        <div class="container main__grid">
+        <!-- Columna principal (izq.) -->
+        <section class="content">
+          <!-- Hero: noticia principal -->
+          <article class="hero card" data-id="aldosivi" style="cursor: pointer;">
+            <figure class="card__media">
+              <img src="https://storage.lacapitalmdp.com/2026/03/aldo-7-1024x743.jpeg" alt="Aldosivi y Huracán en el estadio José María Minella" />
+            </figure>
+            <div class="card__body">
+              <span class="badge badge--sports">DEPORTES</span>
+              <h1 class="hero__title"><a href="#">Aldosivi gano contra Huracán en el Minella y sigue invicto</a></h1>
+              <p class="hero__subtitle">El elenco marplatense acumula cinco victorias en el Torneo Apertura de la Liga Profesional.</p>
+            </div>
+          </article>
+
+          <!-- Grid de noticias -->
+          <section class="news-grid-section">
+            <h2 class="section-title">Últimas noticias</h2>
+            <div class="news-grid">
+              <!-- Tarjeta 1 -->
+              <article class="card" data-id="guardia" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/emtur-guardia_094-1024x683.jpg" alt="Guardia del Mar en operación" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--city">LA CIUDAD</span>
+                  <h3 class="card__title"><a href="#">Firmaron un convenio que garantiza el funcionamiento de la Guardia del Mar</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 2 -->
+              <article class="card" data-id="basurales" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/BasuralAmeghino.png" alt="Basurales en barrio Ameghino" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--city">LA CIUDAD</span>
+                  <h3 class="card__title"><a href="#">Denuncian microbasurales y ratas en el barrio Ameghino</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 3 -->
+              <article class="card" data-id="paro-univ" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2025/08/adum-apu_22-1024x683.jpg" alt="Paro universitario en Argentina" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--nation">EL PAÍS</span>
+                  <h3 class="card__title"><a href="#">Comenzó el paro universitario y proponen una nueva Marcha Federal</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 4 -->
+              <article class="card" data-id="fila-tecnologia" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/Distribuidora5-1024x768.jpeg" alt="Fila para buscar trabajo en local de tecnología" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--economy">ECONOMÍA</span>
+                  <h3 class="card__title"><a href="#">Más de dos cuadras de fila para buscar trabajo en un nuevo local de tecnología</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 5 -->
+              <article class="card" data-id="juicio-droga" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2025/08/tribunales-1024x683.jpg" alt="Juicio a banda por venta de droga" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--police">POLICIALES</span>
+                  <h3 class="card__title"><a href="#">Piden llevar a juicio a una banda acusada de vender droga</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 6 -->
+              <article class="card" data-id="balean-hombre" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/Patrulleros-66-1024x683.jpg" alt="Hombre baleado en barrio San Cayetano" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--police">POLICIALES</span>
+                  <h3 class="card__title"><a href="#">Balean a un hombre en el pecho en un intento de robo en barrio San Cayetano</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 7 -->
+              <article class="card" data-id="comision-libra" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2025/01/Ferraro--1024x683.jpg" alt="Comisión Libra en conferencia" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--nation">EL PAÍS</span>
+                  <h3 class="card__title"><a href="#">La Comisión Libra denunciará al fiscal Taiano por encubrimiento</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 8 -->
+              <article class="card" data-id="reforma-laboral" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/02/sector_manufacturero-1024x614.jpg" alt="Fallo judicial sobre reforma laboral" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--nation">EL PAÍS</span>
+                  <h3 class="card__title"><a href="#">Otro fallo judicial declaró inconstitucional la reforma laboral</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 9 -->
+              <article class="card" data-id="kicillof" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/Axel_Kicillof-1024x683.jpg" alt="Axel Kicillof en acto político" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--province">PROVINCIA</span>
+                  <h3 class="card__title">Kicillof gana terreno en el PJ bonaerense y acelera su armado político</h3>
+                </div>
+              </article>
+              <!-- Tarjeta 10 -->
+              <article class="card" data-id="combustibles" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/petrol-stations-1024x683.jpg" alt="Estación de servicio con actualización de precios" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--economy">ECONOMÍA</span>
+                  <h3 class="card__title"><a href="#">Subieron 4% los combustibles</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 11 -->
+              <article class="card" data-id="araujo" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/araujo-1024x574.jpg" alt="Retrato de Marcelo Araujo" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--sports">DEPORTES</span>
+                  <h3 class="card__title"><a href="#">Murió Marcelo Araujo, histórica voz del fútbol de Primera</a></h3>
+                </div>
+              </article>
+              <!-- Tarjeta 12 -->
+              <article class="card" data-id="abogada-brasil" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://picsum.photos/seed/brasil/600/400" alt="Tribunales en Brasil" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--world">EL MUNDO</span>
+                  <h3 class="card__title"><a href="#">Comienza en Brasil el juicio contra una abogada argentina por injuria racial</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección Tecnología -->
+          <section class="section" id="tecnologia">
+            <h2 class="section-title">Tecnología</h2>
+            <div class="news-grid">
+              <article class="card" data-id="airpods-max" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/AirPods-Max-2-1024x683.jpg" alt="AirPods Max 2" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--tech">TECNOLOGÍA</span>
+                  <h3 class="card__title"><a href="#">AirPods Max 2: Apple suma IA y traducción en tiempo real</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección Internacional -->
+          <section class="section" id="mundo">
+            <h2 class="section-title">Internacional</h2>
+            <div class="news-grid">
+              <article class="card" data-id="israel" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/Israeli-artillery-fires-shells-1024x683.jpg" alt="Operación en el Líbano" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--world">EL MUNDO</span>
+                  <h3 class="card__title"><a href="#">Israel anuncia una operación terrestre en el Líbano contra Hezbollah</a></h3>
+                </div>
+              </article>
+              <article class="card" data-id="gladiadores" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/monumento-funerario-romano-2-1024x768.jpg" alt="Monumento funerario romano con escenas de gladiadores" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--world">EL MUNDO</span>
+                  <h3 class="card__title"><a href="#">Descubren un monumento funerario romano con escenas de gladiadores</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+          
+          <!-- Sección LA CIUDAD -->
+          <section class="section" id="ciudad">
+            <h2 class="section-title">La Ciudad</h2>
+            <div class="news-grid">
+              <article class="card" data-id="guardia" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/emtur-guardia_094-1024x683.jpg" alt="Guardia del Mar en operación" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--city">LA CIUDAD</span>
+                  <h3 class="card__title"><a href="#">Firmaron un convenio que garantiza el funcionamiento de la Guardia del Mar</a></h3>
+                </div>
+              </article>
+              <article class="card" data-id="basurales" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/BasuralAmeghino.png" alt="Basurales en barrio Ameghino" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--city">LA CIUDAD</span>
+                  <h3 class="card__title"><a href="#">Denuncian microbasurales y ratas en el barrio Ameghino</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección PROVINCIA -->
+          <section class="section" id="provincia">
+            <h2 class="section-title">Provincia</h2>
+            <div class="news-grid">
+              <article class="card" data-id="kicillof" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/Axel_Kicillof-1024x683.jpg" alt="Axel Kicillof en acto político" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--province">PROVINCIA</span>
+                  <h3 class="card__title">Kicillof gana terreno en el PJ bonaerense y acelera su armado político</h3>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección DEPORTES -->
+          <section class="section" id="deportes">
+            <h2 class="section-title">Deportes</h2>
+            <div class="news-grid">
+              <article class="card" data-id="araujo" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/araujo-1024x574.jpg" alt="Retrato de Marcelo Araujo" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--sports">DEPORTES</span>
+                  <h3 class="card__title"><a href="#">Murió Marcelo Araujo, histórica voz del fútbol de Primera</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección ARTE Y ESPECTÁCULOS -->
+          <section class="section" id="arte">
+            <h2 class="section-title">Arte y Espectáculos</h2>
+            <div class="news-grid"></div>
+          </section>
+
+          <!-- Sección POLICIALES -->
+          <section class="section" id="policiales">
+            <h2 class="section-title">Policiales</h2>
+            <div class="news-grid">
+              <article class="card" data-id="juicio-droga" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2025/08/tribunales-1024x683.jpg" alt="Juicio a banda por venta de droga" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--police">POLICIALES</span>
+                  <h3 class="card__title"><a href="#">Piden llevar a juicio a una banda acusada de vender droga</a></h3>
+                </div>
+              </article>
+              <article class="card" data-id="balean-hombre" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/03/Patrulleros-66-1024x683.jpg" alt="Hombre baleado en barrio San Cayetano" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--police">POLICIALES</span>
+                  <h3 class="card__title"><a href="#">Balean a un hombre en el pecho en un intento de robo en barrio San Cayetano</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Sección EL PAÍS -->
+          <section class="section" id="pais">
+            <h2 class="section-title">El País</h2>
+            <div class="news-grid">
+              <article class="card" data-id="paro-univ" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2025/08/adum-apu_22-1024x683.jpg" alt="Paro universitario en Argentina" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--nation">EL PAÍS</span>
+                  <h3 class="card__title"><a href="#">Comenzó el paro universitario y proponen una nueva Marcha Federal</a></h3>
+                </div>
+              </article>
+              <article class="card" data-id="comision-libra" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2025/01/Ferraro--1024x683.jpg" alt="Comisión Libra en conferencia" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--nation">EL PAÍS</span>
+                  <h3 class="card__title"><a href="#">La Comisión Libra denunciará al fiscal Taiano por encubrimiento</a></h3>
+                </div>
+              </article>
+              <article class="card" data-id="reforma-laboral" style="cursor: pointer;">
+                <figure class="card__media">
+                  <img src="https://storage.lacapitalmdp.com/2026/02/sector_manufacturero-1024x614.jpg" alt="Fallo judicial sobre reforma laboral" />
+                </figure>
+                <div class="card__body">
+                  <span class="badge badge--nation">EL PAÍS</span>
+                  <h3 class="card__title"><a href="#">Otro fallo judicial declaró inconstitucional la reforma laboral</a></h3>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <!-- Columna lateral (der.)   -->
+        
+        <aside class="sidebar" aria-label="Noticias secundarias y publicidad">
+          <!-- Noticias secundarias -->
+          <section class="sidebar__block">
+            <h2 class="section-title">En foco</h2>
+            <!-- Nota secundaria 1 -->
+            <article class="card card--horizontal" data-id="uthgra" style="cursor: pointer;">
+              <figure class="card__media">
+                <img src="https://picsum.photos/seed/uthgra/300/200" alt="Uthgra denuncia ataques vinculados a la barra de Alvarado" />
+              </figure>
+              <div class="card__body">
+                <span class="badge badge--police">POLICIALES</span>
+                <h3 class="card__title">Grave denuncia de Uthgra por ataques vinculados a la barra de Alvarado</h3>
+              </div>
+            </article>
+            <!-- Nota secundaria 2 -->
+            <article class="card card--horizontal" data-id="nadador" style="cursor: pointer;">
+              <figure class="card__media">
+                <img src="https://picsum.photos/seed/corrientes/300/200" alt="Zona de Cabo Corrientes en Mar del Plata" />
+              </figure>
+              <div class="card__body">
+                <span class="badge badge--city">LA CIUDAD</span>
+                <h3 class="card__title"><a href="#">Hallaron muerto al nadador que había ingresado al mar en Cabo Corrientes</a></h3>
+              </div>
+            </article>
+          </section>
+
+          <!-- Más publicidad -->
+          <aside class="ad-banner ad-banner--stack" aria-label="Más publicidad">
+            <div class="ad-stack">
+              <a href="https://www.darsalud.com.ar/" class="ad-banner__content ad-banner__content--image" aria-label="Publicidad Dar Salud" target="_blank" rel="noopener noreferrer">
+                <img class="ad-banner__image" src="https://storage.lacapitalmdp.com/2025/10/Dar-Salud-300-x-250.jpg" alt="Dar Salud - Publicidad" />
+              </a>
+              <a href="#" class="ad-banner__content ad-banner__content--image" aria-label="Publicidad Clínica Pueyrredon">
+                <img class="ad-banner__image" src="https://storage.lacapitalmdp.com/2026/03/C-Pueyrredo%CC%81n-3.jpg" alt="Clínica Pueyrredon - Estamos cerca de vos" />
+              </a>  
+              <a href="#" class="ad-banner__content ad-banner__content--image" aria-label="Publicidad RIPSA billeteras virtuales">
+                <img class="ad-banner__image" src="https://storage.lacapitalmdp.com/2024/05/ripsaPHOTO-2024-05-30-10-53-17.jpg" alt="RIPSA - Billeteras virtuales ahora son parte" />
+              </a>
+              <a href="#" class="ad-banner__content ad-banner__content--image" aria-label="Publicidad SERVISA">
+                <img class="ad-banner__image" src="https://storage.lacapitalmdp.com/2025/06/servisa1.gif" alt="SERVISA - Publicidad" />
+              </a>
+            </div>
+          </aside>
+        </aside>
+      </div>
+    <section class="section info-section" id="servicios">
+      <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3 class="info-card__title">Cotizaciones</h3>
+            <div class="info-table">
+              <div class="info-row"><span>Dólar Blue</span><span>1405 / 1425</span></div>
+              <div class="info-row"><span>Real</span><span>260 / 275</span></div>
+              <div class="info-row"><span>Euro</span><span>1550 / 1650</span></div>
+              <div class="info-row"><span>Merval</span><span>2606351</span></div>
+              <div class="info-row"><span>Dólar</span><span>1365 / 1415</span></div>
+              <div class="info-row"><span>UVA</span><span>1825.96</span></div>
+            </div>
+          </article>
+          <article class="info-card">
+            <h3 class="info-card__title">Quinielas</h3>
+            <ul class="info-list">
+              <li>Previa 16/03 — 8979</li>
+              <li>Primera 16/03 — 1257</li>
+              <li>Matutina 16/03 — 3099</li>
+              <li>Vespertina 14/03 — 9181</li>
+              <li>Nocturna 14/03 — 2795</li>
+            </ul>
+            <a class="info-link" href="#" aria-label="Resultados de quinielas">Resultados de quinielas</a>
+          </article>
+          <article class="info-card">
+            <h3 class="info-card__title">Farmacias de turno</h3>
+            <ul class="info-list info-list--scroll">
+              <li>AMANCAY MDQ</li>
+              <li>AVENIDA</li>
+              <li>COPAL</li>
+              <li>DEL LABRADOR</li>
+              <li>FCIA NUEVA PLAZA II</li>
+              <li>FLORES</li>
+              <li>FRESCO</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h3 class="info-card__title">Horóscopo</h3>
+            <p class="info-text"><strong>Aries</strong><br/>Sea propicio conectar con otros, permitiendo que surjan nuevas alianzas y perspectivas. La comunicación fluida facilitará el entendimiento y la colaboración.</p>
+            <a class="info-link" href="#" aria-label="Ver todos los signos">Ver todos los signos</a>
+          </article>
+        </div>
+      </div>
+    </section>
+          </div> <!-- end main-view -->
+
+      <div id="article-view" class="container article-view" style="display: none; padding: 2rem 1rem;">
+        <button id="back-btn" class="back-button">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Volver al Inicio
+        </button>
+        <article class="article-content">
+          <span id="av-category" class="badge" style="margin-top: 1rem;"></span>
+          <h1 id="av-headline" class="article-headline" style="margin-top: 0.5rem; font-size: 2.2rem;"></h1>
+          <img id="av-image" src="" alt="Imagen de la noticia" class="article-image" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius); margin: 1.5rem 0;">
+          <div id="av-content" class="article-body" style="font-size: 1.1rem; line-height: 1.6; color: var(--text);"></div>
+        </article>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <!-- Nombre del diario -->
+        <div class="footer__brand">
+          <span class="logo-text">EL FARO INFORME</span>
+          <p>Noticias de Mar del Plata, la Provincia y el Mundo.</p>
+        </div>
+        <!-- Links de navegación -->
+        <nav class="footer__nav" aria-label="Navegación secundaria">
+          <ul>
+            <li><a href="#ciudad">LA CIUDAD</a></li>
+            <li><a href="#provincia">PROVINCIA</a></li>
+            <li><a href="#deportes">DEPORTES</a></li>
+            <li><a href="#arte">ARTE Y ESPECTÁCULOS</a></li>
+            <li><a href="#policiales">POLICIALES</a></li>
+            <li><a href="#tecnologia">TECNOLOGÍA</a></li>
+            <li><a href="#pais">EL PAÍS</a></li>
+            <li><a href="#mundo">EL MUNDO</a></li>
+          </ul>
+        </nav>
+        <!-- Redes sociales -->
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/lacapitalmdp/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/diariolacapitalmdp" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://twitter.com/lacapitalmdq" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <div class="container">
+          <small>&copy; 2026 EL FARO INFORME. Todos los derechos reservados.</small>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

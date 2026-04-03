@@ -1,0 +1,325 @@
+/* ============================================================
+   EL FARO INFORME — styles.css
+   Brand overrides for Bootstrap 5. Zero media queries.
+   ============================================================ */
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+    --bg-deep:         #141414;
+    --bg-surface:      #1c1c1c;
+    --bg-card:         #222222;
+    --bg-card-hover:   #2a2a2a;
+    --text-primary:    #f3f3f6;
+    --text-secondary:  #858585;
+    --text-muted:      #555555;
+    --border-subtle:   rgba(255,255,255,0.07);
+    --border-accent:   rgba(255,255,255,0.13);
+    --accent:          #3b82f6;
+    --radius:          10px;
+    --shadow-card:     0 2px 16px rgba(0,0,0,0.45);
+    --shadow-hover:    0 6px 28px rgba(0,0,0,0.65);
+
+    /* Category colours */
+    --cat-city:     #10b981;
+    --cat-province: #8b5cf6;
+    --cat-sports:   #3b82f6;
+    --cat-police:   #ef4444;
+    --cat-tech:     #06b6d4;
+    --cat-nation:   #f59e0b;
+    --cat-economy:  #f97316;
+    --cat-world:    #6366f1;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── Skip link ──────────────────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    z-index: 9999;
+}
+.skip-link:focus {
+    left: 1rem; top: 1rem;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    padding: .5rem 1rem;
+    border-radius: 6px;
+}
+
+/* ── Header (masthead, no logo) ─────────────────────────────── */
+.site-header {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-subtle);
+}
+.masthead-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--text-primary);
+    line-height: 1;
+}
+.masthead-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .8rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.header-date {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .85rem;
+    color: var(--text-secondary);
+}
+.header-social a {
+    color: var(--text-secondary);
+    transition: color .2s;
+}
+.header-social a:hover { color: var(--text-primary); }
+
+/* ── Navbar / Filter bar ────────────────────────────────────── */
+.site-nav {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    box-shadow: 0 4px 16px rgba(0,0,0,.45);
+}
+.site-nav .nav-link {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .4px;
+    color: var(--text-secondary);
+    padding: .45rem .8rem;
+    border-radius: 999px;
+    transition: all .2s;
+    cursor: pointer;
+}
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+    color: var(--text-primary);
+    background: rgba(255,255,255,.09);
+}
+
+/* ── Section headings ───────────────────────────────────────── */
+.section-title {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding-bottom: .45rem;
+    border-bottom: 2px solid var(--border-accent);
+    color: var(--text-primary);
+}
+
+/* ── News cards ─────────────────────────────────────────────── */
+.news-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    cursor: pointer;
+}
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-accent);
+}
+.news-card .card-img-wrapper {
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+}
+.news-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s;
+}
+.news-card:hover .card-img-top { transform: scale(1.05); }
+.news-card .card-body { background: var(--bg-card); }
+.news-card .card-title {
+    font-size: .98rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+.news-card .card-text { color: var(--text-secondary); }
+
+/* hero variant */
+.hero-card .card-img-wrapper { aspect-ratio: 16 / 9; }
+.hero-card .card-title {
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+}
+
+/* ── Category badges ────────────────────────────────────────── */
+.badge-cat {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    padding: .28rem .65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+}
+.badge-city     { background: var(--cat-city);     color: #fff; }
+.badge-province { background: var(--cat-province);  color: #fff; }
+.badge-sports   { background: var(--cat-sports);   color: #fff; }
+.badge-police   { background: var(--cat-police);   color: #fff; }
+.badge-tech     { background: var(--cat-tech);     color: #fff; }
+.badge-nation   { background: var(--cat-nation);   color: #1a1a1a; }
+.badge-economy  { background: var(--cat-economy);  color: #1a1a1a; }
+.badge-world    { background: var(--cat-world);    color: #fff; }
+
+/* ── Sidebar cards ──────────────────────────────────────────── */
+.sidebar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow .2s;
+}
+.sidebar-card:hover { box-shadow: var(--shadow-card); }
+.sidebar-card img   { object-fit: cover; height: 100%; }
+
+/* ── Ad slots ───────────────────────────────────────────────── */
+.ad-slot img {
+    border-radius: var(--radius);
+    border: 1px solid var(--border-subtle);
+    width: 100%;
+}
+
+/* ── Info / Services cards ──────────────────────────────────── */
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+}
+.info-card h3 { font-size: 1rem; color: var(--text-primary); }
+.info-row {
+    background: rgba(255,255,255,.04);
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .88rem;
+}
+.info-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .88rem;
+}
+.info-list li {
+    padding: .35rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+}
+.info-list li:last-child { border-bottom: none; }
+.info-list--scroll { max-height: 190px; overflow-y: auto; }
+.info-link {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--accent);
+    font-size: .88rem;
+}
+.info-link:hover { text-decoration: underline; }
+.info-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .88rem;
+    color: var(--text-secondary);
+}
+
+/* ── Contact section ────────────────────────────────────────── */
+.contact-section {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+}
+.contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+}
+.contact-card .form-control,
+.contact-card .form-select {
+    background: var(--bg-surface);
+    border-color: var(--border-accent);
+    color: var(--text-primary);
+    font-size: .95rem;
+}
+.contact-card .form-control:focus,
+.contact-card .form-select:focus {
+    background: var(--bg-surface);
+    border-color: var(--accent);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 .2rem rgba(59,130,246,.25);
+}
+.contact-card .form-control::placeholder { color: var(--text-muted); }
+.contact-card label { color: var(--text-secondary); font-size: .9rem; }
+.btn-submit {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .3px;
+    transition: filter .2s;
+}
+.btn-submit:hover { filter: brightness(1.15); color: #fff; }
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.site-footer {
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-subtle);
+}
+.site-footer .brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.site-footer a { color: var(--text-muted); transition: color .2s; }
+.site-footer a:hover { color: var(--text-primary); }
+
+/* ── Modal overrides ────────────────────────────────────────── */
+.modal-content {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius);
+}
+.modal-header { border-bottom: 1px solid var(--border-subtle); }
+.modal-footer { border-top:    1px solid var(--border-subtle); }
+.btn-close { filter: invert(1) grayscale(1) brightness(2); }
+.modal-body img   { border-radius: var(--radius); }
+.modal-body .lead {
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+}
+.modal-body .article-text p { line-height: 1.85; font-size: 1rem; }
+.modal-meta {
+    color: var(--text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: .82rem;
+}
+
+/* ── Transition for filtered cards ─────────────────────────── */
+.col { transition: opacity .2s; }
+
+/* ── Accessibility (Ages 5 to 80 UX Mandate) ───────────────── */
+.site-nav .nav-link, .btn {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

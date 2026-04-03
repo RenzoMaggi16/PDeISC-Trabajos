@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <!-- Metadatos -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EL FARO INFORME</title>
+  <meta name="description" content="Portada de un diario digital moderno con noticias de Mar del Plata y Argentina." />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Brand Overrides -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+
+  <!-- ============================================
+       ACCESSIBILITY: Skip Link
+       ============================================ -->
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+  <!-- ============================================
+       HEADER: Logo, Date, Social
+       ============================================ -->
+  <header class="site-header py-3" role="banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-3 text-center text-md-start mb-2 mb-md-0">
+          <time class="header-date" datetime="2026-03-16">Lunes 16 de marzo de 2026</time>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <a href="#contenido-principal">
+            <div class="masthead-title">EL FARO INFORME</div>
+            <div class="masthead-subtitle">Mar del Plata · Argentina · El Mundo</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-end gap-3 mt-2 mt-md-0 header-social" aria-label="Redes sociales">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M22 12.07C22 6.49 17.52 2 12 2S2 6.49 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.02H7.9V12.07h2.54V9.86c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.88h2.74l-.44 2.91h-2.3v7.02C18.34 21.2 22 17.06 22 12.07z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.95.24 2.4.4.6.23 1.03.51 1.48.96.45.45.73.88.96 1.48.16.45.35 1.23.4 2.4.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.95-.4 2.4-.23.6-.51 1.03-.96 1.48-.45.45-.88.73-1.48.96-.45.16-1.23.35-2.4.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.95-.24-2.4-.4-.6-.23-1.03-.51-1.48-.96-.45-.45-.73-.88-.96-1.48-.16-.45-.35-1.23-.4-2.4C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.95.4-2.4.23-.6.51-1.03.96-1.48.45-.45.88-.73 1.48-.96.45-.16 1.23-.35 2.4-.4C8.42 2.17 8.8 2.16 12 2.16z"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.75 3H20l-6.43 7.34L21 21h-5.27l-4.14-4.98L7.78 21H4.75l6.76-7.72L4 3h5.27l3.83 4.6L17.75 3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="site-nav navbar navbar-expand-lg py-2" aria-label="Navegación principal">
+    <div class="container">
+      <button class="navbar-toggler mx-auto mb-2 mb-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav gap-1 text-center">
+          <li class="nav-item"><a class="nav-link active" href="#" data-filter="all">TODAS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="ciudad">LA CIUDAD</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="provincia">PROVINCIA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="deportes">DEPORTES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="policiales">POLICIALES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="tecnologia">TECNOLOGÍA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="pais">EL PAÍS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="economia">ECONOMÍA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-filter="mundo">EL MUNDO</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="contenido-principal" class="py-4">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- ========== PRIMARY COLUMN ========== -->
+        <div class="col-lg-8">
+
+          <!-- Hero Article -->
+          <article class="news-card hero-card mb-4" data-category="deportes" data-bs-toggle="modal" data-bs-target="#modal-aldosivi" id="hero-aldosivi">
+            <div class="card-img-wrapper">
+              <img src="https://pxcdn.0223.com.ar/f/032026/1773692896390.webp?cw=748&ch=420&cma=1&extw=jpeg" class="card-img-top" alt="Aldosivi vs Huracán" />
+            </div>
+            <div class="card-body p-3">
+              <span class="badge-cat badge-sports mb-2 d-inline-block">DEPORTES</span>
+              <h1 class="card-title fs-3">Aldosivi gano contra Huracán en el Minella y sigue invicto</h1>
+              <p class="card-text mt-2">El elenco marplatense acumula cinco victorias en el Torneo Apertura de la Liga Profesional.</p>
+            </div>
+          </article>
+
+          <!-- Últimas Noticias Grid -->
+          <section id="ultimas">
+            <h2 class="section-title mb-3" id="filter-heading">Últimas noticias</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <!-- Card: Guardia del Mar -->
+              <div class="col"><article class="news-card h-100" data-category="ciudad" data-bs-toggle="modal" data-bs-target="#modal-guardia">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/emtur-guardia_094-1024x683.jpg" class="card-img-top" alt="Guardia del Mar" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-city mb-2 d-inline-block">LA CIUDAD</span><h3 class="card-title">Firmaron un convenio que garantiza el funcionamiento de la Guardia del Mar</h3></div>
+              </article></div>
+              <!-- Card: Basurales -->
+              <div class="col"><article class="news-card h-100" data-category="ciudad" data-bs-toggle="modal" data-bs-target="#modal-basurales">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/BasuralAmeghino.png" class="card-img-top" alt="Basurales en barrio Ameghino" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-city mb-2 d-inline-block">LA CIUDAD</span><h3 class="card-title">Denuncian microbasurales y ratas en el barrio Ameghino</h3></div>
+              </article></div>
+              <!-- Card: Juicio Droga -->
+              <div class="col"><article class="news-card h-100" data-category="policiales" data-bs-toggle="modal" data-bs-target="#modal-droga">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2022/10/tribunal-penal-federal-1024x683.jpg" class="card-img-top" alt="Juicio a banda" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-police mb-2 d-inline-block">POLICIALES</span><h3 class="card-title">Piden llevar a juicio a una banda acusada de vender droga</h3></div>
+              </article></div>
+              <!-- Card: Balean -->
+              <div class="col"><article class="news-card h-100" data-category="policiales" data-bs-toggle="modal" data-bs-target="#modal-balean">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/Patrulleros-66-1024x683.jpg" class="card-img-top" alt="San Cayetano" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-police mb-2 d-inline-block">POLICIALES</span><h3 class="card-title">Balean a un hombre en el pecho en un intento de robo en barrio San Cayetano</h3></div>
+              </article></div>
+              <!-- Card: Comisión Libra -->
+              <div class="col"><article class="news-card h-100" data-category="pais" data-bs-toggle="modal" data-bs-target="#modal-libra">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2025/01/Ferraro--1024x683.jpg" class="card-img-top" alt="Comisión Libra" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-nation mb-2 d-inline-block">EL PAÍS</span><h3 class="card-title">La Comisión Libra denunciará al fiscal Taiano por encubrimiento</h3></div>
+              </article></div>
+              <!-- Card: Reforma Laboral -->
+              <div class="col"><article class="news-card h-100" data-category="pais" data-bs-toggle="modal" data-bs-target="#modal-reforma">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/02/sector_manufacturero-1024x614.jpg" class="card-img-top" alt="Reforma laboral" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-nation mb-2 d-inline-block">EL PAÍS</span><h3 class="card-title">Otro fallo judicial declaró inconstitucional la reforma laboral</h3></div>
+              </article></div>
+              <!-- Card: Kicillof -->
+              <div class="col"><article class="news-card h-100" data-category="provincia" data-bs-toggle="modal" data-bs-target="#modal-kicillof">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/Axel_Kicillof-1024x683.jpg" class="card-img-top" alt="Kicillof" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-province mb-2 d-inline-block">PROVINCIA</span><h3 class="card-title">Kicillof gana terreno en el PJ bonaerense y acelera su armado político</h3></div>
+              </article></div>
+              <!-- Card: Combustibles -->
+              <div class="col"><article class="news-card h-100" data-category="economia" data-bs-toggle="modal" data-bs-target="#modal-combustibles">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/petrol-stations-1024x683.jpg" class="card-img-top" alt="Combustibles" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-economy mb-2 d-inline-block">ECONOMÍA</span><h3 class="card-title">Subieron 4% los combustibles</h3></div>
+              </article></div>
+              <!-- Card: Araujo -->
+              <div class="col"><article class="news-card h-100" data-category="deportes" data-bs-toggle="modal" data-bs-target="#modal-araujo">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/araujo-1024x574.jpg" class="card-img-top" alt="Marcelo Araujo" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-sports mb-2 d-inline-block">DEPORTES</span><h3 class="card-title">Murió Marcelo Araujo, histórica voz del fútbol de Primera</h3></div>
+              </article></div>
+              <!-- Card: Brasil -->
+              <div class="col"><article class="news-card h-100" data-category="mundo" data-bs-toggle="modal" data-bs-target="#modal-brasil">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/02/agostina_paez-1024x576.jpg" class="card-img-top" alt="Juicio en Brasil" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-world mb-2 d-inline-block">EL MUNDO</span><h3 class="card-title">Comienza en Brasil el juicio contra una abogada argentina por injuria racial</h3></div>
+              </article></div>
+              <!-- Card: AirPods -->
+              <div class="col"><article class="news-card h-100" data-category="tecnologia" data-bs-toggle="modal" data-bs-target="#modal-airpods">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/AirPods-Max-2-1024x683.jpg" class="card-img-top" alt="AirPods Max 2" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-tech mb-2 d-inline-block">TECNOLOGÍA</span><h3 class="card-title">AirPods Max 2: Apple suma IA y traducción en tiempo real</h3></div>
+              </article></div>
+              <!-- Card: Israel -->
+              <div class="col"><article class="news-card h-100" data-category="mundo" data-bs-toggle="modal" data-bs-target="#modal-israel">
+                <div class="card-img-wrapper"><img src="https://www.lanacion.com.ar/resizer/v2/columna-de-humo-tras-un-bombardeo-de-artilleria-QLFGLRUQI5DX5JYXGKPD526F2U.JPG?auth=db10fd407e084c3b65d074c4f3f56919ea93e5ec2d0b22888c413fc1287171f0&width=880&height=586&quality=70&smart=true" class="card-img-top" alt="Operación en Líbano" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-world mb-2 d-inline-block">EL MUNDO</span><h3 class="card-title">Israel anuncia una operación terrestre en el Líbano contra Hezbollah</h3></div>
+              </article></div>
+              <!-- Card: Romano -->
+              <div class="col"><article class="news-card h-100" data-category="mundo" data-bs-toggle="modal" data-bs-target="#modal-romano">
+                <div class="card-img-wrapper"><img src="https://storage.lacapitalmdp.com/2026/03/monumento-funerario-romano-2-1024x768.jpg" class="card-img-top" alt="Monumento romano" /></div>
+                <div class="card-body p-3"><span class="badge-cat badge-world mb-2 d-inline-block">EL MUNDO</span><h3 class="card-title">Descubren un monumento funerario romano con escenas de gladiadores</h3></div>
+              </article></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ========== SIDEBAR ========== -->
+        <aside class="col-lg-4" aria-label="Noticias secundarias y publicidad">
+          <section class="mb-4">
+            <h2 class="section-title mb-3">En foco</h2>
+            <!-- Sidebar Card 1 -->
+            <article class="sidebar-card d-flex mb-3">
+              <img src="https://storage.lacapitalmdp.com/2026/03/club-alvarado-1024x768.jpeg" alt="Uthgra" class="flex-shrink-0" style="width:120px;" />
+              <div class="p-3 d-flex flex-column justify-content-center">
+                <span class="badge-cat badge-police mb-1 d-inline-block" style="width:fit-content;">POLICIALES</span>
+                <h3 class="card-title fs-6 mb-0">Grave denuncia de Uthgra por ataques vinculados a la barra de Alvarado</h3>
+              </div>
+            </article>
+            <!-- Sidebar Card 2 -->
+            <article class="sidebar-card d-flex mb-3">
+              <img src="https://storage.lacapitalmdp.com/2026/03/cabo-rescate1-1024x515.jpg" alt="Cabo Corrientes" class="flex-shrink-0" style="width:120px;" />
+              <div class="p-3 d-flex flex-column justify-content-center">
+                <span class="badge-cat badge-city mb-1 d-inline-block" style="width:fit-content;">LA CIUDAD</span>
+                <h3 class="card-title fs-6 mb-0">Hallaron muerto al nadador que había ingresado al mar en Cabo Corrientes</h3>
+              </div>
+            </article>
+          </section>
+          <!-- Ad Banners -->
+          <div class="d-flex flex-column gap-3 ad-slot">
+            <a href="#"><img src="https://storage.lacapitalmdp.com/2025/10/Dar-Salud-300-x-250.jpg" alt="Publicidad Dar Salud" /></a>
+            <a href="#"><img src="https://storage.lacapitalmdp.com/2026/03/C-Pueyrredo%CC%81n-3.jpg" alt="Publicidad Clínica Pueyrredon" /></a>
+            <a href="#"><img src="https://storage.lacapitalmdp.com/2024/05/ripsaPHOTO-2024-05-30-10-53-17.jpg" alt="Publicidad RIPSA" /></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
+    <section class="py-5" id="servicios">
+      <div class="container">
+        <h2 class="section-title mb-4">Servicios</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+          <!-- Cotizaciones -->
+          <div class="col"><div class="info-card p-3 h-100">
+            <h3>Cotizaciones</h3>
+            <div class="d-flex flex-column gap-2 mt-2">
+              <div class="info-row d-flex justify-content-between p-2"><span>Dólar Blue</span><span>1405 / 1425</span></div>
+              <div class="info-row d-flex justify-content-between p-2"><span>Real</span><span>260 / 275</span></div>
+              <div class="info-row d-flex justify-content-between p-2"><span>Euro</span><span>1550 / 1650</span></div>
+              <div class="info-row d-flex justify-content-between p-2"><span>Merval</span><span>2606351</span></div>
+              <div class="info-row d-flex justify-content-between p-2"><span>Dólar</span><span>1365 / 1415</span></div>
+              <div class="info-row d-flex justify-content-between p-2"><span>UVA</span><span>1825.96</span></div>
+            </div>
+          </div></div>
+          <!-- Quinielas -->
+          <div class="col"><div class="info-card p-3 h-100">
+            <h3>Quinielas</h3>
+            <ul class="info-list mt-2">
+              <li>Previa 16/03 — 8979</li>
+              <li>Primera 16/03 — 1257</li>
+              <li>Matutina 16/03 — 3099</li>
+              <li>Vespertina 14/03 — 9181</li>
+              <li>Nocturna 14/03 — 2795</li>
+            </ul>
+           
+          </div></div>
+          <!-- Farmacias -->
+          <div class="col"><div class="info-card p-3 h-100">
+            <h3>Farmacias de turno</h3>
+            <ul class="info-list info-list--scroll mt-2">
+              <li>AMANCAY MDQ</li><li>AVENIDA</li><li>COPAL</li><li>DEL LABRADOR</li><li>FCIA NUEVA PLAZA II</li><li>FLORES</li><li>FRESCO</li>
+            </ul>
+          </div></div>
+          <!-- Horóscopo -->
+          <div class="col"><div class="info-card p-3 h-100">
+            <h3>Horóscopo</h3>
+            <p class="info-text mt-2"><strong>Aries</strong><br/>Sea propicio conectar con otros, permitiendo que surjan nuevas alianzas y perspectivas.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       CONTACT SECTION
+       ============================================ -->
+  <section class="contact-section py-5" id="contacto">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <h2 class="section-title mb-1">Contacto</h2>
+          <p class="mb-4" style="color:var(--text-secondary);font-family:sans-serif;font-size:.9rem;">Envínos tu consulta, sugerencia o denuncia y nos pondremos en contacto a la brevedad.</p>
+
+          <!-- Toast Container (Success) -->
+          <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+            <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  ¡Mensaje enviado correctamente! Nos pondremos en contacto a la brevedad.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contenido-principal" class="btn btn-outline-light mb-3 w-100" aria-label="Volver al inicio">Volver al Inicio</a>
+
+          <!-- Contact form -->
+          <form id="contact-form" class="contact-card shadow-sm rounded p-4 mb-3" novalidate>
+
+              <!-- Name: letters & spaces only, min 3 chars -->
+              <div class="mb-3">
+                  <label for="contact-name" class="form-label">Nombre completo</label>
+                  <input
+                      type="text"
+                      id="contact-name"
+                      name="nombre"
+                      class="form-control"
+                      placeholder="Tu nombre y apellido"
+                      required
+                      minlength="3"
+                      pattern="^[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s]+$"
+                  />
+                  <div class="invalid-feedback">
+                      El nombre debe tener al menos 3 caracteres y no puede contener números.
+                  </div>
+              </div>
+
+              <!-- Email: domain must be alphabetic only -->
+              <div class="mb-3">
+                  <label for="contact-email" class="form-label">Correo electrónico</label>
+                  <input
+                      type="email"
+                      id="contact-email"
+                      name="email"
+                      class="form-control"
+                      placeholder="ejemplo@correo.com"
+                      required
+                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+                  />
+                  <div class="invalid-feedback">
+                      Ingresá un correo válido. El dominio (ej: gmail) no puede contener números.
+                  </div>
+              </div>
+
+              <!-- Subject -->
+              <div class="mb-3">
+                  <label for="contact-subject" class="form-label">Asunto</label>
+                  <input
+                      type="text"
+                      id="contact-subject"
+                      name="asunto"
+                      class="form-control"
+                      placeholder="Motivo de tu mensaje"
+                      required
+                      minlength="4"
+                  />
+                  <div class="invalid-feedback">
+                      El asunto es requerido (mínimo 4 caracteres).
+                  </div>
+              </div>
+
+              <!-- Message -->
+              <div class="mb-3">
+                  <label for="contact-message" class="form-label">Mensaje</label>
+                  <textarea
+                      id="contact-message"
+                      name="mensaje"
+                      class="form-control"
+                      rows="5"
+                      placeholder="Escribí tu mensaje aquí..."
+                      required
+                      minlength="20"
+                  ></textarea>
+                  <div class="invalid-feedback">
+                      El mensaje debe tener al menos 20 caracteres.
+                  </div>
+              </div>
+
+              <!-- Terms & Conditions checkbox -->
+              <div class="mb-4">
+                  <div class="form-check">
+                      <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="contact-terms"
+                          name="terminos"
+                          required
+                      />
+                      <label class="form-check-label" for="contact-terms" style="color:var(--text-secondary);font-family:sans-serif;font-size:.9rem;">
+                          He leído y acepto los
+                          <a href="terms.html" target="_blank" style="color:var(--accent);">Términos y Condiciones</a>
+                      </label>
+                      <div class="invalid-feedback">
+                          Debés aceptar los Términos y Condiciones para continuar.
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Submit button -->
+              <div class="text-end">
+                  <button type="submit" class="btn btn-submit px-4 py-2">Enviar mensaje</button>
+              </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer py-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <span class="logo-text d-block mb-2">EL FARO INFORME</span>
+          <p class="mb-0">Noticias de Mar del Plata, la Provincia y el Mundo.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-uppercase mb-3" style="color:var(--text-primary);">Secciones</h6>
+          <ul class="list-unstyled d-flex flex-column gap-1">
+            <li><a href="#ciudad">La Ciudad</a></li><li><a href="#provincia">Provincia</a></li>
+            <li><a href="#deportes">Deportes</a></li><li><a href="#policiales">Policiales</a></li>
+            <li><a href="#tecnologia">Tecnología</a></li><li><a href="#pais">El País</a></li><li><a href="#mundo">El Mundo</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-uppercase mb-3" style="color:var(--text-primary);">Seguinos</h6>
+          <div class="d-flex flex-column gap-1">
+            <a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X (Twitter)</a>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color: var(--border-subtle);" />
+      <p class="text-center mb-0" style="color:var(--text-muted); font-size:0.8rem;">&copy; 2026 EL FARO INFORME. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       MODALS: In-Page Reading (SPA)
+       Each modal loads the full article content.
+       ============================================ -->
+
+  <!-- Modal: Aldosivi -->
+  <div class="modal fade" id="modal-aldosivi" tabindex="-1" aria-labelledby="lbl-aldosivi" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="lbl-aldosivi">Aldosivi gano contra Huracán en el Minella y sigue invicto</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+      <div class="modal-body">
+        <span class="badge-cat badge-sports mb-2 d-inline-block">DEPORTES</span>
+        <div class="modal-meta mb-3"><time datetime="2026-03-29">Domingo 29 de marzo de 2026</time> · Por Redacción Deportes</div>
+        <img src="https://pxcdn.0223.com.ar/f/032026/1773692896390.webp?cw=748&ch=420&cma=1&extw=jpeg" class="w-100 mb-3" alt="Aldosivi en el Minella" />
+        <p class="lead">El Tiburón se impuso ante el Globo en un partido ajustado en Mar del Plata, estirando su buena racha en el certamen y manteniéndose sin conocer la derrota.</p>
+        <div class="article-text">
+          <p>En una tarde que se presentó ideal para el fútbol en Mar del Plata, <strong>Aldosivi</strong> logró una merecida victoria en el estadio José María Minella tras derrotar a <strong>Huracán</strong>. El conjunto local aprovechó las oportunidades clave para imponerse en el marcador y continuar con su racha de partidos invicto, consolidándose como uno de los equipos más sólidos del torneo.</p>
+          <p>El partido fue intensamente disputado en el mediocampo, con ambos equipos buscando el arco rival desde el primer minuto. Sin embargo, fue el equipo marplatense quien supo ser más efectivo en la definición, aprovechando una desatención defensiva de la visita pasada la media hora de juego, para abrir el marcador que terminaría siendo definitivo.</p>
+          <p>A pesar de los intentos de Huracán en la segunda mitad táctica del encuentro, la defensa del <em>Tiburón</em> se mostró infranqueable. El arquero local tuvo una actuación destacada en los minutos finales, ahogando al menos dos gritos de gol claros del equipo de Parque Patricios. La victoria suma confianza para Aldosivi de cara al próximo compromiso en condición de visitante.</p>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Modal: Guardia del Mar -->
+  <div class="modal fade" id="modal-guardia" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Firmaron un convenio que garantiza el funcionamiento de la Guardia del Mar</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-city mb-2 d-inline-block">LA CIUDAD</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción La Ciudad</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/emtur-guardia_094-1024x683.jpg" class="w-100 mb-3" alt="Guardia del Mar" />
+      <p class="lead">El acuerdo, suscrito entre el EMTUR y patrocinadores privados de turismo, asegura la disponibilidad de recursos e indumentaria para el tradicional grupo icónico de la ciudad para las próximas temporadas.</p>
+      <div class="article-text">
+        <p>En un acto oficial celebrado de cara a las próximas campañas turísticas, las autoridades del Ente Municipal de Turismo (EMTUR) oficializaron la firma de un necesario convenio tripartito que garantizará la continuidad y sostenibilidad financiera y operativa de "La Guardia del Mar", el emblemático grupo coreográfico y musical que ha representado a Mar del Plata durante décadas.</p>
+        <p>Tras algunas semanas de incertidumbre suscitadas por el recorte presupuestario destinado a las entidades culturales municipales, el salvataje llegó mediante el apoyo explícito de corporaciones privadas adscritas a las cámaras de hoteleros y balnearios de la ciudad. El convenio asume los costos principales de actualización de indumentarias, compra y mantenimiento de instrumentos, y facilita instalaciones permanentes para el riguroso y diario entrenamiento del ballet.</p>
+        <p>La noticia fue recibida con honda alegría y alivio por parte de los casi cuarenta integrantes, directores y coreógrafos que actualmente conforman este estandarte de la cultura marplatense. Quienes han visitado las costas argentinas saben que ver el paso de estas embajadoras culturales durante ceremonias públicas y aperturas turísticas es una tradición intocable; tradición que, afortunadamente, ahora ha quedado fuera de riesgo logístico.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Basurales -->
+  <div class="modal fade" id="modal-basurales" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Denuncian microbasurales y ratas en el barrio Ameghino</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-city mb-2 d-inline-block">LA CIUDAD</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción La Ciudad</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/BasuralAmeghino.png" class="w-100 mb-3" alt="Basurales Ameghino" />
+      <p class="lead">Los vecinos elevan de manera alarmada quejas sobre la desidia estatal en lotes abandonados. Se multiplicaron las pilas ilegales de residuos promoviendo plagas e infecciones recurrentes.</p>
+      <div class="article-text">
+        <p>La situación higiénico-sanitaria en diversas zonas periféricas de la ciudad alcanzó nuevamente una fase crítica. Esta vez, las asociaciones de fomento y los vecinos autoconvocados del barrio Florentino Ameghino hicieron públicas sus severas denuncias frente al desborde de microbasurales incrustados en plenos descampados urbanos y esquinas poco transitadas, exigiendo respuestas inmediatas del departamento de aseo municipal.</p>
+        <p>"Ya no se puede abrir la ventana porque se te meten directamente las ratas al comedor de tu casa", fue el testimonio desesperado de una madre sobre la cruda realidad del día a día frente a extensos amontonamientos clandestinos de bolsas, escombros y chatarra voluminosa.</p>
+        <p>Con fotografías de basurales sobre las veredas, la indignación escala a medida que el servicio regular de recolección es incapaz de levantar los desechos que quedan por fuera de los volquetes reglamentarios. Pese a las promesas pasadas del Ente Municipal de Servicios Urbanos, las tareas de saneamiento y fumigación profunda prometidas aún brillan por su ausencia.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Juicio Droga -->
+  <div class="modal fade" id="modal-droga" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Piden llevar a juicio a una banda acusada de vender droga</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-police mb-2 d-inline-block">POLICIALES</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Policiales</div>
+      <img src="https://storage.lacapitalmdp.com/2022/10/tribunal-penal-federal-1024x683.jpg" class="w-100 mb-3" alt="Operativo" />
+      <p class="lead">La fiscalía solicitó la elevación a juicio oral para seis imputados, acusados de liderar una red de comercialización de estupefacientes en diversos barrios de la ciudad.</p>
+      <div class="article-text">
+        <p>Tras varios meses de intensa investigación y operativos simultáneos, la Fiscalía Temática de Estupefacientes ha solicitado formalmente que se eleve a juicio la causa contra seis personas señaladas como presuntos integrantes de una banda dedicada a la comercialización de estupefacientes al menudeo en distintos puntos de Mar del Plata.</p>
+        <p>La investigación comenzó a raíz de denuncias anónimas de vecinos que notaron un movimiento inusual en las viviendas que operaban como "búnkeres". Durante los allanamientos realizados el año pasado, las fuerzas policiales lograron secuestrar grandes cantidades de cocaína fraccionada, dinero en efectivo, y balanzas de precisión que confirmaron la logística de la red criminal.</p>
+        <p>Según la presentación del fiscal, los imputados tenían roles claramente definidos, desde la provisión y el estiramiento de las sustancias, hasta los denominados "soldaditos" que realizaban las ventas y alertaban sobre la presencia policial. Se espera que el juzgado de garantías defina la fecha para el inicio de las audiencias.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Balean -->
+  <div class="modal fade" id="modal-balean" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Balean a un hombre en el pecho en un intento de robo en barrio San Cayetano</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-police mb-2 d-inline-block">POLICIALES</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Policiales</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/Patrulleros-66-1024x683.jpg" class="w-100 mb-3" alt="Operativo San Cayetano" />
+      <p class="lead">La víctima fue interceptada por dos delincuentes en moto cuando llegaba a su domicilio. Se encuentra internada en estado reservado tras ser sometida a una operación de urgencia.</p>
+      <div class="article-text">
+        <p>La inseguridad volvió a golpear en el barrio San Cayetano, donde un hombre de 45 años resultó gravemente herido tras recibir un disparo en el pecho durante un aparente intento de robo de su vehículo. El violento episodio ocurrió durante la noche del domingo, despertando la conmoción de los vecinos de la zona.</p>
+        <p>De acuerdo a los primeros testimonios recabados por las autoridades, la víctima se encontraba a punto de ingresar la camioneta en el garaje de su vivienda cuando fue sorprendido por dos asaltantes armados a bordo de una motocicleta. Al resistirse a entregar las llaves, uno de los delincuentes abrió fuego a corta distancia antes de darse a la fuga sin concretar el robo.</p>
+        <p>Rápidamente, la víctima fue asistida por familiares y trasladada de urgencia al Hospital Interzonal General de Agudos, donde tuvo que ser intervenida quirúrgicamente durante la madrugada. Fuentes del hospital informaron que su pronóstico es reservado y permanece en la unidad de terapia intensiva.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Comisión Libra -->
+  <div class="modal fade" id="modal-libra" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">La Comisión Libra denunciará al fiscal Taiano por encubrimiento</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-nation mb-2 d-inline-block">EL PAÍS</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción El País</div>
+      <img src="https://storage.lacapitalmdp.com/2025/01/Ferraro--1024x683.jpg" class="w-100 mb-3" alt="Justicia" />
+      <p class="lead">Integrantes del organismo anunciaron en conferencia de prensa que presentarán pruebas sobre presuntas irregularidades en la investigación de causas de alto relieve político.</p>
+      <div class="article-text">
+        <p>La tensión entre diversas organizaciones civiles y la cúpula judicial sumó un nuevo capítulo este lunes, cuando los representantes de la autodenominada <em>Comisión Libra</em> confirmaron que formalizarán una denuncia penal contra el fiscal general por supuestas maniobras de encubrimiento.</p>
+        <p>En una concurrida conferencia de prensa, los voceros de la comisión expusieron detalles inéditos de los expedientes que, a su juicio, evidencian un estancamiento deliberado. Según lo presentado, habría existido un ocultamiento sistemático de pruebas documentales y demoras injustificadas en la citación de testigos claves.</p>
+        <p>"No podemos permitir que el sistema de justicia se convierta en una herramienta para blindar la corrupción estructural", afirmó el coordinador de la Comisión. Se espera que la denuncia ingrese a los tribunales el próximo miércoles.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Reforma Laboral -->
+  <div class="modal fade" id="modal-reforma" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Otro fallo judicial declaró inconstitucional la reforma laboral</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-nation mb-2 d-inline-block">EL PAÍS</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Economía y Política</div>
+      <img src="https://storage.lacapitalmdp.com/2026/02/sector_manufacturero-1024x614.jpg" class="w-100 mb-3" alt="Reforma laboral" />
+      <p class="lead">La Cámara Nacional de Apelaciones del Trabajo asestó un nuevo revés contra el articulado de la reciente ley, considerando que los cambios sobre el esquema indemnizatorio vulneran derechos adquiridos.</p>
+      <div class="article-text">
+        <p>En lo que se perfila como una escalada de reveses en el ámbito judicial, la Cámara Nacional de Apelaciones del Trabajo dictaminó este lunes la inconstitucionalidad de los artículos clave que conforman la reciente reforma laboral impulsada desde el Ejecutivo.</p>
+        <p>El fallo se centró específicamente en el polémico artículo que pretendía reducir el límite para el cálculo de las indemnizaciones por despido injustificado. Los magistrados sostuvieron que dicha modificación entra en colisión directa con los preceptos constitucionales que resguardan de la arbitrariedad.</p>
+        <p>Desde los sectores sindicales, la noticia fue celebrada como una victoria trascendental. Fuentes gubernamentales adelantaron que presentarán un recurso extraordinario para llevar el litigio a la Corte Suprema de Justicia de la Nación.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Kicillof -->
+  <div class="modal fade" id="modal-kicillof" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Kicillof gana terreno en el PJ bonaerense y acelera su armado político</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-province mb-2 d-inline-block">PROVINCIA</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Política</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/Axel_Kicillof-1024x683.jpg" class="w-100 mb-3" alt="Kicillof" />
+      <p class="lead">El Gobernador consolidó alianzas estratégicas con intendentes del conurbano y sindicatos, preparándose para definir su liderazgo de cara al próximo escenario electoral.</p>
+      <div class="article-text">
+        <p>Tras una intensa agenda de recorridas, el gobernador Axel Kicillof incrementó su capital político dentro de la interna del Partido Justicialista bonaerense, perfilándose como una de las principales figuras de resistencia opositora a nivel nacional.</p>
+        <p>Esta última semana, el gobernador cerró filas con una veintena de intendentes de la tercera y primera sección electoral. La consolidación de estas alianzas representa un mensaje contundente para aquellos sectores del PJ que reclamaban una renovación dirigencial más amplia.</p>
+        <p>Analistas políticos remarcan que este avance obedece tanto a su fortalecimiento provincial como a su proyección de cara al inminente proceso de rearmado. "La prioridad es blindar el territorio bonaerense frente a las políticas de ajuste", subrayaron sus referentes.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Combustibles -->
+  <div class="modal fade" id="modal-combustibles" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Subieron 4% los combustibles</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-economy mb-2 d-inline-block">ECONOMÍA</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Economía</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/petrol-stations-1024x683.jpg" class="w-100 mb-3" alt="Combustibles" />
+      <p class="lead">Un nuevo aumento llegó a los surtidores de todo el país a partir de la medianoche, acumulando incrementos sostenidos en lo que va del año.</p>
+      <div class="article-text">
+        <p>Las principales empresas petroleras del país aplicaron un incremento promedio del 4% en los precios de las naftas y el gasoil en todas las estaciones de servicio. Este ajuste busca compensar la devaluación programada y las actualizaciones impositivas del sector energético.</p>
+        <p>En Mar del Plata y gran parte de la Provincia de Buenos Aires, la nafta súper superó la barrera psicológica dispuesta tras los ajustes de enero. Según refirieron fuentes de las cámaras de expendedores, el flujo de clientes descendió un leve porcentaje desde que los aumentos se volvieron un hábito casi mensual.</p>
+        <p>Distintas federaciones de transportistas alertaron que inevitablemente se verán obligados a trasladar la suba de los combustibles a las tarifas de los fletes, lo que redundaría en un renovado empuje inflacionario en los alimentos y productos de consumo masivo.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Araujo -->
+  <div class="modal fade" id="modal-araujo" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Murió Marcelo Araujo, histórica voz del fútbol de Primera</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-sports mb-2 d-inline-block">DEPORTES</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Deportes</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/araujo-1024x574.jpg" class="w-100 mb-3" alt="Marcelo Araujo" />
+      <p class="lead">El emblemático relator que marcó varias generaciones con su particular estilo, falleció a sus 78 años. Su legado en las transmisiones deportivas es imborrable.</p>
+      <div class="article-text">
+        <p>El periodismo deportivo argentino se vistió de luto al confirmarse el fallecimiento de Marcelo Araujo, la inconfundible voz que acompañó el fútbol de primera división a lo largo de los inolvidables años noventa y principios del dos mil.</p>
+        <p>Nacido como Lázaro Zilberman, Araujo irrumpió en los medios cambiando para siempre el paradigma del relato por televisión. Junto a Enrique Macaya Márquez, integró una de las duplas más célebres de la pantalla nacional.</p>
+        <p>Hacia el final de su carrera, su estilo polarizado generaba tantas adhesiones fervientes como críticas contundentes. Ex colegas, clubes y miles de televidentes manifestaron su profunda tristeza a través de las redes sociales.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Brasil -->
+  <div class="modal fade" id="modal-brasil" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Comienza en Brasil el juicio contra una abogada argentina por injuria racial</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-world mb-2 d-inline-block">EL MUNDO</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción El Mundo</div>
+      <img src="https://storage.lacapitalmdp.com/2026/02/agostina_paez-1024x576.jpg" class="w-100 mb-3" alt="Juicio en Brasil" />
+      <p class="lead">El incidente, ocurrido durante unas vacaciones en Río de Janeiro, captó la atención mediática. Podría enfrentarse a una pena de varios años de prisión efectiva.</p>
+      <div class="article-text">
+        <p>Tras meses de espera procesal, este lunes iniciaron las audiencias en los tribunales de Río de Janeiro contra una abogada de nacionalidad argentina, acusada por el delito de "injuria racial" durante sus vacaciones en dicho país en 2025.</p>
+        <p>La disputa sucedió en un parador de las concurridas playas cariocas, donde la profesional habría agredido verbalmente a un trabajador del establecimiento. El hecho fue grabado por transeúntes, cuyas filmaciones ahora ofician de prueba principal.</p>
+        <p>En Brasil, la ley de injuria ha sido equiparada a los crímenes de racismo, un delito inafianzable que prevé penas de uno a tres años de prisión, más diversas sanciones pecuniarias.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: AirPods -->
+  <div class="modal fade" id="modal-airpods" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">AirPods Max 2: Apple suma IA y traducción en tiempo real</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-tech mb-2 d-inline-block">TECNOLOGÍA</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción Tecnología</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/AirPods-Max-2-1024x683.jpg" class="w-100 mb-3" alt="AirPods Max 2" />
+      <p class="lead">El gigante tecnológico presentó su nueva versión de auriculares estrella, incorporando procesadores neurales avanzados para redefinir la cancelación de ruidos e interacción del usuario.</p>
+      <div class="article-text">
+        <p>Apple ha revelado la esperada segunda generación de sus auriculares AirPods Max 2. La principal gran innovación recae en la poderosa inclusión de inteligencia artificial generativa aplicada de forma nativa a la escucha diaria gracias al nuevo chip H3.</p>
+        <p>La funcionalidad más destacada es el modo de "conversación universal": los auriculares poseen la capacidad de traducir en tiempo real más de una treintena de idiomas, susurrando al usuario la traducción mediante síntesis de voz indistinguible.</p>
+        <p>Adicionalmente, el diseño renueva su esquema de alimentación pasándose completamente al estándar USB-C e incorporando un algoritmo de ecualización predictiva que se adapta al entorno de la persona. Sin embargo, su elevado precio de salida mantiene el modelo estrictamente como un producto premium.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Israel -->
+  <div class="modal fade" id="modal-israel" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Israel anuncia una operación terrestre en el Líbano contra Hezbollah</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-world mb-2 d-inline-block">EL MUNDO</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción El Mundo</div>
+      <img src="https://www.lanacion.com.ar/resizer/v2/columna-de-humo-tras-un-bombardeo-de-artilleria-QLFGLRUQI5DX5JYXGKPD526F2U.JPG?auth=db10fd407e084c3b65d074c4f3f56919ea93e5ec2d0b22888c413fc1287171f0&width=880&height=586&quality=70&smart=true" class="w-100 mb-3" alt="Conflicto" />
+      <p class="lead">Las Fuerzas de Defensa de Israel confirmaron la escalada del conflicto en la frontera norte tras meses de intensos cruces aéreos con la organización armada libanesa.</p>
+      <div class="article-text">
+        <p>El mando militar de las Fuerzas de Defensa de Israel oficializó el inicio de operaciones terrestres selectivas sobre la región sur del Líbano. El anuncio marca una grave escalada en las hostilidades contra las infraestructuras de Hezbollah.</p>
+        <p>En el comunicado oficial, se puntualizó que la incursión tiene carácter "limitado y de precisión", apuntando a desmantelar complejos de misiles y redes de túneles adyacentes a comunidades fronterizas israelíes.</p>
+        <p>La noticia desencadenó inmediatos pronunciamientos de cancillerías globales instando al cese de las hostilidades ante el riesgo de una guerra regional abierta. Portavoces del Líbano declararon el frente como "un acto flagrante de invasión territorial".</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Modal: Romano -->
+  <div class="modal fade" id="modal-romano" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Descubren un monumento funerario romano con escenas de gladiadores</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+    <div class="modal-body">
+      <span class="badge-cat badge-world mb-2 d-inline-block">EL MUNDO</span>
+      <div class="modal-meta mb-3"><time datetime="2026-03-30">Lunes 30 de marzo de 2026</time> · Por Redacción El Mundo / Ciencia</div>
+      <img src="https://storage.lacapitalmdp.com/2026/03/monumento-funerario-romano-2-1024x768.jpg" class="w-100 mb-3" alt="Monumento romano" />
+      <p class="lead">Arqueólogos desenterraron una cámara casi intacta en las afueras de Pompeya, revelando frescos de una calidad sin precedentes de los juegos en la arena.</p>
+      <div class="article-text">
+        <p>A las continuas maravillas que sigue devolviendo la tierra en las vecindades del monte Vesubio, esta semana se le ha sumado un excepcional hallazgo arqueológico: un voluminoso monumento funerario correspondiente al siglo I d.C., perteneciente a una influyente familia patricia ligada a espectáculos de gladiadores.</p>
+        <p>Lo que verdaderamente fascina a la comunidad de restauradores es el soberbio estado de conservación de los frescos que adornan la tumba. Las pinturas detallan con inusitada precisión técnica las crudas escenas de los enfrentamientos en el anfiteatro local.</p>
+        <p>Los directores de la excavación señalaron este descubrimiento como uno de los mosaicos documentales más importantes de las últimas dos décadas, arrojando luz inestimable sobre las prácticas mortuorias del período romano temprano.</p>
+      </div>
+    </div>
+  </div></div></div>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+  <script src="form-handler.js"></script>
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
