@@ -1,0 +1,65 @@
+body {
+  background-color: #141414;
+  color: #f3f3f6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.custom-card {
+  background-color: transparent;
+  border: 1px solid #858585;
+  border-radius: 8px;
+}
+
+.text-light {
+  color: #f3f3f6 !important;
+}
+
+.text-muted {
+  color: #858585 !important;
+}
+
+code {
+  color: #858585;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+/* Custom Table Styles overriding Bootstrap */
+.custom-table {
+  --bs-table-bg: transparent;
+  --bs-table-color: #f3f3f6;
+  color: #f3f3f6;
+  font-size: 0.875rem;
+}
+
+.custom-table thead th {
+  color: #858585;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #858585;
+  padding: 0.5rem 0.6rem;
+}
+
+.custom-table tbody td {
+  padding: 0.7rem 0.6rem;
+  border-bottom: 1px solid #2a2a2a;
+  background-color: transparent;
+  color: #f3f3f6;
+}
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Typography Helpers */
+.mono {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.82rem;
+  color: #858585;
+}
+
+.neg {
+  color: #f3f3f6;
+  font-weight: 600;
+}

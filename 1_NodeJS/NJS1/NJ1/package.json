@@ -1,0 +1,21 @@
+{
+  "name": "nj1-exercises",
+  "version": "1.0.0",
+  "description": "Node.js learning exercises - NJ1",
+  "type": "module",
+  "main": "exercises/exercise5.js",
+  "scripts": {
+    "ex1": "node exercises/exercise1.js",
+    "ex2": "node exercises/exercise2.js",
+    "ex3": "node exercises/exercise3.js",
+    "ex4": "node exercises/exercise4.js",
+    "ex5": "node exercises/exercise5.js",
+    "start": "node exercises/exercise5.js"
+  },
+  "keywords": ["nodejs", "learning", "exercises"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
