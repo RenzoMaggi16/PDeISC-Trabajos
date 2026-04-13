@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJ2 — Servidor HTTP y Sistema de Archivos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-dark text-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4" href="/">NJ2</a>
+    <span class="text-secondary small">Ejercicio 2 — HTTP y Sistema de Archivos</span>
+  </div>
+</nav>
+
+<div class="bg-dark border-bottom border-secondary py-5 text-center">
+  <div class="container">
+    <h1 class="fw-bold text-primary">NODE.JS HTTP + SISTEMA DE ARCHIVOS</h1>
+    <p class="text-secondary fs-5">
+      Ejercicio 2 — Servir archivos estáticos y rutas de API con <strong class="text-primary">node:http</strong> y <strong class="text-primary">node:fs/promises</strong>
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+      <span class="badge bg-primary">node:http</span>
+      <span class="badge bg-secondary">node:fs/promises</span>
+      <span class="badge bg-info text-dark">Módulos ES</span>
+      <span class="badge bg-success">async / await</span>
+    </div>
+  </div>
+</div>
+
+<main class="container py-5">
+  <div class="row g-4 mb-4">
+    <div class="col-12 col-md-6">
+      <div class="card bg-secondary bg-opacity-10 border-secondary h-100">
+        <div class="card-header fw-bold text-primary">HTTMODULE.JS</div>
+        <div class="card-body text-secondary">
+          <p>
+            Funciones puras para construir respuestas HTTP.
+            <code>buildResponse()</code>, <code>buildJsonResponse()</code> y <code>buildErrorResponse()</code>
+            gestionan el formato de todas las respuestas.
+            <code>parseRoute()</code> elimina los parámetros de consulta.
+            <code>logRequest()</code> formatea las entradas de registro de solicitudes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card bg-secondary bg-opacity-10 border-secondary h-100">
+        <div class="card-header fw-bold text-primary">FSMODULE.JS</div>
+        <div class="card-body text-secondary">
+          <p>
+            Utilidades de archivos asíncronas basadas en <code>node:fs/promises</code>.
+            <code>readTextFile()</code> carga archivos como cadenas UTF-8.
+            <code>writeTextFile()</code> sobreescribe archivos.
+            <code>appendToFile()</code> añade líneas.
+            <code>getFileInfo()</code> devuelve metadatos estructurados.
+            <code>fileExists()</code> nunca lanza errores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-info mb-5">
+    <strong>Este archivo fue leído del disco usando <code>fsModule.readTextFile()</code> y servido mediante <code>httpModule.buildResponse()</code>.</strong>
+  </div>
+
+  <h5 class="fw-bold text-primary mb-3">RUTAS DE API DISPONIBLES</h5>
+  <div class="card bg-secondary bg-opacity-10 border-secondary">
+    <div class="card-body p-0">
+      <table class="table table-dark table-striped mb-0">
+        <thead>
+          <tr>
+            <th>MÉTODO</th>
+            <th>RUTA</th>
+            <th>DESCRIPCIÓN</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge bg-primary">GET</span></td><td><code>/</code></td><td>Sirve este archivo HTML desde el disco</td></tr>
+          <tr><td><span class="badge bg-primary">GET</span></td><td><code>/api/fileinfo</code></td><td>Devuelve metadatos del archivo como JSON</td></tr>
+          <tr><td><span class="badge bg-primary">GET</span></td><td><code>/api/log</code></td><td>Añade una línea con marca de tiempo a <code>access.log</code></td></tr>
+          <tr><td><span class="badge bg-primary">GET</span></td><td><code>/api/writefile</code></td><td>Escribe un mensaje con marca de tiempo en <code>output.txt</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-dark border-top border-secondary text-center text-secondary py-3 mt-5">
+  <small>NJ2 &middot; node:http &middot; node:fs &middot; 127.0.0.1:3000</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

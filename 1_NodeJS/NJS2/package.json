@@ -1,0 +1,13 @@
+{
+  "name": "nj2",
+  "version": "1.0.0",
+  "description": "Proyecto de aprendizaje de Node.js - 5 ejercicios",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "upper-case": "^2.0.2"
+  },
+  "keywords": ["nodejs", "modulos", "aprendizaje"],
+  "license": "ISC"
+}
