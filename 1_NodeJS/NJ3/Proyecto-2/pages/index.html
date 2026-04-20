@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJS3 — Proyecto 2 (Visualizador de DHTML)</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Estilos en cascada globales -->
+    <link rel="stylesheet" href="../public/styles/estilos-globales.css">
+    <link rel="stylesheet" href="../public/styles/estilos-index.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación Responsiva -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand fs-4" href="/">NJS3 — Proyecto 2</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacionSecundario" aria-controls="menuNavegacionSecundario" aria-expanded="false" aria-label="Desplegar control">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavegacionSecundario">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 text-center mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-mouse">Mouse</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-teclado">Teclado</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-formulario">Formularios</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-ventana">Ventana</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-tiempo">Tiempo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Zona central interactiva (Hero Section) -->
+    <header class="hero-seccion text-center">
+        <div class="container">
+            <h1 class="titulo-hero">Explorador de Eventos JavaScript</h1>
+            <p class="subtitulo-hero">
+                Un entorno interactivo para comprender cómo el código detecta y responde al comportamiento del usuario. Navega por las tarjetas a continuación para experimentar con las diferentes categorías de manipulación asincrónica (DHTML).
+            </p>
+        </div>
+    </header>
+
+    <!-- Grilla de Tarjetas Dinámicas -->
+    <main class="container flex-grow-1 py-5">
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Tarjeta 1: Mouse -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <article class="tarjeta-nav">
+                    <div class="icono-tarjeta">🖱️</div>
+                    <h3 class="titulo-tarjeta">Eventos de Mouse</h3>
+                    <p class="desc-tarjeta">Captura movimientos, fogonazos de clics, pasajes de cursor ("hover") y restricciones del menú secundario en la pantalla.</p>
+                    <a href="/eventos-mouse" class="btn-explorar">Explorar →</a>
+                </article>
+            </div>
+
+            <!-- Tarjeta 2: Teclado -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <article class="tarjeta-nav">
+                    <div class="icono-tarjeta">⌨️</div>
+                    <h3 class="titulo-tarjeta">Eventos de Teclado</h3>
+                    <p class="desc-tarjeta">Comprende la detección de códigos nativos, estado de caracteres y captura de atajos maestros de combinación de teclas.</p>
+                    <a href="/eventos-teclado" class="btn-explorar">Explorar →</a>
+                </article>
+            </div>
+
+            <!-- Tarjeta 3: Formularios -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <article class="tarjeta-nav">
+                    <div class="icono-tarjeta">📝</div>
+                    <h3 class="titulo-tarjeta">Eventos de Formulario</h3>
+                    <p class="desc-tarjeta">Reactividad visual y validaciones complejas en tiempo real detectando la escritura de credenciales u opciones elegidas.</p>
+                    <a href="/eventos-formulario" class="btn-explorar">Explorar →</a>
+                </article>
+            </div>
+
+            <!-- Tarjeta 4: Ventana / Window -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <article class="tarjeta-nav">
+                    <div class="icono-tarjeta">🖥️</div>
+                    <h3 class="titulo-tarjeta">Control de Ventana</h3>
+                    <p class="desc-tarjeta">Gestiona el navegador rastreando redimensionamientos, desplazamientos rápidos, notificaciones y cierres automáticos.</p>
+                    <a href="/eventos-ventana" class="btn-explorar">Explorar →</a>
+                </article>
+            </div>
+
+            <!-- Tarjeta 5: Eventos Cronometrados -->
+            <div class="col-12 col-md-6 col-xl-4">
+                <article class="tarjeta-nav">
+                    <div class="icono-tarjeta">⏳</div>
+                    <h3 class="titulo-tarjeta">Flujo del Tiempo</h3>
+                    <p class="desc-tarjeta">Implementaciones recursivas avanzadas evaluando retardos y ciclos repetitivos: Emulador de cuenta regresiva, auto-guardado o cronómetro.</p>
+                    <a href="/eventos-tiempo" class="btn-explorar">Explorar →</a>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Corporativo -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 NJS3 — Proyecto 2. Interfaz DHTML interactiva.</p>
+        </div>
+    </footer>
+
+    <!-- Dependencia Bootstrap 5 CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Módulos locales de UI compartida -->
+    <script src="../scripts/navbar.js"></script>
+</body>
+</html>

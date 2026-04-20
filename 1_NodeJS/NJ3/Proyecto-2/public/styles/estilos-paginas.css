@@ -1,0 +1,338 @@
+/* Encabezado Base de Páginas */
+.encabezado-pagina {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+}
+
+.titulo-pagina {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-texto-primario);
+    margin-bottom: 0.5rem;
+}
+
+.desc-pagina {
+    color: var(--color-texto-secundario);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+/* Lienzo de Interacción Visual Constante */
+#areaDemo {
+    background-color: var(--color-superficie);
+    border: 2px dashed rgba(255,255,255,0.1);
+    border-radius: var(--radio-borde);
+    padding: 2rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--transicion-rapida), transform var(--transicion-rapida);
+}
+#areaDemo.hover-activo {
+    border-color: var(--color-acento-secundario);
+    border-style: solid;
+    transform: scale(1.01);
+}
+
+/* Componentes Flotantes del Demo */
+.medidor-flotante {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid #333;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-family: var(--fuente-mono);
+    font-size: 0.85rem;
+    color: var(--color-acento-primario);
+    pointer-events: none;
+}
+
+.punto-doble-click {
+    position: absolute;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-acento-secundario);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    box-shadow: 0 0 15px var(--color-acento-secundario);
+    animation: aparecer 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tooltip-personalizado {
+    position: absolute;
+    background: var(--color-superficie-resalte);
+    color: var(--color-texto-primario);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    pointer-events: none;
+    z-index: 100;
+    border: 1px solid #444;
+    box-shadow: var(--sombra-card);
+}
+
+@keyframes aparecer {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Panel de Consola / Lógica (Terminal) */
+#panelLog {
+    background-color: #030303;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 1rem;
+    height: 250px;
+    overflow-y: auto;
+    font-family: var(--fuente-mono);
+    font-size: 0.85rem;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.9);
+    position: relative;
+    scroll-behavior: smooth;
+}
+#panelLog::-webkit-scrollbar { width: 8px; }
+#panelLog::-webkit-scrollbar-track { background: #111; }
+#panelLog::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+.entrada-log {
+    color: var(--color-texto-secundario);
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dotted #1a1a1a;
+    animation: entradaLog 0.2s ease-out;
+    line-height: 1.4;
+}
+.entrada-log .hora-etiqueta {
+    color: var(--color-acento-primario);
+    margin-right: 8px;
+    opacity: 0.8;
+}
+.entrada-log .destaque-evento {
+    color: var(--color-advertencia);
+}
+
+@keyframes entradaLog {
+    0% { opacity: 0; transform: translateX(-15px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.cabecera-consola {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.titulo-consola {
+    font-family: var(--fuente-mono);
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Modificadores Página 2: Teclado */
+#panelTecladoVivo {
+    background: #09090b;
+    padding: 1.5rem;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+.tecla-resaltada {
+    font-size: 3rem;
+    color: var(--color-acento-primario);
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+.info-tecla {
+    font-size: 1rem;
+    color: var(--color-texto-secundario);
+    margin-top: 10px;
+}
+#campoTexto {
+    background: var(--color-superficie);
+    color: #fff;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    resize: none;
+}
+#campoTexto:focus { background: #1a1a20; box-shadow: none; border-color: var(--color-acento-primario); outline: none; }
+
+.indicador-estado-tecla {
+    padding: 4px 10px;
+    background: #27272a;
+    border-radius: 4px;
+    margin: 0 5px;
+    font-size: 0.8rem;
+    opacity: 0.4;
+    transition: var(--transicion-rapida);
+}
+.indicador-estado-tecla.activo {
+    opacity: 1;
+    background: var(--color-acento-secundario);
+    color: #fff;
+}
+
+/* Modificadores Página 3: Formulario Estético */
+.form-control, .form-select {
+    background-color: var(--color-superficie-resalte);
+    border: 1px solid #3f3f46;
+    color: var(--color-texto-primario);
+    transition: var(--transicion-rapida);
+    border-radius: 8px;
+}
+.form-control:focus, .form-select:focus {
+    background-color: #1a1a20;
+    color: var(--color-texto-primario);
+    border-color: var(--color-acento-primario);
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.15);
+}
+.form-label {
+    transition: color var(--transicion-rapida);
+    font-weight: 500;
+}
+.label-enfocado {
+    color: var(--color-acento-primario);
+}
+.medidor-fuerza {
+    height: 6px;
+    border-radius: 3px;
+    transition: width var(--transicion-media), background-color var(--transicion-media);
+    margin-top: 8px;
+    width: 0%;
+}
+.medidor-debil { background-color: var(--color-error); width: 33%; }
+.medidor-media { background-color: var(--color-advertencia); width: 66%; }
+.medidor-fuerte { background-color: var(--color-exito); width: 100%; }
+.texto-fuerza {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    text-align: right;
+    display: block;
+}
+.texto-fuerza.debil { color: var(--color-error); }
+.texto-fuerza.media { color: var(--color-advertencia); }
+.texto-fuerza.fuerte { color: var(--color-exito); }
+
+.msg-error {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    display: none;
+    animation: entradaLog 0.2s;
+}
+
+/* Modificadores Página 4: Ventana */
+#barraProgresoScroll {
+    position: fixed;
+    top: 0; left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-acento-primario), var(--color-acento-secundario));
+    width: 0%;
+    z-index: 1050; /* Sobre la navbar */
+    box-shadow: 0 0 10px var(--color-acento-secundario);
+    transition: width 0.1s;
+}
+.indicador-dimensiones {
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--fuente-mono);
+}
+.dims-txt { color: var(--color-acento-primario); }
+
+.bloque-placeholder {
+    height: 600px;
+    background: repeating-linear-gradient(45deg, #111, #111 20px, #1a1a1a 20px, #1a1a1a 40px);
+    border-radius: 12px;
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Modificadores Página 5: Tiempo */
+.anillo-cuenta-atras {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 8px solid #27272a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: var(--fuente-mono);
+    position: relative;
+    transition: border-color var(--transicion-media), color 0.2s, transform 0.2s;
+}
+.anillo-cuenta-atras.corriendo {
+    border-color: var(--color-acento-secundario);
+    color: var(--color-texto-primario);
+}
+.animacion-pulso-rojo {
+    border-color: var(--color-error) !important;
+    color: var(--color-error) !important;
+    animation: pulsoAlarma 0.5s infinite alternate;
+}
+@keyframes pulsoAlarma {
+    0% { transform: scale(1); box-shadow: 0 0 15px var(--color-error); }
+    100% { transform: scale(1.15); box-shadow: 0 0 40px var(--color-error); }
+}
+
+.display-cronometro {
+    font-size: 3rem;
+    font-family: var(--fuente-mono);
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-acento-primario);
+    background: #050505;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #222;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.lista-vueltas {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+}
+.lista-vueltas li {
+    font-family: var(--fuente-mono);
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+}
+.indicador-guardado {
+    font-size: 0.9rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    background: #27272a;
+    color: #a1a1aa;
+}
+.indicador-guardado.modificado { background: rgba(245, 158, 11, 0.2); color: var(--color-advertencia); }
+.indicador-guardado.exito { background: rgba(16, 185, 129, 0.2); color: var(--color-exito); }

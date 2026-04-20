@@ -1,0 +1,16 @@
+{
+  "name": "njs3-proyecto-2",
+  "version": "1.0.0",
+  "description": "Multi-Page Event Showcase con Express Routing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "type": "commonjs"
+}

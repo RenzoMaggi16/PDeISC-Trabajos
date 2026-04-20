@@ -1,0 +1,78 @@
+/* ==============================================================
+   VARIABLES MAESTRAS DEL SISTEMA (Design System Avanzado)
+   ============================================================== */
+:root {
+  /* Escala Monocromática */
+  --color-fondo: #0b0f19;         /* Modo oscuro ultra-profundo (IDE feel) */
+  --color-superficie: #141b2d;    /* Capas, cartas, y contenedores medios */
+  --color-superficie-alta: #1e293b;/* Hover y demarcados claros */
+  --color-borde: #334155;         /* Divisiones */
+  
+  --color-blanco: #ffffff;
+  --color-texto-primario: #f8fafc;
+  --color-texto-secundario: #94a3b8;
+  
+  /* Sistema de Estado Logístico */
+  --color-acento: #38bdf8;        /* Resaltados estructurales */
+  --color-ok: #22c55e;
+  --color-error: #ef4444;
+  --color-warn: #f59e0b;
+
+  /* Diccionario de Acentos (Blueprints de Nodos) */
+  --color-nodo-buscador:     #3b82f6; /* Azul base */
+  --color-nodo-enciclopedia: #8b5cf6; /* Violeta */
+  --color-nodo-codigo:       #22c55e; /* Verde success */
+  --color-nodo-video:        #ef4444; /* Rojo alerta */
+  --color-nodo-noticia:      #f59e0b; /* Ambar amarillento */
+
+  /* Fuentes Analíticas / Redacción */
+  --fuente-principal: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --fuente-mono: 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
+
+  /* Físicas */
+  --radio-borde: 8px;
+  --sombra-superior: 0 10px 30px -10px rgba(0,0,0,0.8);
+  --sombra-card: 0 4px 24px rgba(0,0,0,0.12);
+  --transicion: 0.25s ease-in-out;
+}
+
+/* ==============================================================
+   RESET CLÁSICO & COMPORTAMIENTOS BÁSICOS
+   ============================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-primario);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Clases de Asistencia Dinámica */
+.bg-oscuro { background-color: var(--color-fondo) !important; }
+.bg-secundario { background-color: var(--color-superficie) !important; }
+.bg-secundario-alpha { background-color: rgba(20, 27, 45, 0.4) !important; }
+
+.text-claro { color: var(--color-texto-primario) !important; }
+.text-sutil { color: var(--color-texto-secundario) !important; }
+.text-blanco { color: var(--color-blanco) !important; }
+.text-acento { color: var(--color-acento) !important; }
+
+.border-secundario { border-color: var(--color-borde) !important; }
+
+/* Enlaces Generales */
+a { transition: var(--transicion); }
+
+/* Componentes de Bloque */
+.btn-xs {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    padding: 0.2rem 0.4rem;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Formulario — NJS3 P2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/styles/estilos-globales.css">
+    <link rel="stylesheet" href="../public/styles/estilos-paginas.css">
+</head>
+<body>
+
+    <!-- Navegación compartida -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand fs-4" href="/">NJS3 — Proyecto 2</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacionSecundario" aria-controls="menuNavegacionSecundario" aria-expanded="false" aria-label="Desplegar menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavegacionSecundario">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 text-center mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-mouse">Mouse</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-teclado">Teclado</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-formulario">Formularios</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-ventana">Ventana</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/eventos-tiempo">Tiempo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 flex-grow-1">
+        <!-- Retorno seguro de jerarquía de interfaz -->
+        <a href="/" class="btn-volver mb-4">← Volver al inicio</a>
+
+        <div class="encabezado-pagina">
+            <h1 class="titulo-pagina">Ciclo de vida del Formulario</h1>
+            <p class="desc-pagina">Verificaciones sólidas en tiempo vivo sobre desenfoques, envíos truncados e indicación reactiva visual a la fortaleza criptográfica.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Interfaz Gráfica (Sin backend real) -->
+            <div class="col-12 col-lg-8">
+                <div class="card bg-transparent border-dark h-100 p-lg-4 p-2 shadow-sm rounded-4" style="background:#111 !important">
+                    <div class="card-body">
+                        
+                        <!-- Notificador de Status Positivo Formulario Completo -->
+                        <div id="alertaExito" class="alert alert-success d-none mb-4 fw-bold shadow-sm" role="alert">
+                            ✅ ¡Registro simulado exitosamente validado! Redirigiendo componentes...
+                        </div>
+
+                        <form id="formularioRegistro" novalidate>
+                            
+                            <div class="mb-4 position-relative">
+                                <label for="inputNombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control form-control-lg" id="inputNombre" required>
+                                <div class="msg-error" id="errorNombre">El nombre completo es totalmente obligatorio.</div>
+                                <div class="text-end mt-1 text-muted small"><span id="conteoNom">0</span>/50 caracteres</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="inputCorreo" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control form-control-lg" id="inputCorreo" placeholder="tunombre@ejemplo.com" required>
+                                <div class="msg-error" id="errorCorreo">Introduce un formato válido de dirección.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="inputClave" class="form-label">Contraseña secreta</label>
+                                <input type="password" class="form-control form-control-lg" id="inputClave" required minlength="8">
+                                <!-- Barra estética DHTML del Password Strength -->
+                                <div class="medidor-fuerza" id="barraFuerzaClave"></div>
+                                <span class="texto-fuerza" id="textoFuerzaClave">Carencia de datos</span>
+                                <div class="msg-error" id="errorClave">La contraseña es frágil. Requiere un mínimo de 8 elementos.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="selectPais" class="form-label">Región de Residencia</label>
+                                <select class="form-select form-select-lg" id="selectPais" required>
+                                    <option value="" selected disabled>Selecciona tu país...</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="MX">México</option>
+                                    <option value="ES">España</option>
+                                </select>
+                                <div class="msg-error" id="errorPais">Necesitas especificar una región obligatoriamente.</div>
+                            </div>
+
+                            <div class="form-check mb-4 mt-3">
+                                <input class="form-check-input" type="checkbox" id="checkCondiciones" required>
+                                <label class="form-check-label ms-2 text-secondary font-weight-bold" for="checkCondiciones">
+                                    Confirmo que comprendo y <strong>Acepto los términos</strong>.
+                                </label>
+                                <div class="msg-error" id="errorTerminos">Si no adscribes a nuestros términos no podremos proceder.</div>
+                            </div>
+
+                            <div class="d-flex gap-3 pt-3 border-top border-secondary border-opacity-25 mt-4">
+                                <button type="submit" class="btn btn-primario px-4 py-2 flex-grow-1">Empujar Solicitud</button>
+                                <button type="reset" class="btn btn-secundario px-4 py-2">Vaciar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Cruda de Eventos Fijos -->
+            <div class="col-12 col-lg-4">
+                <div class="cabecera-consola">
+                    <h4 class="titulo-consola">&gt;_ Registro de eventos</h4>
+                    <button id="btnLimpiarLog" class="btn btn-sm btn-secundario">Limpiar</button>
+                </div>
+                <div id="panelLog" style="height: 570px;">
+                    <!-- Los inputs/changes saldrán aquí -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/eventos-formulario.js"></script>
+</body>
+</html>

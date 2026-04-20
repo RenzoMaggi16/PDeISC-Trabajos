@@ -1,0 +1,147 @@
+/* Importar tipografía estética Google Fonts elegida para el diseño moderno */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+/* Variables CSS del nivel fundamental definiendo un paradigma Dark Theme de alta gama */
+:root {
+    --color-fondo-sitio: #0a0a0a;
+    --color-texto-principal: #f0f0f0;
+    --color-texto-secundario: #a0a0b0;
+    
+    --color-fondo-area: #18181b;
+    --color-borde-area: #27272a;
+    
+    /* Configuración armónica de colores de los 6 controles (HSL inspirado para limpieza visual) */
+    --color-btn-1: #6366f1; /* Índigo vibrante */
+    --color-btn-2: #8b5cf6; /* Púrpura elegante */
+    --color-btn-3: #ec4899; /* Rosa neón */
+    --color-btn-4: #0ea5e9; /* Cyan oceánico */
+    --color-btn-5: #10b981; /* Verde esmeralda */
+    --color-btn-6: #f59e0b; /* Ámbar energizante */
+
+    /* Fuentes y métricas de escala visual */
+    --fuente-base: 'Outfit', sans-serif;
+    --radio-redondeo: 16px;
+}
+
+body {
+    background-color: var(--color-fondo-sitio);
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-base);
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.2px;
+}
+
+/* Modificadores estéticos genéricos */
+.titulo-principal {
+    color: #ffffff;
+    letter-spacing: -1.5px;
+}
+
+/* Redimensiones adaptativas para la barra principal */
+.display-brand {
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #6366f1, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(12px);
+}
+.nav-link {
+    font-weight: 300;
+    transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--color-btn-4) !important;
+    font-weight: 400;
+}
+
+/* Base de configuración y animaciones universales en Botones */
+.btn {
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 12px;
+    letter-spacing: 0.4px;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s, background-color 0.3s, filter 0.3s;
+}
+
+/* Sensación elástica al presionar un botón */
+.btn:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* Brillo resplandeciente al posicionar el cursor arrimado */
+.btn:hover:not(:disabled) {
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    filter: brightness(1.15) contrast(1.1);
+}
+
+/* Apariencia apagada de los controles inaccesibles lógica-condicionalmente */
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    filter: saturate(30%) brightness(70%);
+    box-shadow: none !important;
+    transform: none;
+}
+
+/* Aplicación de colores cromáticos específicos definidos a cada tipo de Control */
+.btn-accion-1 { background-color: var(--color-btn-1); }
+.btn-accion-2 { background-color: var(--color-btn-2); }
+.btn-accion-3 { background-color: var(--color-btn-3); }
+.btn-accion-4 { background-color: var(--color-btn-4); }
+
+/* Los colores de valor atonal claro requieren texto negro para alto contraste (AA) */
+.btn-accion-5 { background-color: var(--color-btn-5); color: #000; }
+.btn-accion-6 { background-color: var(--color-btn-6); color: #000; }
+.btn-accion-5:hover:not(:disabled), .btn-accion-6:hover:not(:disabled) { color: #000; }
+
+/* Contenedor del lienzo interaccional central */
+#areaVisualizacion {
+    background-color: var(--color-fondo-area);
+    border: 2px dashed var(--color-borde-area);
+    min-height: 400px;
+    position: relative;
+    box-shadow: inset 0 2px 15px rgba(0,0,0,0.5);
+}
+
+/* Animaciones y estilos del texto inyectado con JavaScript */
+h1#textoInteractuable {
+    font-weight: 700;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin: 0;
+    transition: color 0.4s ease-in-out, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: aparecerSuave 0.6s backwards;
+}
+
+/* Transiciones interactivas con "rebote" aplicadas a la fotografía inyectada */
+img#imagenInteractuable {
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    /* El parámetro cubic-bezier asegura el efecto rebote requerido según lineamientos de modernidad */
+    transition: width 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: aparecerSuave 0.6s backwards;
+}
+
+/* Animación de entrada inicial para recursos inyectados (Keyframes) */
+@keyframes aparecerSuave {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Pequeño panel de estado con notificaciones de progreso debajo de la tarjeta */
+#barraEstado {
+    background-color: rgba(99, 102, 241, 0.15) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #e0e7ff;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(8px);
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+}

@@ -1,0 +1,103 @@
+/* Hero Central */
+.hero-seccion {
+    padding: 4rem 1rem;
+    background: radial-gradient(circle at top, var(--color-superficie-resalte) 0%, var(--color-fondo) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.titulo-hero {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(90deg, #fff, var(--color-acento-secundario), var(--color-acento-primario));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.subtitulo-hero {
+    font-size: 1.15rem;
+    color: var(--color-texto-secundario);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Tarjetas de Navegación del Tablero */
+.tarjeta-nav {
+    background-color: var(--color-superficie);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radio-borde);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transicion-media);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-nav::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--color-acento-primario);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transicion-media);
+}
+
+.tarjeta-nav:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-card);
+    border-color: rgba(255,255,255,0.1);
+    background-color: var(--color-superficie-resalte);
+}
+
+.tarjeta-nav:hover::before {
+    transform: scaleX(1);
+    background: var(--color-acento-secundario);
+}
+
+.icono-tarjeta {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform var(--transicion-rapida);
+}
+
+.tarjeta-nav:hover .icono-tarjeta {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.titulo-tarjeta {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-primario);
+}
+
+.desc-tarjeta {
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Botón descriptivo interno (link simulado) */
+.btn-explorar {
+    align-self: flex-start;
+    padding: 0.6rem 1.2rem;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--color-acento-primario);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: var(--transicion-rapida);
+}
+
+.tarjeta-nav:hover .btn-explorar {
+    background-color: var(--color-acento-primario);
+    color: #fff;
+}

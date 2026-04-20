@@ -1,0 +1,77 @@
+/* ==============================================================
+   VARIABLES MAESTRAS DEL ESTADO Y DISEÑO (MODOS)
+   ============================================================== */
+:root {
+  /* Fondo Editorial & Espacios */
+  --color-fondo: #0b1120;         /* Base ultradark, similar IDE neutral */
+  --color-superficie: #1e293b;    /* Capas medias, cards y barras */
+  --color-borde: #334155;         
+  
+  --color-blanco: #ffffff;
+  --color-texto-primario: #f1f5f9;
+  --color-texto-secundario: #94a3b8;
+  
+  /* Sistema Vectorial Bimodal */
+  --color-acento-primario: #0ea5e9;   /* main brand - cielo */
+  --color-acento-secundario: #6366f1; /* secondary - indigo */
+  
+  --color-acumulacion: #22c55e;       /* green (+=) */
+  --color-reemplazo: #f59e0b;         /* amber (=) */
+  
+  /* Tonalidades Parametrizables (Alertas & Decorados) */
+  --color-exito: #22c55e;
+  --color-error: #ef4444;
+  --color-advertencia: #f59e0b;
+  --color-info: #3b82f6;
+
+  /* Tipografías */
+  --fuente-principal: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --fuente-mono: 'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
+
+  /* Métricas */
+  --radio-borde: 8px;
+  --sombra-card: 0 4px 20px rgba(0,0,0,0.15);
+  --transicion: 0.25s ease-in-out;
+}
+
+/* ==============================================================
+   RESETEOS Y COMPORTAMIENTO
+   ============================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-primario);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Clases Híbridas Reutilizables */
+.bg-oscuro { background-color: var(--color-fondo) !important; }
+.bg-secundario { background-color: var(--color-superficie) !important; }
+
+.text-claro { color: var(--color-texto-primario) !important; }
+.text-sutil { color: var(--color-texto-secundario) !important; }
+.text-blanco { color: var(--color-blanco) !important; }
+.text-acento { color: var(--color-acento-primario) !important; }
+
+.border-secundario { border-color: var(--color-borde) !important; }
+
+a { transition: var(--transicion); }
+
+/* Helpers Visibles */
+.btn-xs {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    padding: 0.2rem 0.4rem;
+}
+.oculto {
+    display: none !important;
+}

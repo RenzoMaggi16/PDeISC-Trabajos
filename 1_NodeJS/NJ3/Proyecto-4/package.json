@@ -1,0 +1,16 @@
+{
+  "name": "proyecto-4",
+  "version": "1.0.0",
+  "description": "Dynamic Node Creation & Attribute Mutation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "NJS3",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.22.1"
+  },
+  "type": "commonjs"
+}

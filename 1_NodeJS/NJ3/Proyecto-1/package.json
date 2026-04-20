@@ -1,0 +1,16 @@
+{
+  "name": "njs3-proyecto-1",
+  "version": "1.0.0",
+  "description": "Proyecto 1 de Manipulacion del DOM con DHTML y Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "type": "commonjs"
+}

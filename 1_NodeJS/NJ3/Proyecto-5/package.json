@@ -1,0 +1,16 @@
+{
+  "name": "proyecto-5",
+  "version": "1.0.0",
+  "description": "Dynamic HTML Injection via innerHTML",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "NJS3",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

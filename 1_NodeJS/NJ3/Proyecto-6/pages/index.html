@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Registro - Proyecto 6</title>
+    <!-- Estilos locales sin usar librerías externas -->
+    <link rel="stylesheet" href="/public/styles/estilos-globales.css">
+    <link rel="stylesheet" href="/public/styles/estilos-formulario.css">
+    <link rel="stylesheet" href="/public/styles/estilos-perfil.css">
+</head>
+
+<body>
+
+    <!-- Navegación Universal -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="/">NJS3 — Proyecto 6</a>
+            <button class="navbar-toggler" id="btnHamburguesa" aria-label="Abrir menú">
+                <span class="linea"></span><span class="linea"></span><span class="linea"></span>
+            </button>
+            <div class="navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link activo" href="/">Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Superestructura Principal -->
+    <main class="contenedor-aplicacion">
+
+        <header class="cabecera-pagina">
+            <h1>Formulario de Registro</h1>
+            <p>Completá este formulario detallado. Al finalizar, tu perfil se construirá dinámicamente usando el poder
+                de JavaScript para manipulación del árbol DOM sin recargar la página.</p>
+        </header>
+
+        <!-- Indicador de Progreso Multi-paso (Visual) -->
+        <div class="indicador-progreso">
+            <div class="paso activo" id="ind-sec1">
+                <span class="paso-circulo">1</span>
+                <span class="paso-etiqueta">Datos Personales</span>
+            </div>
+            <div class="paso-conector"></div>
+            <div class="paso" id="ind-sec2">
+                <span class="paso-circulo">2</span>
+                <span class="paso-etiqueta">Contacto</span>
+            </div>
+            <div class="paso-conector"></div>
+            <div class="paso" id="ind-sec3">
+                <span class="paso-circulo">3</span>
+                <span class="paso-etiqueta">Cuenta</span>
+            </div>
+            <div class="paso-conector"></div>
+            <div class="paso" id="ind-sec4">
+                <span class="paso-circulo">4</span>
+                <span class="paso-etiqueta">Preferencias</span>
+            </div>
+        </div>
+
+        <!-- Grid de dos columnas -->
+        <div class="grid-principal">
+
+            <!-- Columna Izquierda: FORMULARIO -->
+            <section class="columna-formulario">
+                <form id="formularioRegistro" novalidate autocomplete="off">
+
+                    <!-- SECCIÓN 1: DATOS PERSONALES -->
+                    <fieldset id="sec-1">
+                        <legend>Datos Personales</legend>
+
+                        <div class="fila-campos">
+                            <!-- Nombre -->
+                            <div class="campo campo-flotante">
+                                <input type="text" id="inp-nombre" placeholder="Nombre" required />
+                                <label for="inp-nombre">Nombre <span class="req">*</span></label>
+                            </div>
+
+                            <!-- Apellido -->
+                            <div class="campo campo-flotante">
+                                <input type="text" id="inp-apellido" placeholder="Apellido" required />
+                                <label for="inp-apellido">Apellido <span class="req">*</span></label>
+                            </div>
+                        </div>
+
+                        <div class="fila-campos">
+                            <!-- Fecha Nac. -->
+                            <div class="campo">
+                                <label for="inp-fecha" class="label-fijo">Fecha de nacimiento <span
+                                        class="req">*</span></label>
+                                <input type="date" id="inp-fecha" required />
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="campo campo-flotante">
+                                <input type="tel" id="inp-telefono" placeholder="Número de teléfono" />
+                                <label for="inp-telefono">Número de teléfono</label>
+                            </div>
+                        </div>
+
+                        <!-- Género -->
+                        <div class="campo campo-radios">
+                            <label class="label-fijo">Género <span class="req">*</span></label>
+                            <div class="grupo-radios">
+                                <label class="radio-personalizado"><input type="radio" name="genero" value="Masculino"
+                                        id="radio-masc"> <span class="radio-ui"></span> Masculino</label>
+                                <label class="radio-personalizado"><input type="radio" name="genero" value="Femenino"
+                                        id="radio-fem"> <span class="radio-ui"></span> Femenino</label>
+                                <label class="radio-personalizado"><input type="radio" name="genero" value="No binario"
+                                        id="radio-nobin"> <span class="radio-ui"></span> No binario</label>
+                                <label class="radio-personalizado"><input type="radio" name="genero"
+                                        value="Prefiero no decir" id="radio-omitir"> <span class="radio-ui"></span>
+                                    Prefiero no decir</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- SECCIÓN 2: DATOS DE CONTACTO -->
+                    <fieldset id="sec-2">
+                        <legend>Datos de Contacto</legend>
+
+                        <!-- Correo -->
+                        <div class="campo campo-flotante">
+                            <input type="email" id="inp-email" placeholder="Correo electrónico" required />
+                            <label for="inp-email">Correo electrónico <span class="req">*</span></label>
+                        </div>
+
+                        <!-- Correo Confirmar -->
+                        <div class="campo campo-flotante">
+                            <input type="email" id="inp-email-confirm" placeholder="Confirmar correo" required />
+                            <label for="inp-email-confirm">Confirmar correo <span class="req">*</span></label>
+                        </div>
+
+                        <div class="fila-campos">
+                            <!-- País -->
+                            <div class="campo">
+                                <label for="sel-pais" class="label-fijo">País <span class="req">*</span></label>
+                                <select id="sel-pais" required>
+                                    <option value="" disabled selected>-- Seleccioná un país --</option>
+                                    <optgroup label="América Latina">
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Bolivia">Bolivia</option>
+                                        <option value="Chile">Chile</option>
+                                        <option value="Colombia">Colombia</option>
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="México">México</option>
+                                        <option value="Paraguay">Paraguay</option>
+                                        <option value="Perú">Perú</option>
+                                        <option value="Uruguay">Uruguay</option>
+                                        <option value="Venezuela">Venezuela</option>
+                                    </optgroup>
+                                    <optgroup label="Europa">
+                                        <option value="España">España</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <!-- Provincia -->
+                            <div class="campo campo-flotante mt-auto">
+                                <input type="text" id="inp-provincia" placeholder="Provincia / Estado" />
+                                <label for="inp-provincia">Provincia / Estado</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- SECCIÓN 3: DATOS DE LA CUENTA -->
+                    <fieldset id="sec-3">
+                        <legend>Datos de la Cuenta</legend>
+
+                        <div class="fila-campos">
+                            <!-- Usuario -->
+                            <div class="campo campo-flotante">
+                                <input type="text" id="inp-usuario" placeholder="Nombre de usuario" required />
+                                <label for="inp-usuario">Nombre de usuario <span class="req">*</span></label>
+                            </div>
+
+                            <!-- Edad -->
+                            <div class="campo campo-flotante">
+                                <input type="number" id="inp-edad" placeholder="Edad" min="5" max="120" required />
+                                <label for="inp-edad">Edad <span class="req">*</span></label>
+                            </div>
+                        </div>
+
+                        <!-- Contraseña -->
+                        <div class="campo">
+                            <div class="contenedor-password campo-flotante">
+                                <input type="password" id="inp-password" placeholder="Contraseña" required />
+                                <label for="inp-password">Contraseña <span class="req">*</span></label>
+                                <button type="button" id="btn-toggle-password" class="btn-toggle" aria-label="Mostrar contraseña">&#128065;</button>
+                            </div>
+                            <div class="medidor-fuerza">
+                                <div class="barra-fuerza" id="barra-fuerza-1"></div>
+                                <div class="barra-fuerza" id="barra-fuerza-2"></div>
+                                <div class="barra-fuerza" id="barra-fuerza-3"></div>
+                                <span id="texto-fuerza" class="texto-fuerza"></span>
+                            </div>
+                        </div>
+
+                        <!-- Rango / slider -->
+                        <div class="campo">
+                            <label for="inp-nivel" class="label-fijo flex-between">Nivel de experiencia <span
+                                    class="req">*</span>
+                                <span class="valor-rango" id="valor-nivel-vivo">Intermedio (3)</span>
+                            </label>
+                            <div class="rango-contenedor">
+                                <span class="limite-rango">1</span>
+                                <input type="range" id="inp-nivel" min="1" max="5" step="1" value="3" required />
+                                <span class="limite-rango">5</span>
+                            </div>
+                        </div>
+
+                        <!-- Rol -->
+                        <div class="campo">
+                            <label for="sel-rol" class="label-fijo">Rol preferido <span class="req">*</span></label>
+                            <select id="sel-rol" required>
+                                <option value="" disabled selected>-- Seleccioná un rol --</option>
+                                <option value="Desarrollador Frontend">Desarrollador Frontend</option>
+                                <option value="Desarrollador Backend">Desarrollador Backend</option>
+                                <option value="Diseñador UX/UI">Diseñador UX/UI</option>
+                                <option value="Analista de Datos">Analista de Datos</option>
+                                <option value="DevOps / Infraestructura">DevOps / Infraestructura</option>
+                                <option value="Estudiante">Estudiante</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- SECCIÓN 4: PREFERENCIAS E INTERESES -->
+                    <fieldset id="sec-4">
+                        <legend>Preferencias e Intereses</legend>
+
+                        <!-- Intereses Checkboxes -->
+                        <div class="campo">
+                            <label class="label-fijo">Intereses / tecnologías <span class="req">*</span></label>
+                            <div class="grupo-intereses" id="chk-intereses-wrapper">
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="JavaScript"> <span class="check-ui"></span> JavaScript</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="Node.js"> <span class="check-ui"></span> Node.js</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="React"> <span class="check-ui"></span> React</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses" value="Vue">
+                                    <span class="check-ui"></span> Vue</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="Python"> <span class="check-ui"></span> Python</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="Bases de datos"> <span class="check-ui"></span> Bases de datos</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="DevOps"> <span class="check-ui"></span> DevOps</label>
+                                <label class="check-personalizado"><input type="checkbox" name="intereses"
+                                        value="Diseño UI"> <span class="check-ui"></span> Diseño UI</label>
+                            </div>
+                        </div>
+
+                        <!-- Bio Textarea -->
+                        <div class="campo campo-flotante">
+                            <textarea id="inp-bio" placeholder="Breve biografía (mínimo 10 caracteres, máx 300)"
+                                rows="4" maxlength="300"></textarea>
+                            <label for="inp-bio">Biografía</label>
+                            <div id="contadorBio" class="contador-caracteres">0 / 300</div>
+                        </div>
+
+                        <!-- Foto URL -->
+                        <div class="campo campo-flotante">
+                            <input type="url" id="inp-foto" placeholder="Foto de perfil (URL http...)" />
+                            <label for="inp-foto">Foto de perfil (URL)</label>
+                            <div id="previsualizacionFoto" class="oculto">
+                                <img src="" id="img-preview" alt="Previsualización" />
+                                <span id="error-preview">URL de imagen inválida</span>
+                            </div>
+                        </div>
+
+                        <!-- Notificaciones Checkbox -->
+                        <div class="campo my-3">
+                            <label class="check-personalizado simple-align">
+                                <input type="checkbox" id="chk-notificaciones">
+                                <span class="check-ui"></span> Deseo recibir notificaciones semanales
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Acciones -->
+                    <div class="acciones-formulario">
+                        <button type="submit" id="btn-enviar" class="btn-principal" disabled>Registrar Persona</button>
+                        <button type="button" id="btn-limpiar" class="btn-secundario">Limpiar formulario</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- Columna Derecha: PERFIL (Preview) -->
+            <aside class="columna-perfil">
+                <div id="contenedorPerfil">
+                    <div id="estadoVacio">
+                        <span class="icono-vacio">👤</span>
+                        <p>Completá el formulario para ver el perfil aquí.</p>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Toast UI -->
+    <div id="toast" class="toast">Notificación</div>
+
+    <!-- Carga de Scripts encadenados en orden -->
+    <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/validador.js"></script>
+    <script src="/scripts/perfil.js"></script>
+    <script src="/scripts/formulario.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+/* -------------------------------------
+   ESTILOS EXCLUSIVOS PAGINA INDEX
+---------------------------------------- */
+
+/* Animaciones e incrementos de volumen gráfico al hacer hover sobre tarjetas (Dashboard) */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(14, 165, 233, 0.15);
+    border-color: var(--color-acento-primario);
+}
+
+.icono-card {
+    font-size: 3.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.btn-explorar {
+    background-color: transparent;
+    color: var(--color-acento-primario);
+    border: 1px solid var(--color-acento-primario);
+    transition: all 0.3s ease;
+}
+
+.card:hover .btn-explorar {
+    background-color: var(--color-acento-primario);
+    color: var(--color-fondo);
+}
+
+.titulo-hero {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}

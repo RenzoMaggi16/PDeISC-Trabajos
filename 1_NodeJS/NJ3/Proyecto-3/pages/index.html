@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inspector de Nodos Hijos - Proyecto 3</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Hojas de estilos compartidas e individuales -->
+    <link rel="stylesheet" href="/public/styles/estilos-globales.css">
+    <link rel="stylesheet" href="/public/styles/estilos-index.css">
+</head>
+<body class="bg-oscuro text-claro p-0 m-0">
+    
+    <!-- Barra de Navegación Global -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-oscuro border-bottom border-secondary mb-5">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-acento" href="/">NJS3 — Proyecto 3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mouse">Eventos de Mouse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/teclado">Eventos de Teclado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formulario">Eventos de Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ventana">Eventos de Ventana</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tiempo">Eventos de Tiempo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Héroe Princial -->
+    <main class="container">
+        <div class="row align-items-center mb-5 text-center px-3">
+            <div class="col-12">
+                <h1 class="display-3 fw-bold mb-3 titulo-hero text-acento">Inspector de Nodos Hijos</h1>
+                <p class="lead text-secundario mb-0">Bienvenido al entorno interactivo para la inspección manual del DOM. Haz clic en cualquier elemento en las sub-páginas para que el sistema identifique y escanee sus nodos hijos de inmediato.</p>
+            </div>
+        </div>
+
+        <!-- Grilla de Navegación de Ejercicios -->
+        <div class="row g-4 mb-5">
+            <!-- Card Mouse -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 bg-card p-3 borde-sutil">
+                    <div class="card-body text-center d-flex flex-column">
+                        <div class="icono-card mb-3">🖱️</div>
+                        <h3 class="h4 card-title fw-bold text-white mb-2">Eventos de Mouse</h3>
+                        <p class="card-text text-secundario mb-4 flex-grow-1">Áreas de interacción, botones y trazado. Entra, activa el inspector y evalúa las ramificaciones de los contenedores visuales.</p>
+                        <a href="/mouse" class="btn btn-explorar w-100 fw-bold">Explorar →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Teclado -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 bg-card p-3 borde-sutil">
+                    <div class="card-body text-center d-flex flex-column">
+                        <div class="icono-card mb-3">⌨️</div>
+                        <h3 class="h4 card-title fw-bold text-white mb-2">Eventos de Teclado</h3>
+                        <p class="card-text text-secundario mb-4 flex-grow-1">Detección de pulsaciones, código y key. Selecciona los campos de recolección para revelar su modelo de datos.</p>
+                        <a href="/teclado" class="btn btn-explorar w-100 fw-bold">Explorar →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Formulario -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 bg-card p-3 borde-sutil">
+                    <div class="card-body text-center d-flex flex-column">
+                        <div class="icono-card mb-3">📝</div>
+                        <h3 class="h4 card-title fw-bold text-white mb-2">Eventos de Formulario</h3>
+                        <p class="card-text text-secundario mb-4 flex-grow-1">Validación y envíos (submit/change). Inspecciona la anidación sistemática de inputs y contenedores logísticos del DOM.</p>
+                        <a href="/formulario" class="btn btn-explorar w-100 fw-bold">Explorar →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Ventana -->
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="card h-100 bg-card p-3 borde-sutil">
+                    <div class="card-body text-center d-flex flex-column">
+                        <div class="icono-card mb-3">🪟</div>
+                        <h3 class="h4 card-title fw-bold text-white mb-2">Eventos de Ventana</h3>
+                        <p class="card-text text-secundario mb-4 flex-grow-1">Rendimiento, desplazamientos (scroll) y encuadre. Haz clic en las interfaces re-posicionadas para indagar en sus jerarquías.</p>
+                        <a href="/ventana" class="btn btn-explorar w-100 fw-bold">Explorar →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Tiempo -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 bg-card p-3 borde-sutil">
+                    <div class="card-body text-center d-flex flex-column">
+                        <div class="icono-card mb-3">⏱️</div>
+                        <h3 class="h4 card-title fw-bold text-white mb-2">Eventos de Tiempo</h3>
+                        <p class="card-text text-secundario mb-4 flex-grow-1">Temporizadores continuos y únicos. Evalúa con rigor y detén relojes de control estructural invocando el Inspector avanzado.</p>
+                        <a href="/tiempo" class="btn btn-explorar w-100 fw-bold">Explorar →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Encabezado/Pie de cierre -->
+    <footer class="mt-auto py-4 bg-card border-top border-secondary text-center text-secundario">
+        <div class="container">
+            <small>© 2026 NJS3 - Proyecto 3. Desarrollo y Arquitectura Web.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle (with Popper) CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/scripts/navbar.js"></script>
+</body>
+</html>

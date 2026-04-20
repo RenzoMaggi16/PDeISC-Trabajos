@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJS3 — Proyecto 1</title>
+    <!-- Bootstrap 5 CSS obtenido por CDN oficial -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Carga de la hoja de estilos nativa (rutas correctas resueltas por Express Static) -->
+    <link href="../public/styles/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de Navegación principal Responsiva con menú hamburguesa -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow border-bottom border-light border-opacity-10">
+        <div class="container-fluid py-1">
+            <a class="navbar-brand fw-bold mb-0 mx-2 text-uppercase d-flex align-items-center" href="#">
+                <span class="fs-4 fst-italic display-brand">NJS3 — Proyecto 1</span>
+            </a>
+            <!-- Botón de apertura adaptativa (Mobile Toggle) -->
+            <button class="navbar-toggler border-1 shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Desplegar control de pantalla">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0 text-center mx-4 gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" aria-current="page" href="#presentacion">Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 active" href="#panelControl">Centro de Botones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 flex-grow-1">
+        <!-- Hero Section: Cabecera descriptiva principal del proyeto -->
+        <section id="presentacion" class="text-center mb-5 py-3">
+            <h2 class="display-5 display-md-3 fw-bold mb-4 titulo-principal">DHTML Interactivo Web</h2>
+            <p class="lead text-light text-opacity-75 mx-auto" style="max-width: 750px; font-weight: 300;">
+                Interfaz que demuestra la captura dinámica, manipulación visual y ciclado condicional de recursos inyectados al árbol DOM mediante Vanilla JavaScript, distribuido mediante Node y Express.
+            </p>
+        </section>
+
+        <!-- Panel de Control: Disposición en columnas automáticas responsivas para Bootstrap -->
+        <section id="panelControl" class="mb-5 px-md-3">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <button id="btnAgregarH1" class="btn btn-accion-1 w-100 py-3 fs-5 shadow-sm fw-semibold">Agregar H1</button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <button id="btnCambiarTexto" class="btn btn-accion-2 w-100 py-3 fs-5 shadow-sm fw-semibold" disabled>Cambiar Texto</button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <button id="btnCambiarColor" class="btn btn-accion-3 w-100 py-3 fs-5 shadow-sm fw-semibold" disabled>Cambiar Color</button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <button id="btnAgregarImagen" class="btn btn-accion-4 w-100 py-3 fs-5 shadow-sm fw-semibold">Agregar Imagen</button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <button id="btnCambiarImagen" class="btn btn-accion-5 w-100 py-3 fs-5 shadow-sm fw-semibold" disabled>Cambiar Imagen</button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <button id="btnCambiarTamanio" class="btn btn-accion-6 w-100 py-3 fs-5 shadow-sm fw-semibold" disabled>Cambiar Tamaño</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Área de Visualización: El renderizado JavaScript tomará lugar dentro de esta división -->
+        <section>
+            <div id="areaVisualizacion" class="card shadow-lg rounded-4 d-flex flex-column align-items-center justify-content-center text-center p-3">
+                <!-- Se inyectarán dinámicamente los elementos aquí -->
+            </div>
+        </section>
+
+        <!-- Barra Inferior de Diagnósticos/Estado de la acción de interfaz -->
+        <section class="mt-4 pb-5 text-center mt-lg-5">
+            <div class="d-inline-flex flex-column justify-content-center align-items-center">
+                <span id="barraEstado" class="badge rounded-pill px-4 py-2 fs-6 shadow">Última acción: Esperando interacción visual...</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Paquete Bootstrap 5 JS Bundle en dependencia al pie de la estructura -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    <!-- Lógica Vanilla JS con gestión del DOM -->
+    <script src="../scripts/dom.js"></script>
+</body>
+</html>
