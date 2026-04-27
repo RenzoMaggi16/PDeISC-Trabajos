@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodo sort() — Ordenar arrays</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/estilos.css">
+</head>
+<body>
+  <div class="container py-5">
+    <header class="mb-5">
+      <h1 class="fw-bold mb-3">
+        <span class="metodo-badge">sort()</span>
+        <br><br>
+        Metodo sort() — Ordenar arrays
+      </h1>
+      <p class="fs-5 opacity-75">sort() ordena el array original. Para numeros siempre se debe usar una funcion comparadora.</p>
+    </header>
+
+    <section class="tarjeta-ejercicio">
+      <h2 class="h4 mb-3">1. Numeros</h2>
+      <p class="mb-4">Ordena los numeros usando una funcion comparadora (a - b) o (b - a).</p>
+      <div class="d-flex gap-2 mb-3">
+        <button id="btn-ejecutar-a" class="btn-primario">Menor a mayor</button>
+        <button id="btn-ejecutar-a2" class="btn-secundario">Mayor a menor</button>
+        <button id="btn-reiniciar-a" class="btn-secundario">Reiniciar</button>
+      </div>
+      <div id="salida-a" class="bloque-salida"></div>
+    </section>
+
+    <section class="tarjeta-ejercicio">
+      <h2 class="h4 mb-3">2. Palabras alfabeticamente</h2>
+      <p class="mb-4">Ordena textos usando localeCompare para prevenir errores.</p>
+      <div class="d-flex gap-2 mb-3">
+        <button id="btn-ejecutar-b" class="btn-primario">Ordenar A-Z</button>
+        <button id="btn-ejecutar-b2" class="btn-secundario">Ordenar Z-A</button>
+        <button id="btn-reiniciar-b" class="btn-secundario">Reiniciar</button>
+      </div>
+      <div id="salida-b" class="bloque-salida"></div>
+    </section>
+
+    <section class="tarjeta-ejercicio">
+      <h2 class="h4 mb-3">3. Objetos por edad</h2>
+      <p class="mb-4">Ordena un array de objetos comparando una propiedad especifica.</p>
+      <div class="d-flex gap-2 mb-3">
+        <button id="btn-ejecutar-c" class="btn-primario">Ordenar por edad (asc)</button>
+        <button id="btn-ejecutar-c2" class="btn-secundario">Ordenar por edad (desc)</button>
+        <button id="btn-reiniciar-c" class="btn-secundario">Reiniciar</button>
+      </div>
+      <div id="salida-c" class="bloque-salida"></div>
+    </section>
+  </div>
+  <footer>NJS - Metodos de Arrays</footer>
+  <script src="/scripts/ejercicio13.js"></script>
+</body>
+</html>

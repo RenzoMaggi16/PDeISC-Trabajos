@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio8-includes",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio8-Includes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

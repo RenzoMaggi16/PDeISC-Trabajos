@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio6-slice",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio6-Slice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

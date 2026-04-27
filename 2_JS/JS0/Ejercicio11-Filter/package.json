@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio11-filter",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio11-Filter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

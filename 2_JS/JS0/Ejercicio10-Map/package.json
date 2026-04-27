@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio10-map",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio10-Map",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

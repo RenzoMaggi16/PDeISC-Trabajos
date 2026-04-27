@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio1-push",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio1-Push",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

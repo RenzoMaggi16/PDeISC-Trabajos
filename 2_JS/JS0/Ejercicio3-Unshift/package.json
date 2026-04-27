@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio3-unshift",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio3-Unshift",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

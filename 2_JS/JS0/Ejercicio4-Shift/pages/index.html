@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodo shift() — Eliminar del inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/estilos.css">
+</head>
+<body>
+  <div class="container py-5">
+    <header class="mb-5">
+      <h1 class="fw-bold mb-3">
+        <span class="metodo-badge">shift()</span>
+        <br><br>
+        Metodo shift() — Eliminar del inicio
+      </h1>
+      <p class="fs-5 opacity-75">shift() elimina el primer elemento de un array y lo devuelve. Modifica el array original.</p>
+    </header>
+
+    <section class="tarjeta-ejercicio">
+      <h2 class="h4 mb-3">1. Numeros enteros</h2>
+      <p class="mb-4">Elimina el primer numero del array usando shift().</p>
+      <div class="d-flex gap-2 mb-3">
+        <button id="btn-ejecutar-a" class="btn-primario">Ejecutar shift()</button>
+        <button id="btn-reiniciar-a" class="btn-secundario">Reiniciar</button>
+      </div>
+      <div id="salida-a" class="bloque-salida"></div>
+    </section>
+
+    <section class="tarjeta-ejercicio">
+      <h2 class="h4 mb-3">2. Mensajes de chat</h2>
+      <p class="mb-4">Elimina y lee el mensaje mas antiguo (el primero de la lista).</p>
+      <div class="d-flex gap-2 mb-3">
+        <button id="btn-ejecutar-b" class="btn-primario">Eliminar primer mensaje</button>
+        <button id="btn-reiniciar-b" class="btn-secundario">Reiniciar</button>
+      </div>
+      <div id="salida-b" class="bloque-salida"></div>
+    </section>
+
+    <section class="tarjeta-ejercicio">
+      <h2 class="h4 mb-3">3. Cola de atencion</h2>
+      <p class="mb-4">Atiende a la primera persona en la fila llamandola por su nombre.</p>
+      <div class="d-flex gap-2 mb-3">
+        <button id="btn-ejecutar-c" class="btn-primario">Atender siguiente</button>
+        <button id="btn-reiniciar-c" class="btn-secundario">Reiniciar</button>
+      </div>
+      <div id="salida-c" class="bloque-salida"></div>
+    </section>
+  </div>
+
+  <footer>
+    NJS - Metodos de Arrays
+  </footer>
+
+  <script src="/scripts/ejercicio4.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio9-foreach",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio9-ForEach",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

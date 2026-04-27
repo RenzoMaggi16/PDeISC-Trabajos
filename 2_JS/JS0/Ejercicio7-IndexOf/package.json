@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio7-indexof",
+  "version": "1.0.0",
+  "description": "Ejercicio de Array: Ejercicio7-IndexOf",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
