@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Civil - Almacén de Personas</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Playfair Display & Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/public/styles/estilos-formulario.css">
+  <link rel="stylesheet" href="/public/styles/estilos-lista.css">
+  <link rel="stylesheet" href="/public/styles/estilos-notificaciones.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg gov-navbar">
+    <div class="container-fluid px-4">
+      <span class="navbar-brand text-white">🏛️ Almacén de Personas</span>
+      <button class="navbar-toggler border-white text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
+        <button id="btn-limpiar" class="btn btn-outline-light btn-sm fw-bold px-3">🗑️ Limpiar Todo</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid px-4 py-4">
+    <!-- Summary Stats Bar -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="stats-bar d-flex flex-wrap justify-content-around align-items-center rounded shadow-sm">
+          <div class="stat-item text-center">
+            <span class="stat-label">Total registrados</span>
+            <span class="stat-value" id="stat-total">0</span>
+          </div>
+          <div class="stat-item text-center">
+            <span class="stat-label">Promedio de edad</span>
+            <span class="stat-value" id="stat-edad-promedio">0</span>
+          </div>
+          <div class="stat-item text-center">
+            <span class="stat-label">Masculino / Femenino</span>
+            <span class="stat-value" id="stat-genero">0% / 0%</span>
+          </div>
+          <div class="stat-item text-center border-0">
+            <span class="stat-label">Con hijos</span>
+            <span class="stat-value" id="stat-hijos">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Layout Split -->
+    <div class="row g-4">
+      <!-- Left Panel: Form -->
+      <div class="col-12 col-lg-4">
+        <div class="card gov-card shadow-sm">
+          <div class="card-header bg-white border-bottom-0 pt-4 pb-0 px-4">
+            <h4 class="gov-title mb-0">Nuevo Registro</h4>
+            <p class="text-muted small">Complete los datos de la persona a registrar.</p>
+          </div>
+          <div class="card-body px-4 pb-4">
+            <form id="form-persona" novalidate>
+              <div class="row g-3">
+                
+                <!-- Nombre & Apellido -->
+                <div class="col-md-6 form-group">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                    <label for="nombre">Nombre</label>
+                  </div>
+                  <div class="mensaje-error" id="error-nombre"></div>
+                </div>
+                
+                <div class="col-md-6 form-group">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                    <label for="apellido">Apellido</label>
+                  </div>
+                  <div class="mensaje-error" id="error-apellido"></div>
+                </div>
+
+                <!-- Edad & Documento -->
+                <div class="col-md-4 form-group">
+                  <div class="form-floating">
+                    <input type="number" class="form-control" id="edad" name="edad" placeholder="0">
+                    <label for="edad">Edad</label>
+                  </div>
+                  <div class="mensaje-error" id="error-edad"></div>
+                </div>
+
+                <div class="col-md-8 form-group">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="documento" name="documento" placeholder="Documento">
+                    <label for="documento">Documento (DNI)</label>
+                  </div>
+                  <div class="mensaje-error" id="error-documento"></div>
+                </div>
+
+                <!-- Fecha Nacimiento -->
+                <div class="col-12 form-group">
+                  <div class="form-floating">
+                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                  </div>
+                  <div class="mensaje-error" id="error-fechaNacimiento"></div>
+                </div>
+
+                <!-- Sexo (Radio) -->
+                <div class="col-12 form-group mt-2">
+                  <label class="form-label text-muted small fw-bold mb-1">Sexo Registral</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="sexo" id="sexo-m" value="Masculino">
+                      <label class="form-check-label" for="sexo-m">Masculino</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="sexo" id="sexo-f" value="Femenino">
+                      <label class="form-check-label" for="sexo-f">Femenino</label>
+                    </div>
+                  </div>
+                  <div class="mensaje-error" id="error-sexo"></div>
+                </div>
+
+                <!-- Estado Civil & Nacionalidad -->
+                <div class="col-md-6 form-group">
+                  <div class="form-floating">
+                    <select class="form-select" id="estadoCivil" name="estadoCivil">
+                      <option value="" selected disabled>Seleccionar...</option>
+                      <option value="Soltero/a">Soltero/a</option>
+                      <option value="Casado/a">Casado/a</option>
+                      <option value="Divorciado/a">Divorciado/a</option>
+                      <option value="Viudo/a">Viudo/a</option>
+                      <option value="En pareja">En pareja</option>
+                    </select>
+                    <label for="estadoCivil">Estado civil</label>
+                  </div>
+                  <div class="mensaje-error" id="error-estadoCivil"></div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" placeholder="Nacionalidad">
+                    <label for="nacionalidad">Nacionalidad</label>
+                  </div>
+                  <div class="mensaje-error" id="error-nacionalidad"></div>
+                </div>
+
+                <!-- Teléfono & Mail -->
+                <div class="col-12 form-group">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                    <label for="telefono">Teléfono</label>
+                  </div>
+                  <div class="mensaje-error" id="error-telefono"></div>
+                </div>
+
+                <div class="col-12 form-group">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="mail" name="mail" placeholder="Mail">
+                    <label for="mail">Correo electrónico</label>
+                  </div>
+                  <div class="mensaje-error" id="error-mail"></div>
+                </div>
+
+                <!-- Hijos -->
+                <div class="col-6 form-group mt-2">
+                  <label class="form-label text-muted small fw-bold mb-1">¿Tiene hijos?</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="hijos" id="hijos-si" value="Sí">
+                      <label class="form-check-label" for="hijos-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="hijos" id="hijos-no" value="No">
+                      <label class="form-check-label" for="hijos-no">No</label>
+                    </div>
+                  </div>
+                  <div class="mensaje-error" id="error-hijos"></div>
+                </div>
+
+                <div class="col-6 form-group" id="contenedor-cantidad-hijos">
+                  <div class="form-floating">
+                    <input type="number" class="form-control" id="cantidadHijos" name="cantidadHijos" placeholder="Cantidad">
+                    <label for="cantidadHijos">Cantidad de hijos</label>
+                  </div>
+                  <div class="mensaje-error" id="error-cantidadHijos"></div>
+                </div>
+
+              </div>
+
+              <div class="mt-4 pt-2 border-top">
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold gov-btn">Guardar Registro</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Data Display -->
+      <div class="col-12 col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3 px-1">
+          <h5 class="gov-title mb-0">Directorio de Personas</h5>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-secondary btn-sm active" id="btn-vista-lista">📋 Lista</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-vista-tarjetas">🃏 Tarjetas</button>
+          </div>
+        </div>
+
+        <div id="lista-personas">
+          <!-- Renderizado dinámico -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Contenedor para Notificaciones Toast -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/scripts/notificaciones.js"></script>
+  <script src="/scripts/storage.js"></script>
+  <script src="/scripts/validador.js"></script>
+  <script src="/scripts/renderizado.js"></script>
+  <script src="/scripts/formulario.js"></script>
+
+  <!-- Mobile Nav Helper -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btn-limpiar').addEventListener('click', () => {
+        const navCol = document.getElementById('navCollapse');
+        if (navCol.classList.contains('show')) {
+          new bootstrap.Collapse(navCol).hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* ==========================================================================
+   ESTILOS BASE Y FORMULARIO (Registro Civil)
+   ========================================================================== */
+
+:root {
+  --gov-blue: #1E3A5F;
+  --gov-bg: #FAFAF8;
+  --gov-teal: #0D9488;
+  --gov-teal-hover: #0F766E;
+  --gov-red: #DC2626;
+  --gov-text: #334155;
+  --gov-border: #E2E8F0;
+}
+
+body {
+  background-color: var(--gov-bg);
+  font-family: 'Lato', sans-serif;
+  color: var(--gov-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .gov-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--gov-blue);
+}
+
+/* Navbar */
+.gov-navbar {
+  background-color: var(--gov-blue);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.8rem 1rem;
+}
+
+/* Stats Bar */
+.stats-bar {
+  background: white;
+  border-top: 4px solid var(--gov-teal);
+}
+
+.stat-item {
+  flex: 1;
+  padding: 1rem;
+  border-right: 1px solid var(--gov-border);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748B;
+  font-weight: 700;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gov-blue);
+}
+
+/* Form Card */
+.gov-card {
+  border: 1px solid var(--gov-border);
+  border-radius: 8px;
+}
+
+.form-floating > label {
+  color: #64748B;
+}
+
+.form-control, .form-select {
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--gov-teal);
+  box-shadow: 0 0 0 0.25rem rgba(13, 148, 136, 0.15);
+}
+
+/* Validation Styles */
+.mensaje-error {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  color: var(--gov-red);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  min-height: 18px; /* Fixed height to prevent layout jumps */
+  transition: opacity 0.2s ease;
+  line-height: 1.2;
+}
+
+.form-control.is-invalid ~ .mensaje-error,
+.form-select.is-invalid ~ .mensaje-error,
+.is-invalid ~ .mensaje-error {
+  visibility: visible;
+  opacity: 1;
+}
+
+.form-control.is-invalid, .form-select.is-invalid {
+  border-color: var(--gov-red);
+  background-image: none;
+}
+
+.form-control.is-valid, .form-select.is-valid {
+  border-color: var(--gov-teal);
+  background-image: none;
+}
+
+/* Conditional Field Animation (Hijos) */
+#contenedor-cantidad-hijos {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+}
+
+#contenedor-cantidad-hijos.mostrar {
+  opacity: 1;
+  max-height: 100px;
+  visibility: visible;
+}
+
+/* Buttons */
+.gov-btn {
+  background-color: var(--gov-teal);
+  border: none;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.gov-btn:hover {
+  background-color: var(--gov-teal-hover);
+  transform: translateY(-1px);
+}

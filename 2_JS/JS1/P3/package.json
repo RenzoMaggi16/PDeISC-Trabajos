@@ -1,0 +1,12 @@
+{
+  "name": "js1-p3-localstorage",
+  "version": "1.0.0",
+  "description": "Almacén de Personas con LocalStorage SPA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.1"
+  }
+}

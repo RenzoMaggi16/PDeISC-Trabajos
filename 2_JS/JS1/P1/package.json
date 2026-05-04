@@ -1,0 +1,12 @@
+{
+  "name": "njs3-p1-formulario",
+  "version": "1.0.0",
+  "description": "SPA Formulario con Validación en Tiempo Real",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.1"
+  }
+}

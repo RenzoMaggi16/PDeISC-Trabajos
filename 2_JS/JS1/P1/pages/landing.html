@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Bank | Tarjeta Black</title>
+
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/public/styles/estilos-landing.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">NOVA Bank</a>
+      <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navCollapse">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#beneficios">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#requisitos">Requisitos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#preguntas">Preguntas frecuentes</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="/formulario" class="btn btn-primary btn-cta">Solicitar ahora</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section d-flex align-items-center">
+    <div class="hero-bg-overlay"></div>
+    <div class="container position-relative z-1">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-6 text-center text-lg-start hero-content">
+          <h1 class="display-3 fw-bold text-white mb-3">Tu estilo de vida<br>merece más.</h1>
+          <p class="lead text-white-50 mb-4">Tarjeta Black — acceso exclusivo a un mundo de beneficios sin límites.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+            <a href="/formulario" class="btn btn-primary btn-cta btn-lg">Solicitar mi Tarjeta Black</a>
+            <a href="#beneficios" class="btn btn-outline-light btn-lg">Conocer beneficios</a>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-5 mt-lg-0 d-flex justify-content-center">
+          <div class="css-card-container">
+            <div class="css-card float-animation">
+              <div class="card-logo">NOVA Bank</div>
+              <div class="card-chip"></div>
+              <div class="card-number">•••• •••• •••• 1234</div>
+              <div class="card-text">TARJETA BLACK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar bg-white py-4 shadow-sm position-relative z-2">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3 scroll-hidden">
+          <h3 class="display-6 fw-bold text-primary mb-0"><span class="counter" data-target="50000">0</span>+</h3>
+          <p class="text-muted small text-uppercase fw-bold mb-0">Clientes activos</p>
+        </div>
+        <div class="col-6 col-md-3 scroll-hidden">
+          <h3 class="display-6 fw-bold text-primary mb-0"><span class="counter" data-target="0">1</span>%</h3>
+          <p class="text-muted small text-uppercase fw-bold mb-0">Comisión 1er año</p>
+        </div>
+        <div class="col-6 col-md-3 scroll-hidden">
+          <h3 class="display-6 fw-bold text-primary mb-0">+<span class="counter" data-target="180">0</span></h3>
+          <p class="text-muted small text-uppercase fw-bold mb-0">Países con cobertura</p>
+        </div>
+        <div class="col-6 col-md-3 scroll-hidden">
+          <h3 class="display-6 fw-bold text-primary mb-0"><span class="counter" data-target="24">0</span>/7</h3>
+          <p class="text-muted small text-uppercase fw-bold mb-0">Atención prioritaria</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section id="beneficios" class="py-5 bg-light">
+    <div class="container py-5">
+      <h2 class="text-center fw-bold mb-5 scroll-hidden text-dark">Beneficios exclusivos para vos</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 scroll-hidden">
+          <div class="benefit-card h-100 p-4 bg-white rounded shadow-sm">
+            <div class="fs-1 mb-3">💳</div>
+            <h5 class="fw-bold">Cashback del 3%</h5>
+            <p class="text-muted mb-0">Recuperá el 3% de todas tus compras en el país y en el exterior automáticamente.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 scroll-hidden">
+          <div class="benefit-card h-100 p-4 bg-white rounded shadow-sm">
+            <div class="fs-1 mb-3">✈️</div>
+            <h5 class="fw-bold">1.200 Salas VIP</h5>
+            <p class="text-muted mb-0">Acceso ilimitado a salas VIP en aeropuertos de todo el mundo para vos y un acompañante.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 scroll-hidden">
+          <div class="benefit-card h-100 p-4 bg-white rounded shadow-sm">
+            <div class="fs-1 mb-3">🛡️</div>
+            <h5 class="fw-bold">Seguro de Viaje</h5>
+            <p class="text-muted mb-0">Cobertura médica internacional de hasta USD 150.000 incluida al pagar con tu tarjeta.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 scroll-hidden">
+          <div class="benefit-card h-100 p-4 bg-white rounded shadow-sm">
+            <div class="fs-1 mb-3">🎁</div>
+            <h5 class="fw-bold">Puntos NOVA</h5>
+            <p class="text-muted mb-0">Acumulá puntos que no vencen nunca. Canjealos por vuelos, estadías o experiencias.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 scroll-hidden">
+          <div class="benefit-card h-100 p-4 bg-white rounded shadow-sm">
+            <div class="fs-1 mb-3">🏦</div>
+            <h5 class="fw-bold">Límite Flexible</h5>
+            <p class="text-muted mb-0">Límites de crédito adaptados a tu perfil y capacidad financiera, con aumentos proactivos.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 scroll-hidden">
+          <div class="benefit-card h-100 p-4 bg-white rounded shadow-sm">
+            <div class="fs-1 mb-3">📞</div>
+            <h5 class="fw-bold">Concierge 24hs</h5>
+            <p class="text-muted mb-0">Tu asistente personal disponible todo el año para reservas, compras y eventos exclusivos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5">
+    <div class="container py-5">
+      <h2 class="text-center fw-bold mb-5 scroll-hidden text-dark">¿Cómo solicitar tu Tarjeta Black?</h2>
+      <div class="row text-center g-4 position-relative">
+        <!-- Connecting line for desktop -->
+        <div class="d-none d-lg-block position-absolute top-50 start-50 translate-middle w-75 border-top border-2" style="z-index:-1; border-color: #E5E7EB !important;"></div>
+        
+        <div class="col-12 col-lg-4 scroll-hidden">
+          <div class="bg-white mx-auto rounded-circle shadow d-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; border: 4px solid var(--accent-blue);">
+            <span class="fs-2">📝</span>
+          </div>
+          <h5 class="fw-bold">1. Completá el formulario online</h5>
+        </div>
+        <div class="col-12 col-lg-4 scroll-hidden">
+          <div class="bg-white mx-auto rounded-circle shadow d-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; border: 4px solid var(--accent-blue);">
+            <span class="fs-2">🔍</span>
+          </div>
+          <h5 class="fw-bold">2. Revisamos tu solicitud en 48hs</h5>
+        </div>
+        <div class="col-12 col-lg-4 scroll-hidden">
+          <div class="bg-white mx-auto rounded-circle shadow d-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; border: 4px solid var(--accent-blue);">
+            <span class="fs-2">🏠</span>
+          </div>
+          <h5 class="fw-bold">3. Recibís tu tarjeta en casa</h5>
+        </div>
+      </div>
+      <div class="text-center mt-5 scroll-hidden">
+        <a href="/formulario" class="btn btn-primary btn-cta btn-lg px-5">Empezar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section id="requisitos" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 scroll-hidden">
+          <div class="bg-white p-5 rounded-4 shadow-sm border border-light">
+            <h2 class="fw-bold text-dark mb-4 text-center">Requisitos para acceder</h2>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li class="d-flex align-items-center fs-5"><span class="text-success me-3">✅</span> Ser mayor de 18 años</li>
+              <li class="d-flex align-items-center fs-5"><span class="text-success me-3">✅</span> DNI argentino vigente</li>
+              <li class="d-flex align-items-center fs-5"><span class="text-success me-3">✅</span> Ingresos demostrables mínimos</li>
+              <li class="d-flex align-items-center fs-5"><span class="text-success me-3">✅</span> No registrar deudas activas</li>
+              <li class="d-flex align-items-center fs-5"><span class="text-success me-3">✅</span> Tener cuenta bancaria activa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="preguntas" class="py-5">
+    <div class="container py-5">
+      <h2 class="text-center fw-bold mb-5 scroll-hidden text-dark">Preguntas frecuentes</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 scroll-hidden">
+          <div class="accordion" id="faqAccordion">
+            
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  ¿Tiene costo de mantenimiento?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  El primer año está 100% bonificado. Luego, la comisión de mantenimiento se bonifica automáticamente si superás el consumo mínimo mensual establecido.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  ¿Cómo funciona el programa de puntos?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Acumulás 1.5 puntos NOVA por cada dólar o su equivalente en pesos gastado. Estos puntos no tienen fecha de caducidad y se pueden canjear en nuestro portal exclusivo.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  ¿Puedo pedir tarjetas adicionales?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Sí, podés solicitar hasta 3 tarjetas adicionales sin cargo para familiares directos, quienes también disfrutarán de beneficios como el acceso a salas VIP.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  ¿Cuánto demora el proceso de aprobación?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Una vez enviado el formulario, nuestro sistema realiza un pre-análisis en segundos. El análisis definitivo y confirmación se comunican vía mail en un plazo máximo de 48 horas hábiles.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded shadow-sm">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  ¿Necesito ser cliente del banco previamente?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  No es un requisito excluyente. Si aprobás la calificación crediticia y no tenés cuenta, te abriremos una Cuenta Premium bonificada junto con la emisión de la tarjeta.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-5" style="background-color: var(--bg-color);">
+    <div class="container py-5 text-center scroll-hidden">
+      <h2 class="display-5 fw-bold text-white mb-3">¿Listo para dar el siguiente paso?</h2>
+      <p class="lead text-white-50 mb-4">Solicitá tu Tarjeta Black hoy. Sin turnos, sin papeles.</p>
+      <a href="/formulario" class="btn btn-primary btn-cta btn-lg px-5 py-3 fs-5 shadow">Solicitar ahora</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white-50 py-5">
+    <div class="container">
+      <div class="row g-4 border-bottom border-secondary pb-4 mb-4">
+        <div class="col-lg-4">
+          <h4 class="text-white fw-bold mb-3">NOVA Bank</h4>
+          <p>Elevando tu experiencia financiera al máximo nivel.</p>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-2 mb-md-0">&copy; 2026 NOVA Bank. Todos los derechos reservados.</p>
+        <p class="mb-0 small text-muted">Este sitio es un proyecto educativo. No representa una entidad financiera real.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/scripts/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* ==========================================================================
+   SISTEMA DE NOTIFICACIONES TOAST
+   ========================================================================== */
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+.custom-toast {
+  background: white;
+  min-width: 280px;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  pointer-events: auto; /* Enable clicks on toast itself */
+  
+  /* Initial animation state */
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.custom-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Dismissing animation */
+.custom-toast.hide {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.toast-indicator {
+  width: 6px;
+  align-self: stretch;
+}
+
+/* Colors by type */
+.custom-toast.exito .toast-indicator { background-color: var(--gov-teal); }
+.custom-toast.error .toast-indicator { background-color: var(--gov-red); }
+.custom-toast.advertencia .toast-indicator { background-color: #F59E0B; }
+
+.toast-content {
+  padding: 1rem;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #334155;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toast-icon {
+  font-size: 1.2rem;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #94A3B8;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.toast-close:hover {
+  color: #1E293B;
+}

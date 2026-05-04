@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Tarjeta Premium</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts: Outfit for headings/labels, DM Mono for specific inputs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/public/styles/estilos-formulario.css">
+  <link rel="stylesheet" href="/public/styles/estilos-perfil.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark premium-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="">Nova Black</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item me-lg-3 mb-2 mb-lg-0">
+            <a href="/" class="btn btn-outline-light btn-sm fw-bold" style="border-radius: 8px;">← Volver al inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-closer active" aria-current="page" href="#solicitud">Solicitar Tarjeta</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container py-5" id="solicitud">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 col-xl-6" id="contenedor-principal">
+        
+        <!-- Section: Form -->
+        <div class="card premium-card shadow-lg" id="tarjeta-formulario">
+          <div class="card-body p-4 p-md-5">
+            <h1 class="h3 mb-4 fw-bold text-center form-title">Solicitud de Tarjeta Black</h1>
+            <p class="text-muted text-center mb-4">Complete sus datos para aplicar a la tarjeta de crédito más exclusiva del mercado.</p>
+            
+            <form id="formulario-solicitud" novalidate>
+              <!-- Row: Nombre y Apellido -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6 position-relative">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Juan">
+                  <div class="invalid-feedback" id="error-nombre"></div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ej: Pérez">
+                  <div class="invalid-feedback" id="error-apellido"></div>
+                </div>
+              </div>
+
+              <!-- Row: Email y Celular -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6 position-relative">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@gmail.com">
+                  <div class="invalid-feedback" id="error-email"></div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="celular" class="form-label">Celular (sin 0 ni 15)</label>
+                  <input type="text" class="form-control mono-font" id="celular" name="celular" placeholder="Ej: 1123456789">
+                  <div class="invalid-feedback" id="error-celular"></div>
+                </div>
+              </div>
+
+              <!-- Row: DNI e Fecha de Nacimiento -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6 position-relative">
+                  <label for="dni" class="form-label">DNI (Sin puntos)</label>
+                  <input type="text" class="form-control mono-font" id="dni" name="dni" placeholder="12345678">
+                  <div class="invalid-feedback" id="error-dni"></div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                  <input type="date" class="form-control mono-font" id="fechaNacimiento" name="fechaNacimiento">
+                  <div class="invalid-feedback" id="error-fechaNacimiento"></div>
+                </div>
+              </div>
+
+              <!-- Row: Ingresos -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-12 position-relative">
+                  <label for="ingresos" class="form-label">Ingresos Mensuales ($)</label>
+                  <input type="number" class="form-control mono-font" id="ingresos" name="ingresos" placeholder="500000">
+                  <div class="invalid-feedback" id="error-ingresos"></div>
+                </div>
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-lg premium-btn">Enviar Solicitud</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Section: Profile Card Result (Hidden by default) -->
+        <div id="resultado" class="mt-4"></div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom Scripts -->
+  <script src="/scripts/validador.js"></script>
+  <script src="/scripts/perfil.js"></script>
+  <script src="/scripts/formulario.js"></script>
+
+  <!-- Navigation Helper for Mobile -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.nav-closer');
+      const navbarCollapse = document.getElementById('navbarNav');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+            bsCollapse.hide();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
