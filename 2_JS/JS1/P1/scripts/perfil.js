@@ -14,6 +14,7 @@ const generarPerfil = (formElement) => {
   
   // 3. querySelector + .value
   const dniUsuario = document.querySelector('[name="dni"]').value;
+  const cuitUsuario = document.querySelector('[name="cuit"]').value;
   const ingresosUsuario = document.querySelector('[name="ingresos"]').value;
   const fechaNacUsuario = document.querySelector('[name="fechaNacimiento"]').value;
 
@@ -58,6 +59,11 @@ const generarPerfil = (formElement) => {
         <div class="dato-fila">
           <span class="dato-label">DNI</span>
           <span class="dato-valor mono">${dniUsuario}</span>
+        </div>
+
+        <div class="dato-fila">
+          <span class="dato-label">CUIT/CUIL</span>
+          <span class="dato-valor mono">${cuitUsuario}</span>
         </div>
         
         <div class="dato-fila">

@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Bloquear letras en Celular, DNI e Ingresos
-      if (id === 'celular' || id === 'dni' || id === 'ingresos') {
+      // Bloquear letras en Celular, DNI, CUIT/CUIL e Ingresos
+      if (id === 'celular' || id === 'dni' || id === 'cuit' || id === 'ingresos') {
         if (!/\d/.test(event.key)) {
           event.preventDefault();
         }

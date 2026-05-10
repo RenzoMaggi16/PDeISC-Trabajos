@@ -79,14 +79,19 @@
                 </div>
               </div>
 
-              <!-- Row: DNI e Fecha de Nacimiento -->
+              <!-- Row: DNI, CUIT/CUIL e Fecha de Nacimiento -->
               <div class="row g-3 mb-3">
-                <div class="col-md-6 position-relative">
+                <div class="col-md-4 position-relative">
                   <label for="dni" class="form-label">DNI (Sin puntos)</label>
                   <input type="text" class="form-control mono-font" id="dni" name="dni" placeholder="12345678">
                   <div class="invalid-feedback" id="error-dni"></div>
                 </div>
-                <div class="col-md-6 position-relative">
+                <div class="col-md-4 position-relative">
+                  <label for="cuit" class="form-label">CUIT/CUIL (Sin guiones)</label>
+                  <input type="text" class="form-control mono-font" id="cuit" name="cuit" placeholder="20123456789">
+                  <div class="invalid-feedback" id="error-cuit"></div>
+                </div>
+                <div class="col-md-4 position-relative">
                   <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
                   <input type="date" class="form-control mono-font" id="fechaNacimiento" name="fechaNacimiento">
                   <div class="invalid-feedback" id="error-fechaNacimiento"></div>

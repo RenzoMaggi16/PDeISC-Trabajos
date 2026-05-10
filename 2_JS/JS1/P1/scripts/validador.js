@@ -19,6 +19,10 @@ const REGLAS = {
     validar: (valor) => /^\d{7,8}$/.test(valor.trim()),
     mensaje: "El DNI debe contener entre 7 y 8 números exactos."
   },
+  cuit: {
+    validar: (valor) => /^\d{11}$/.test(valor.trim()),
+    mensaje: "El CUIT/CUIL debe contener exactamente 11 números."
+  },
   ingresos: {
     validar: (valor) => {
       const num = parseInt(valor, 10);
