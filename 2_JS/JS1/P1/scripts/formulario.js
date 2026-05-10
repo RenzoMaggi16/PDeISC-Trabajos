@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const id = input.id;
 
-      // Bloquear números en Nombre y Apellido
-      if (id === 'nombre' || id === 'apellido') {
+      // Bloquear números en Nombre, Apellido y Trabajo
+      if (id === 'nombre' || id === 'apellido' || id === 'trabajo') {
         if (/\d/.test(event.key)) {
           event.preventDefault();
         }

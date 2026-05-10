@@ -22,7 +22,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg app-navbar">
     <div class="container-fluid px-4">
-      <span class="navbar-brand fw-bold">🛠️ Inventario Pro</span>
+      <span class="navbar-brand fw-bold">Inventario</span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -133,6 +133,34 @@
                   <label class="form-label">Garantía (Meses)</label>
                   <input type="number" class="form-control mono-font" name="garantia" id="garantia" placeholder="12">
                   <div class="invalid-feedback" id="error-garantia"></div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label class="form-label">Fecha de Ingreso</label>
+                  <input type="date" class="form-control mono-font" name="fechaIngreso" id="fechaIngreso">
+                  <div class="invalid-feedback" id="error-fechaIngreso"></div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label class="form-label">Estado</label>
+                  <select class="form-select" name="estado" id="estado">
+                    <option value="" disabled selected>Seleccionar...</option>
+                    <option value="Nueva">Nueva</option>
+                    <option value="Usada">Usada</option>
+                    <option value="Rota">Rota</option>
+                  </select>
+                  <div class="invalid-feedback" id="error-estado"></div>
+                </div>
+
+                <div class="col-12 form-group">
+                  <label class="form-label">Ubicación</label>
+                  <select class="form-select" name="ubicacion" id="ubicacion">
+                    <option value="" disabled selected>Seleccionar...</option>
+                    <option value="Depósito">Depósito</option>
+                    <option value="Estanterías">Estanterías</option>
+                    <option value="Para vender">Para vender</option>
+                  </select>
+                  <div class="invalid-feedback" id="error-ubicacion"></div>
                 </div>
 
                 <div class="col-12 form-group">

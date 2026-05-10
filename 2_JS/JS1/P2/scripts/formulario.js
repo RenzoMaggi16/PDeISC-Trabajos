@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     precio: { validar: (v) => { const n = parseFloat(v); return !isNaN(n) && n > 0 && v.length <= 6 && /^\d+(\.\d+)?$/.test(v); }, msg: "Número positivo, máx 6 dígitos." },
     stock: { validar: (v) => { const n = parseInt(v, 10); return !isNaN(n) && n >= 0 && /^\d+$/.test(v); }, msg: "Debe ser un número entero positivo." },
     garantia: { validar: (v) => { const n = parseInt(v, 10); return !isNaN(n) && n >= 0 && n <= 120 && /^\d+$/.test(v); }, msg: "Meses entre 0 y 120." },
+    fechaIngreso: { validar: (v) => v !== "", msg: "Requerido." },
+    estado: { validar: (v) => v !== "", msg: "Seleccione un estado." },
+    ubicacion: { validar: (v) => v !== "", msg: "Seleccione la ubicación." },
     descripcion: { validar: (v) => v.trim().length >= 10 && v.trim().length <= 200, msg: "Entre 10 y 200 caracteres." }
   };
 
@@ -94,6 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: parseFloat(form.elements['precio'].value),
       stock: parseInt(form.elements['stock'].value, 10),
       garantia: parseInt(form.elements['garantia'].value, 10),
+      fechaIngreso: form.elements['fechaIngreso'].value,
+      estado: form.elements['estado'].value,
+      ubicacion: form.elements['ubicacion'].value,
       unidad: unidadSeleccionada.value,
       descripcion: form.elements['descripcion'].value.trim()
     };
@@ -112,11 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Listener global para el botón "Limpiar Todo" (Navbar)
   btnLimpiarTodo.addEventListener('click', () => {
-    if(confirm('¿Estás seguro de eliminar todo el inventario? Esta acción no se puede deshacer.')) {
-      window.Almacenamiento.limpiarTodo();
-      window.Renderizado.actualizarVistas();
-      window.Estadisticas.actualizarPanel();
-    }
+    window.Almacenamiento.limpiarTodo();
+    window.Renderizado.actualizarVistas();
+    window.Estadisticas.actualizarPanel();
   });
 
   // Funciones Auxiliares de Validación

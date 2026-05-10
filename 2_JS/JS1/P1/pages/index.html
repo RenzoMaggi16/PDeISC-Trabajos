@@ -42,7 +42,7 @@
   <!-- Main Content -->
   <main class="container py-5" id="solicitud">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-8 col-xl-6" id="contenedor-principal">
+      <div class="col-12 col-lg-10 col-xl-8" id="contenedor-principal">
         
         <!-- Section: Form -->
         <div class="card premium-card shadow-lg" id="tarjeta-formulario">
@@ -93,12 +93,37 @@
                 </div>
               </div>
 
-              <!-- Row: Ingresos -->
-              <div class="row g-3 mb-4">
-                <div class="col-md-12 position-relative">
+              <!-- Row: Ingresos y Estado Civil -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6 position-relative">
                   <label for="ingresos" class="form-label">Ingresos Mensuales ($)</label>
                   <input type="number" class="form-control mono-font" id="ingresos" name="ingresos" placeholder="500000">
                   <div class="invalid-feedback" id="error-ingresos"></div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="estadoCivil" class="form-label">Estado Civil</label>
+                  <select class="form-select" id="estadoCivil" name="estadoCivil">
+                    <option value="" disabled selected>Seleccione...</option>
+                    <option value="Soltero/a">Soltero/a</option>
+                    <option value="Casado/a">Casado/a</option>
+                    <option value="Divorciado/a">Divorciado/a</option>
+                    <option value="Viudo/a">Viudo/a</option>
+                  </select>
+                  <div class="invalid-feedback" id="error-estadoCivil"></div>
+                </div>
+              </div>
+
+              <!-- Row: Dirección y Trabajo -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6 position-relative">
+                  <label for="direccion" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ej: Av. Siempreviva 742">
+                  <div class="invalid-feedback" id="error-direccion"></div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="trabajo" class="form-label">Trabajo / Ocupación</label>
+                  <input type="text" class="form-control" id="trabajo" name="trabajo" placeholder="Ej: Ingeniero de Software">
+                  <div class="invalid-feedback" id="error-trabajo"></div>
                 </div>
               </div>
 

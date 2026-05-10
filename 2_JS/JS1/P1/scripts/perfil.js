@@ -4,6 +4,9 @@ const generarPerfil = (formElement) => {
   const formData = new FormData(formElement);
   const nombreUsuario = formData.get('nombre');
   const apellidoUsuario = formData.get('apellido');
+  const estadoCivilUsuario = formData.get('estadoCivil');
+  const direccionUsuario = formData.get('direccion');
+  const trabajoUsuario = formData.get('trabajo');
   
   // 2. Direct DOM Property Access
   const emailUsuario = document.getElementById('email').value;
@@ -58,32 +61,51 @@ const generarPerfil = (formElement) => {
         </div>
         
         <div class="dato-fila">
+          <span class="dato-label">Estado Civil</span>
+          <span class="dato-valor">${estadoCivilUsuario}</span>
+        </div>
+
+        <div class="dato-fila">
+          <span class="dato-label">Dirección</span>
+          <span class="dato-valor">${direccionUsuario}</span>
+        </div>
+
+        <div class="dato-fila">
+          <span class="dato-label">Trabajo/Ocup.</span>
+          <span class="dato-valor">${trabajoUsuario}</span>
+        </div>
+
+        <div class="dato-fila">
           <span class="dato-label">Ingresos Declarados</span>
           <span class="dato-valor mono" style="color: #34d399;">${ingresosFormateados}</span>
         </div>
         
         <div class="mt-4 pt-3 border-top border-secondary">
-          <button id="btn-reset" class="btn-outline-light-premium">Cargar Nuevo Usuario</button>
+          <button id="btn-confirmar" class="btn btn-primary btn-lg premium-btn w-100">Confirmar</button>
         </div>
       </div>
     </div>
   `;
 
-  // Listener para resetear el SPA
-  document.getElementById('btn-reset').addEventListener('click', () => {
-    // 1. Limpiar HTML del resultado
-    resultadoDiv.innerHTML = '';
+  // Listener para confirmar y redirigir
+  document.getElementById('btn-confirmar').addEventListener('click', () => {
+    // 1. Mostrar mensaje de éxito
+    resultadoDiv.innerHTML = `
+      <div class="perfil-card mx-auto text-center py-5" style="max-width: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px;">
+        <div class="mb-4">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h2 class="mb-3">¡Enviado correctamente!</h2>
+        <p class="text-white-50">Serás redirigido al inicio en unos segundos...</p>
+      </div>
+    `;
     
-    // 2. Limpiar el formulario silenciosamente
-    formElement.reset();
-    
-    // 3. Remover las clases de validación de todos los inputs
-    const inputs = formElement.querySelectorAll('input');
-    inputs.forEach(input => {
-      input.classList.remove('is-valid', 'is-invalid');
-    });
-
-    // 4. Mostrar el formulario de nuevo
-    document.getElementById('tarjeta-formulario').classList.remove('form-hidden');
+    // 2. Redirigir a la landing page después de 3 segundos
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 3000);
   });
 };

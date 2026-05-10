@@ -9,15 +9,14 @@ const agregarElemento = (item) => {
 
   // MÉTODO: push()
   // Agrega uno o más elementos al final de un array.
-  // USO: Almacenamiento secuencial estándar. Mantiene el orden de ingreso.
   almacen.push(itemConId);
 
-  // MÉTODO: unshift() — Agrega el elemento al inicio del array
-  // USO: Ideal para historiales o "Feed", donde quieres mostrar lo más reciente primer sin tener que usar .reverse() o reordenar el array en tiempo de ejecución.
+  // MÉTODO: unshift()
+  // USO: Ideal para historiales - reordenar el array
   historial.unshift(itemConId);
 
-  // MÉTODO: splice() — Inserción en posición específica
-  // USO: Mantiene un array ordenado (ej: por precio de menor a mayor) insertando el elemento exactamente donde corresponde. Evita usar sort() en todo el array.
+  // MÉTODO: splice()
+  // USO: Mantiene un array ordenado
   const precioNuevo = parseFloat(itemConId.precio);
   // Buscar el índice donde debemos insertar (primer elemento que sea mayor al nuevo)
   let indexInsercion = arrayOrdenado.findIndex(elem => parseFloat(elem.precio) > precioNuevo);
@@ -58,21 +57,18 @@ const limpiarTodo = () => {
 const obtenerConteo = () => almacen.length;
 
 //filter()
-// QUÉ HACE: Crea un nuevo array con los elementos que cumplen la condición dada. No muta el original.
 // USO: Filtra ítems por categoría.
 const filtrarPorCategoria = (categoria) => {
   return almacen.filter(item => item.categoria === categoria);
 };
 
 //map()
-// QUÉ HACE: Crea un nuevo array con los resultados de la llamada a una función en cada elemento.
 // USO: Extrae un campo específico de todos los ítems.
 const extraerCampo = (campo) => {
   return almacen.map(item => item[campo]);
 };
 
 //reduce()
-// QUÉ HACE: Ejecuta una función reductora sobre cada elemento, devolviendo un único valor.
 // USO: Calcula el valor total sumando todos los precios.
 const calcularTotal = () => {
   return almacen.reduce((acumulador, item) => acumulador + parseFloat(item.precio), 0);

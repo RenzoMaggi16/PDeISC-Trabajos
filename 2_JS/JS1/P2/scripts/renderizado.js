@@ -90,12 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
       return `
         <tr class="animate-entrance">
           <td><span class="badge-index">#${idxReal}</span></td>
-          <td class="fw-bold">${item.nombre}</td>
+          <td class="fw-bold">
+            ${item.nombre}
+            <div class="text-muted" style="font-size: 0.75rem;">${item.fechaIngreso ? item.fechaIngreso.split('-').reverse().join('/') : ''}</div>
+          </td>
           <td>${item.marca}</td>
           <td><span class="badge bg-secondary text-light">${item.categoria}</span></td>
           <td class="mono-font fw-bold">${formatPrecio}</td>
           <td class="mono-font">${item.stock} ${item.unidad}(s)</td>
-          <td>${item.voltaje}</td>
+          <td>
+            <span class="badge bg-${item.estado === 'Nueva' ? 'success' : item.estado === 'Usada' ? 'warning text-dark' : 'danger'}">
+              ${item.estado}
+            </span>
+          </td>
+          <td>${item.ubicacion}</td>
           <td>
             <button class="btn btn-sm btn-outline-danger btn-delete" data-id="${item.id}">Borrar</button>
           </td>
@@ -114,7 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
               <th>Categoría</th>
               <th>Precio</th>
               <th>Stock</th>
-              <th>Voltaje</th>
+              <th>Estado</th>
+              <th>Ubicación</th>
               <th>Acción</th>
             </tr>
           </thead>
@@ -150,8 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="data-value">${item.stock} ${item.unidad}</span>
             </div>
             <div class="data-row">
-              <span class="data-label">Garantía:</span>
-              <span class="data-value">${item.garantia} meses</span>
+              <span class="data-label">Estado / Ubic.:</span>
+              <span class="data-value">${item.estado} | ${item.ubicacion}</span>
+            </div>
+            <div class="data-row">
+              <span class="data-label">Ingreso:</span>
+              <span class="data-value">${item.fechaIngreso ? item.fechaIngreso.split('-').reverse().join('/') : '-'}</span>
             </div>
           </div>
           <div class="card-bottom">
@@ -225,11 +238,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. REDUCE: Mostrar total en el botón
+  // 3. REDUCE: Mostrar total en el botón (en Hover)
   const btnTotalReduce = document.getElementById('btn-total-reduce');
-  btnTotalReduce.addEventListener('click', () => {
+  const originalText = btnTotalReduce.textContent;
+
+  btnTotalReduce.addEventListener('mouseenter', () => {
     if (window.Almacenamiento.obtenerConteo() === 0) {
-      alert("El inventario está vacío.");
+      btnTotalReduce.textContent = "Inventario vacío";
+      btnTotalReduce.classList.replace('btn-outline-success', 'btn-secondary');
+      btnTotalReduce.classList.add('text-white');
       return;
     }
     
@@ -237,16 +254,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const total = window.Almacenamiento.calcularTotal();
     const formatter = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' });
     
-    const originalText = "Ver Total (reduce)";
     btnTotalReduce.textContent = `Total: ${formatter.format(total)}`;
     btnTotalReduce.classList.replace('btn-outline-success', 'btn-success');
     btnTotalReduce.classList.add('text-white');
-    
-    setTimeout(() => {
-      btnTotalReduce.textContent = originalText;
-      btnTotalReduce.classList.replace('btn-success', 'btn-outline-success');
-      btnTotalReduce.classList.remove('text-white');
-    }, 4000);
+  });
+
+  btnTotalReduce.addEventListener('mouseleave', () => {
+    btnTotalReduce.textContent = originalText;
+    btnTotalReduce.classList.replace('btn-success', 'btn-outline-success');
+    btnTotalReduce.classList.replace('btn-secondary', 'btn-outline-success');
+    btnTotalReduce.classList.remove('text-white');
   });
 
   // Interceptar la actualización de vistas para poblar el dropdown dinámico

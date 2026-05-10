@@ -215,11 +215,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-limpiar').addEventListener('click', () => {
     if (window.Storage.obtenerConteo() === 0) return;
     
-    if (confirm('¿Estás completamente seguro de borrar todo el Almacén de Personas?')) {
-      window.Storage.limpiarTodo();
-      window.Notificaciones.mostrar('advertencia', 'Se limpió el almacén de datos por completo.');
-      actualizarVista();
-    }
+    window.Storage.limpiarTodo();
+    window.Notificaciones.mostrar('advertencia', 'Se limpió el almacén de datos por completo.');
+    actualizarVista();
   });
 
   window.Renderizado = {

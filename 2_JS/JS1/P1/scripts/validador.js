@@ -41,6 +41,18 @@ const REGLAS = {
       return edad >= 18 && edad <= 99;
     },
     mensaje: "Debe ser mayor de 18 años y menor de 99."
+  },
+  estadoCivil: {
+    validar: (valor) => valor !== "",
+    mensaje: "Debe seleccionar un estado civil."
+  },
+  direccion: {
+    validar: (valor) => valor.trim().length >= 5,
+    mensaje: "La dirección debe tener al menos 5 caracteres."
+  },
+  trabajo: {
+    validar: (valor) => valor.trim().length >= 3 && !/\d/.test(valor),
+    mensaje: "El trabajo debe tener al menos 3 caracteres y no contener números."
   }
 };
 
