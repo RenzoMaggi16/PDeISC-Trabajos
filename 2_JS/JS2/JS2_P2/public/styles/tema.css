@@ -1,0 +1,91 @@
+/**
+ * @file tema.css
+ * @description Variables de tema y overrides de Bootstrap para modo Día/Noche.
+ * Estética "Data Tool": Navy/Slate + Teal/Rose.
+ */
+
+:root {
+  /* Modo Día */
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #1e293b;
+  --border-color: #e2e8f0;
+  
+  --accent-teal: #0d9488;
+  --accent-rose: #e11d48;
+  --accent-blue: #2563eb;
+  
+  --dropzone-bg: #f1f5f9;
+  --dropzone-border: #cbd5e1;
+  --dropzone-hover-bg: #e2e8f0;
+  --dropzone-hover-border: #94a3b8;
+  
+  --badge-pass-bg: #ccfbf1;
+  --badge-pass-text: #115e59;
+  --badge-fail-bg: #ffe4e6;
+  --badge-fail-text: #881337;
+}
+
+body.tema-noche {
+  /* Modo Noche */
+  --bg-body: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f8fafc;
+  --border-color: #334155;
+  
+  --accent-teal: #2dd4bf;
+  --accent-rose: #fb7185;
+  --accent-blue: #60a5fa;
+
+  --dropzone-bg: #1e293b;
+  --dropzone-border: #475569;
+  --dropzone-hover-bg: #334155;
+  --dropzone-hover-border: #64748b;
+
+  --badge-pass-bg: #115e59;
+  --badge-pass-text: #ccfbf1;
+  --badge-fail-bg: #881337;
+  --badge-fail-text: #ffe4e6;
+}
+
+/* Transiciones globales */
+body, .custom-card, .dropzone, .number-badge {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Overrides de Bootstrap */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+}
+
+.custom-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.custom-navbar {
+  background-color: var(--bg-card);
+  border-bottom-color: var(--border-color) !important;
+}
+
+/* Forzar colores claros en modo oscuro si Bootstrap los pisa */
+body.tema-noche h1,
+body.tema-noche h2,
+body.tema-noche h3,
+body.tema-noche h4,
+body.tema-noche h5,
+body.tema-noche h6,
+body.tema-noche p,
+body.tema-noche label,
+body.tema-noche .form-label,
+body.tema-noche .navbar-brand,
+body.tema-noche .nav-link {
+  color: var(--text-primary) !important;
+}
+
+body.tema-noche .text-muted,
+body.tema-noche .text-secondary {
+  color: #94a3b8 !important; /* Slate-400 */
+}

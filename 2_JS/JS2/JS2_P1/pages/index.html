@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recolector de Números</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <!-- Google Fonts: DM Sans (Headings) & Roboto (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/styles/tema.css">
+  <link rel="stylesheet" href="/styles/estilos.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg border-bottom custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Ejercicio 1</a>
+      
+      <!-- Theme Toggle Button (Siempre visible) -->
+      <button id="btnTema" class="btn btn-outline-secondary ms-auto d-flex align-items-center gap-2">
+        <i class="bi bi-sun"></i> <span>Modo Día</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto form-container px-3 px-md-4">
+        
+        <header class="mb-4 text-center">
+          <h1 class="fw-bold mb-2">Ejercicio 1</h1>
+          <p class="text-muted">Ingresá entre 10 y 20 números para generar tu archivo de texto.</p>
+        </header>
+
+        <section class="card shadow-sm border-0 custom-card mb-4">
+          <div class="card-body p-4">
+            
+            <div class="row align-items-end g-3 mb-4">
+              <div class="col-md-8 position-relative">
+                <label for="inputNumero" class="form-label fw-medium">Número a agregar</label>
+                <!-- Nota: type="text" intencional para validación exclusiva por JS -->
+                <input type="text" id="inputNumero" class="form-control form-control-lg" placeholder="Ej: 42 o 3.14" autocomplete="off">
+                <div id="errorMensaje" class="text-danger mt-1 fs-6 position-absolute w-100" style="display: none; top: 100%; left: 0; padding-left: 12px; z-index: 10;"></div>
+              </div>
+              <div class="col-md-4 d-grid">
+                <button type="button" id="btnAgregar" class="btn btn-primary btn-lg custom-btn-primary">
+                  Agregar número
+                </button>
+              </div>
+            </div>
+
+            <!-- Contador -->
+            <div class="text-end mb-3">
+              <small id="textoContador" class="fw-medium text-secondary">0 / 10–20 números ingresados</small>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Panel de Array -->
+            <h5 class="fw-bold mb-3">Números en la colección:</h5>
+            <div id="panelArray" class="d-flex flex-wrap gap-2 array-panel mb-4">
+              <!-- Los badges se insertarán aquí dinámicamente -->
+              <span class="text-muted d-block w-100 text-center py-4 empty-state">La colección está vacía. Empezá agregando un número.</span>
+            </div>
+
+            <!-- Área de estado (Éxito/Error de exportación) -->
+            <div id="areaMensaje" class="alert d-none mb-4" role="alert"></div>
+
+            <!-- Acciones Finales -->
+            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
+              <button type="button" id="btnReiniciar" class="btn btn-outline-danger px-4">
+                <i class="bi bi-trash3 me-1"></i> Reiniciar
+              </button>
+              <button type="button" id="btnGuardar" class="btn btn-success px-4" disabled>
+                <i class="bi bi-save me-1"></i> Guardar y Descargar
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Confirmación -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-card">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="confirmModalLabel">Confirmar Acción</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="confirmModalBody">
+          ¿Estás seguro?
+        </div>
+        <div class="modal-footer border-top-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" id="confirmModalBtn">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Prompt (Modificar) -->
+  <div class="modal fade" id="promptModal" tabindex="-1" aria-labelledby="promptModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-card">
+        <div class="modal-header border-bottom-0">
+          <h5 class="modal-title" id="promptModalLabel">Modificar Número</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <label for="promptModalInput" class="form-label" id="promptModalBody">Ingresá el nuevo valor:</label>
+          <input type="text" class="form-control" id="promptModalInput" autocomplete="off">
+          <div id="promptModalError" class="text-danger mt-1 fs-6" style="display: none;"></div>
+        </div>
+        <div class="modal-footer border-top-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary custom-btn-primary" id="promptModalBtn">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Scripts de la Aplicación -->
+  <script src="/scripts/context/tema.js" defer></script>
+  <script src="/scripts/validador.js" defer></script>
+  <script src="/scripts/modales.js" defer></script>
+  <script src="/scripts/colector.js" defer></script>
+  <script src="/scripts/exportador.js" defer></script>
+  <script src="/scripts/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/**
+ * @file tema.css
+ * @description Variables CSS y estilos para alternar entre el modo Día (claro) y Noche (oscuro).
+ */
+
+:root {
+  /* Paleta de Modo Día (Por Defecto) */
+  --bg-body: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-navbar: #ffffff;
+  
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  
+  --border-color: #dee2e6;
+  
+  /* Acentos (Azul profundo / Teal) */
+  --accent-primary: #0f4c5c;
+  --accent-primary-hover: #0a3641;
+  
+  /* Badges (Coral/Mint cálido) */
+  --badge-bg: #e36414;
+  --badge-text: #ffffff;
+}
+
+body.tema-noche {
+  /* Paleta de Modo Noche */
+  --bg-body: #121212;
+  --bg-card: #1e1e1e;
+  --bg-navbar: #1e1e1e;
+  
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  
+  --border-color: #333333;
+  
+  /* Acentos para fondo oscuro */
+  --accent-primary: #2b7a8c;
+  --accent-primary-hover: #3d9eb3;
+  
+  /* Badges en modo oscuro */
+  --badge-bg: #fb8b24;
+  --badge-text: #121212;
+}
+
+/* Mejora de visibilidad para textos grises en modo oscuro */
+body.tema-noche .text-muted,
+body.tema-noche .text-secondary {
+  color: #b0b0b0 !important;
+}
+
+/* Forzar color claro en encabezados, labels y textos principales si Bootstrap los sobrescribe */
+body.tema-noche h1,
+body.tema-noche h2,
+body.tema-noche h3,
+body.tema-noche h4,
+body.tema-noche h5,
+body.tema-noche h6,
+body.tema-noche p,
+body.tema-noche label,
+body.tema-noche .form-label,
+body.tema-noche .modal-title,
+body.tema-noche .modal-body,
+body.tema-noche .modal-content {
+  color: var(--text-primary) !important;
+}
+
+/* Transiciones globales de tema */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sobrescritura de Bootstrap para el Navbar */
+.custom-navbar {
+  background-color: var(--bg-navbar);
+  border-bottom-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: var(--text-primary) !important;
+}
+
+/* Sobrescritura para las Cards */
+.custom-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.tema-noche .custom-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* Inputs */
+body.tema-noche .form-control {
+  background-color: #2c2c2c;
+  border-color: #444;
+  color: #e0e0e0;
+}
+body.tema-noche .form-control::placeholder {
+  color: #888;
+}
+body.tema-noche .form-control:focus {
+  background-color: #333;
+  color: #fff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 0.25rem rgba(43, 122, 140, 0.25);
+}
+
+/* Botón de tema */
+#btnTema {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  background-color: var(--bg-navbar);
+}
+#btnTema:hover {
+  background-color: var(--border-color);
+}

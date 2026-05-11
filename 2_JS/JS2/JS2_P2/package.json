@@ -1,0 +1,13 @@
+{
+  "name": "js2-p2-filtrador",
+  "version": "1.0.0",
+  "description": "Lector de TXT y Filtrador Numérico (JS2 Proyecto 2)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}

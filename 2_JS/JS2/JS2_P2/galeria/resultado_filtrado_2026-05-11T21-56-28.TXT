@@ -1,0 +1,24 @@
+=== RESULTADO DEL FILTRADO ===
+Fecha y hora: 11/05/2026, 06:56:28 p. m.
+Archivo procesado: numeros_2026-05-11T21-55-26.TXT
+
+--- ESTADÍSTICAS ---
+Total de números en el archivo: 11
+Números útiles (primer = último dígito): 6
+Números descartados: 5
+Porcentaje de utilidad: 54.55%
+
+--- NÚMEROS ÚTILES (orden ascendente) ---
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+6. 323
+
+--- NÚMEROS DESCARTADOS ---
+1. 234235235234234
+2. 34
+3. 324
+4. 234234234324234
+5. 23

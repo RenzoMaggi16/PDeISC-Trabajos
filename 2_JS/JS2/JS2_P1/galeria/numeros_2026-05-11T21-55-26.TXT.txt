@@ -1,0 +1,22 @@
+=== COLECCIÓN DE NÚMEROS ===
+Fecha y hora: 11/05/2026, 06:55:26 p. m.
+Total de números: 11
+
+Listado:
+1. 234235235234234
+2. 323
+3. 3
+4. 1
+5. 2
+6. 34
+7. 4
+8. 5
+9. 324
+10. 234234234324234
+11. 23
+
+Estadísticas:
+- Mínimo: 1
+- Máximo: 234235235234234
+- Suma total: 468469469559187
+- Promedio: 42588133596289.73
