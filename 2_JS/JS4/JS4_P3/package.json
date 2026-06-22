@@ -1,0 +1,12 @@
+{
+  "name": "js4-p3-buscador-tiempo-real",
+  "version": "1.0.0",
+  "description": "Buscador en tiempo real sobre datos de API con filtrado en memoria",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

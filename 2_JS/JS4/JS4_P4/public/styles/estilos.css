@@ -1,0 +1,397 @@
+/* Importación de fuentes Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap');
+
+/* ── Base ─────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero-section {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0e7490 100%);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.endpoint-badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  padding: 0.4em 0.85em;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ── Barra de controles sticky ────────────────────────── */
+.controls-bar {
+  position: sticky;
+  top: 56px;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.carrera-select {
+  min-width: 200px;
+}
+
+/* ── Botones de vista ─────────────────────────────────── */
+.btn-vista {
+  background-color: transparent;
+  border: 1.5px solid #4f46e5;
+  color: #4f46e5;
+  font-size: 0.82rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-vista.active,
+.btn-vista:hover {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.counter-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+}
+
+/* ── Avatar circular ──────────────────────────────────── */
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.avatar-0 { background-color: #4f46e5; }
+.avatar-1 { background-color: #0891b2; }
+.avatar-2 { background-color: #e11d48; }
+.avatar-3 { background-color: #7c3aed; }
+.avatar-4 { background-color: #d97706; }
+.avatar-5 { background-color: #475569; }
+
+/* ── Tarjetas de alumno ───────────────────────────────── */
+.alumno-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.alumno-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.11);
+}
+
+.alumno-card .card-header {
+  background: transparent;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.alumno-card .card-body {
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+}
+
+.alumno-card .card-footer {
+  background: transparent;
+  border-top: 1px solid #f1f5f9;
+  padding: 0.75rem 1rem;
+}
+
+/* ── Nombre y carrera en header de tarjeta ────────────── */
+.alumno-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.alumno-carrera {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ── Botón "Ver detalle" en tarjeta ───────────────────── */
+.btn-ver-detalle {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  width: 100%;
+}
+
+.btn-ver-detalle:hover {
+  background-color: #4338ca;
+  color: #fff;
+}
+
+/* ── Colores de promedio ──────────────────────────────── */
+.promedio-danger  { color: #dc2626; font-weight: 600; }
+.promedio-warning { color: #d97706; font-weight: 600; }
+.promedio-success { color: #16a34a; font-weight: 600; }
+
+/* ── Tabla ────────────────────────────────────────────── */
+.table th { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.table td { font-size: 0.88rem; }
+
+.btn-ver-tabla {
+  background-color: transparent;
+  border: 1.5px solid #4f46e5;
+  color: #4f46e5;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.65rem;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-ver-tabla:hover {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+
+
+/* ── Modal JSON block ─────────────────────────────────── */
+.modal-json-block {
+  background: #1e1e2e;
+  color: #a6e3a1;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+}
+
+/* ── Estado vacío (sin resultados del filtro) ─────────── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+}
+
+.empty-state i { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+
+/* ── Footer ───────────────────────────────────────────── */
+.footer-bar {
+  border-top: 1px solid #dee2e6;
+  background-color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: auto;
+}
+
+/* ── Botón de toggle día/noche ────────────────────────── */
+.btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(20deg) scale(1.08);
+}
+
+/* ══════════════════════════════════════════════════════════
+   MODO OSCURO — Overrides completos
+   ══════════════════════════════════════════════════════════ */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Barra de controles */
+body.dark-mode .controls-bar {
+  background: #1e293b;
+  border-bottom-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-mode .controls-bar .fw-semibold {
+  color: #e2e8f0;
+}
+
+body.dark-mode .counter-badge {
+  color: #94a3b8 !important;
+}
+
+/* Select de carrera */
+body.dark-mode .carrera-select {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Tarjetas de alumno */
+body.dark-mode .alumno-card {
+  background: #1e293b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: #e2e8f0;
+}
+
+body.dark-mode .alumno-card .card-header {
+  border-bottom-color: #334155;
+  background: transparent;
+  color: #e2e8f0;
+}
+
+body.dark-mode .alumno-card .card-body {
+  color: #cbd5e1;
+}
+
+body.dark-mode .alumno-card .card-body p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .alumno-card .card-footer {
+  border-top-color: #334155;
+  background: transparent;
+}
+
+/* Nombre y carrera */
+body.dark-mode .alumno-nombre {
+  color: #f1f5f9;
+}
+
+body.dark-mode .alumno-carrera {
+  color: #94a3b8 !important;
+}
+
+/* Colores de promedio (se mantienen, son de acento) */
+body.dark-mode .promedio-danger  { color: #f87171; }
+body.dark-mode .promedio-warning { color: #fbbf24; }
+body.dark-mode .promedio-success { color: #4ade80; }
+
+/* Tabla */
+body.dark-mode .table {
+  color: #e2e8f0;
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(99,102,241,0.05);
+  --bs-table-hover-bg: rgba(99,102,241,0.1);
+}
+
+body.dark-mode .table-light,
+body.dark-mode .table > thead {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+  --bs-table-bg: #1e293b;
+}
+
+body.dark-mode .table-hover > tbody > tr:hover > * {
+  background-color: rgba(99, 102, 241, 0.08);
+  color: #e2e8f0;
+}
+
+body.dark-mode .table td,
+body.dark-mode .table th {
+  border-color: #334155;
+}
+
+/* Modal */
+body.dark-mode .modal-content {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+body.dark-mode .modal-header {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .modal-footer {
+  border-top-color: #334155;
+}
+
+body.dark-mode .table-borderless td,
+body.dark-mode .table-borderless th {
+  color: #cbd5e1;
+}
+
+/* Botón close del modal */
+body.dark-mode .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Estado vacío */
+body.dark-mode .empty-state {
+  color: #94a3b8;
+}
+
+body.dark-mode .empty-state i {
+  color: #64748b;
+}
+
+/* Footer */
+body.dark-mode .footer-bar {
+  background-color: #1e293b;
+  border-top-color: #334155;
+  color: #94a3b8;
+}
+
+/* Bootstrap text-muted — override agresivo */
+body.dark-mode .text-muted,
+body.dark-mode small.text-muted,
+body.dark-mode p.text-muted,
+body.dark-mode span.text-muted,
+body.dark-mode div.text-muted {
+  color: #94a3b8 !important;
+}
+
+/* Íconos Bootstrap */
+body.dark-mode .bi {
+  color: inherit;
+}
+
+

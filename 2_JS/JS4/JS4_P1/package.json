@@ -1,0 +1,12 @@
+{
+  "name": "js4-p1-fetch-axios",
+  "version": "1.0.0",
+  "description": "Comparativa Fetch Nativo vs Axios con JSONPlaceholder",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,516 @@
+/* Importación de fuentes Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap');
+
+/* ── Base ─────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero-section {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0e7490 100%);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.endpoint-badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  padding: 0.4em 0.85em;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ── Búsqueda ─────────────────────────────────────────── */
+.search-section {
+  background-color: #fff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.search-wrapper {
+  max-width: 600px;
+}
+
+/* Contenedor relativo para posicionar ícono y botón clear */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.search-input {
+  padding-left: 2.25rem;
+  padding-right: 2.5rem;
+  border-radius: 10px;
+  border: 1.5px solid #d1d5db;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  outline: none;
+}
+
+/* Botón × para limpiar — oculto por defecto */
+.btn-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 0.8rem;
+  padding: 4px 6px;
+  display: none;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.btn-clear:hover {
+  color: #374151;
+}
+
+.btn-clear.visible {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Stats bar ────────────────────────────────────────── */
+.stats-bar {
+  font-size: 0.8rem;
+  color: #6b7280;
+  min-height: 1.2rem;
+}
+
+/* ── Contador de resultados ───────────────────────────── */
+.counter-line {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+/* ── Monoespaciado ────────────────────────────────────── */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+}
+
+/* ── Tarjetas de usuario ──────────────────────────────── */
+.user-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.11);
+}
+
+.user-card .card-header {
+  background: transparent;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem;
+}
+
+.user-card .card-body {
+  padding: 0.85rem 1rem;
+  font-size: 0.87rem;
+}
+
+.user-card .card-body p {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.user-card .card-body a {
+  color: #0891b2;
+  text-decoration: none;
+}
+
+.user-card .card-body a:hover {
+  text-decoration: underline;
+}
+
+/* ── Avatar circular ──────────────────────────────────── */
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.avatar-0 { background-color: #4f46e5; }
+.avatar-1 { background-color: #0891b2; }
+.avatar-2 { background-color: #e11d48; }
+.avatar-3 { background-color: #7c3aed; }
+.avatar-4 { background-color: #d97706; }
+.avatar-5 { background-color: #475569; }
+
+/* ── Nombre y username ────────────────────────────────── */
+.user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.user-username {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+}
+
+/* ── Highlight de coincidencia ────────────────────────── */
+mark {
+  background: #fef08a;
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+/* ── Skeleton loading ─────────────────────────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.skeleton-card {
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 1rem;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-card * {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  flex-shrink: 0;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 6px;
+  background: #e2e8f0;
+}
+
+.skeleton-line.wide   { width: 80%; }
+.skeleton-line.medium { width: 55%; }
+.skeleton-line.narrow { width: 40%; }
+
+/* ── Estado vacío ─────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  width: 100%;
+}
+
+.empty-state .empty-icon {
+  font-size: 3rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.empty-state h5 {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.btn-limpiar {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-limpiar:hover {
+  background-color: #4338ca;
+}
+
+/* ── Estado de error ──────────────────────────────────── */
+.error-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  width: 100%;
+}
+
+.error-state .error-icon {
+  font-size: 3rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.error-state h5 {
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+}
+
+.error-state p {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 1.25rem;
+}
+
+.btn-reintentar {
+  background-color: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-reintentar:hover {
+  background-color: #b91c1c;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.footer-bar {
+  border-top: 1px solid #dee2e6;
+  background-color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Botón de toggle día/noche ────────────────────────── */
+.btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(20deg) scale(1.08);
+}
+
+/* ══════════════════════════════════════════════════════════
+   MODO OSCURO — Overrides completos
+   ══════════════════════════════════════════════════════════ */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Sección de búsqueda */
+body.dark-mode .search-section {
+  background-color: #1e293b;
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .form-label {
+  color: #cbd5e1;
+}
+
+/* Input de búsqueda */
+body.dark-mode .search-input {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-mode .search-input::placeholder {
+  color: #64748b;
+}
+
+body.dark-mode .search-input:focus {
+  background-color: #0f172a;
+  border-color: #4f46e5;
+  color: #e2e8f0;
+}
+
+body.dark-mode .search-icon {
+  color: #64748b;
+}
+
+body.dark-mode .btn-clear {
+  color: #94a3b8;
+}
+
+body.dark-mode .btn-clear:hover {
+  color: #e2e8f0;
+}
+
+/* Stats y contador */
+body.dark-mode .stats-bar,
+body.dark-mode .counter-line {
+  color: #94a3b8 !important;
+}
+
+/* Tarjetas de usuario */
+body.dark-mode .user-card {
+  background: #1e293b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: #e2e8f0;
+}
+
+body.dark-mode .user-card .card-header {
+  border-bottom-color: #334155;
+  background: transparent;
+  color: #e2e8f0;
+}
+
+body.dark-mode .user-card .card-body {
+  color: #cbd5e1;
+}
+
+body.dark-mode .user-card .card-body p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .user-card .card-body a {
+  color: #38bdf8;
+}
+
+/* Nombre y username */
+body.dark-mode .user-name {
+  color: #f1f5f9;
+}
+
+body.dark-mode .user-username {
+  color: #94a3b8 !important;
+}
+
+/* Highlight de búsqueda */
+body.dark-mode mark {
+  background: #854d0e;
+  color: #fef9c3;
+}
+
+/* Skeletons */
+body.dark-mode .skeleton-card {
+  background: #1e293b;
+}
+
+body.dark-mode .skeleton-circle,
+body.dark-mode .skeleton-line {
+  background: #334155;
+}
+
+/* Estado vacío */
+body.dark-mode .empty-state h5 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .empty-state p {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .empty-state .empty-icon {
+  color: #64748b;
+}
+
+/* Estado de error */
+body.dark-mode .error-state h5 {
+  color: #f87171;
+}
+
+body.dark-mode .error-state p {
+  color: #94a3b8 !important;
+}
+
+/* Footer */
+body.dark-mode .footer-bar {
+  background-color: #1e293b;
+  border-top-color: #334155;
+  color: #94a3b8;
+}
+
+/* Bootstrap text-muted — override agresivo */
+body.dark-mode .text-muted,
+body.dark-mode small.text-muted,
+body.dark-mode p.text-muted,
+body.dark-mode span.text-muted,
+body.dark-mode div.text-muted {
+  color: #94a3b8 !important;
+}
+
+/* Íconos Bootstrap */
+body.dark-mode .bi {
+  color: inherit;
+}
+
+
