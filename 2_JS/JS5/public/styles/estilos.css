@@ -1,0 +1,428 @@
+/* ══════════════════════════════════════════
+   Variables — modo claro (default)
+══════════════════════════════════════════ */
+:root {
+  --color-primario:    #0d6efd;
+  --color-exito:       #198754;
+  --color-peligro:     #dc3545;
+  --radio-borde:       8px;
+
+  /* Colores modo claro */
+  --fondo-body:        #f0f2f5;
+  --fondo-card:        #ffffff;
+  --fondo-tabla-hover: #e9f0ff;
+  --fondo-thead:       #343a40;
+  --color-texto:       #212529;
+  --color-texto-suave: #6c757d;
+  --borde-tabla:       #f0f2f5;
+  --sombra-card:       0 2px 12px rgba(0, 0, 0, 0.08);
+  --fondo-input:       #ffffff;
+  --borde-input:       #dee2e6;
+  --color-input-texto: #212529;
+  --fondo-modal:       #ffffff;
+  --fondo-stats:       #ffffff;
+}
+
+/* ══════════════════════════════════════════
+   Variables — modo oscuro
+══════════════════════════════════════════ */
+body.modo-oscuro {
+  --fondo-body:        #0f1117;
+  --fondo-card:        #1e2130;
+  --fondo-tabla-hover: #2a2f45;
+  --fondo-thead:       #111827;
+  --color-texto:       #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --borde-tabla:       #2a2f45;
+  --sombra-card:       0 2px 16px rgba(0, 0, 0, 0.35);
+  --fondo-input:       #2a2f45;
+  --borde-input:       #3d4460;
+  --color-input-texto: #e2e8f0;
+  --fondo-modal:       #1e2130;
+  --fondo-stats:       #1e2130;
+}
+
+/* ══════════════════════════════════════════
+   Base
+══════════════════════════════════════════ */
+body {
+  background-color: var(--fondo-body);
+  font-family: 'Inter', sans-serif;
+  color: var(--color-texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ══════════════════════════════════════════
+   Navbar
+══════════════════════════════════════════ */
+.navbar-sombra {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Botón de tema (día/noche) */
+.btn-tema {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-tema:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+#iconoTema {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════════
+   Hero header
+══════════════════════════════════════════ */
+.hero-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  padding: 2.5rem 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitulo {
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 0;
+}
+
+/* ══════════════════════════════════════════
+   Barra de acciones
+══════════════════════════════════════════ */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.buscar-input {
+  max-width: 320px;
+  border-radius: var(--radio-borde);
+  background-color: var(--fondo-input);
+  border-color: var(--borde-input);
+  color: var(--color-input-texto);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.buscar-input::placeholder {
+  color: var(--color-texto-suave);
+}
+
+.buscar-input:focus {
+  background-color: var(--fondo-input);
+  color: var(--color-input-texto);
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
+}
+
+/* ══════════════════════════════════════════
+   Barra de estadísticas
+══════════════════════════════════════════ */
+.stats-bar {
+  background: var(--fondo-stats);
+  border-radius: var(--radio-borde);
+  padding: 0.6rem 1rem;
+  box-shadow: var(--sombra-card);
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-texto {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-texto-suave);
+}
+
+/* ══════════════════════════════════════════
+   Tarjeta de la tabla
+══════════════════════════════════════════ */
+.tabla-card {
+  border: none;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+  background-color: var(--fondo-card);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ══════════════════════════════════════════
+   Tabla de alumnos
+══════════════════════════════════════════ */
+.tabla-alumnos thead {
+  background-color: var(--fondo-thead);
+  color: #fff;
+}
+
+.tabla-alumnos thead th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 1rem;
+  border: none;
+}
+
+.tabla-alumnos tbody tr {
+  transition: background-color 0.15s ease;
+  background-color: var(--fondo-card);
+  color: var(--color-texto);
+}
+
+.tabla-alumnos tbody tr:hover {
+  background-color: var(--fondo-tabla-hover);
+}
+
+.tabla-alumnos tbody td {
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+  border-color: var(--borde-tabla);
+  color: var(--color-texto);
+}
+
+/* ══════════════════════════════════════════
+   Estado vacío
+══════════════════════════════════════════ */
+.estado-vacio {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  background: var(--fondo-card);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-card);
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.estado-vacio-icono {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.estado-vacio-titulo {
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 0.4rem;
+}
+
+.estado-vacio-texto {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ══════════════════════════════════════════
+   Modal
+══════════════════════════════════════════ */
+.modal-content {
+  border-radius: var(--radio-borde);
+  border: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background-color: var(--fondo-modal);
+  color: var(--color-texto);
+  transition: background-color 0.3s ease;
+}
+
+.modal-header {
+  border-bottom-color: var(--borde-tabla);
+}
+
+.modal-footer {
+  border-top-color: var(--borde-tabla);
+}
+
+.modal-title {
+  color: var(--color-texto);
+}
+
+/* Inputs dentro del modal */
+.modal-body .form-control {
+  background-color: var(--fondo-input);
+  border-color: var(--borde-input);
+  color: var(--color-input-texto);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-body .form-control::placeholder {
+  color: var(--color-texto-suave);
+}
+
+.modal-body .form-control:focus {
+  background-color: var(--fondo-input);
+  color: var(--color-input-texto);
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
+}
+
+.modal-body .form-label {
+  color: var(--color-texto);
+}
+
+/* ══════════════════════════════════════════
+   Mensajes de error y éxito inline
+══════════════════════════════════════════ */
+.error-campo {
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.error-campo.es-error {
+  color: var(--color-peligro);
+}
+
+.error-campo.es-exito {
+  color: var(--color-exito);
+}
+
+/* Borde rojo/verde en inputs validados */
+.form-control.is-invalid {
+  border-color: var(--color-peligro);
+  background-image: none;
+}
+
+.form-control.is-valid-custom {
+  border-color: var(--color-exito);
+  background-image: none;
+}
+
+/* ══════════════════════════════════════════
+   Overrides de Bootstrap en modo oscuro
+══════════════════════════════════════════ */
+
+/* Bootstrap pisa los colores de tabla con sus propias variables — hay que sobreescribirlas */
+body.modo-oscuro .tabla-alumnos {
+  --bs-table-bg:           #1e2130;
+  --bs-table-striped-bg:   #242840;
+  --bs-table-hover-bg:     #2a2f45;
+  --bs-table-border-color: #2a2f45;
+  --bs-table-color:        #e2e8f0;
+  color: #e2e8f0;
+  border-color: #2a2f45;
+}
+
+body.modo-oscuro .tabla-alumnos tbody tr {
+  background-color: #1e2130;
+  color: #e2e8f0;
+}
+
+body.modo-oscuro .tabla-alumnos tbody tr:hover {
+  background-color: #2a2f45;
+  color: #e2e8f0;
+}
+
+body.modo-oscuro .tabla-alumnos tbody td {
+  background-color: inherit;
+  color: #e2e8f0;
+  border-color: #2a2f45;
+}
+
+/* Card que envuelve la tabla */
+body.modo-oscuro .card {
+  background-color: #1e2130;
+  border-color: #2a2f45;
+}
+
+/* Bootstrap pisa el fondo del modal con --bs-modal-bg */
+body.modo-oscuro .modal-content {
+  --bs-modal-bg: #1e2130;
+  --bs-modal-color: #e2e8f0;
+  --bs-modal-border-color: #2a2f45;
+  --bs-modal-header-border-color: #2a2f45;
+  --bs-modal-footer-border-color: #2a2f45;
+}
+
+/* Bootstrap pisa el color del body del modal */
+body.modo-oscuro .modal-body,
+body.modo-oscuro .modal-header,
+body.modo-oscuro .modal-footer {
+  background-color: #1e2130;
+  color: #e2e8f0;
+}
+
+/* Bootstrap pisa los inputs con --bs-body-bg */
+body.modo-oscuro .form-control {
+  --bs-body-bg: #2a2f45;
+  background-color: #2a2f45;
+  border-color: #3d4460;
+  color: #e2e8f0;
+}
+
+body.modo-oscuro .form-control:focus {
+  background-color: #2a2f45;
+  color: #e2e8f0;
+}
+
+body.modo-oscuro .form-control::placeholder {
+  color: #94a3b8;
+}
+
+/* Botón secundario (Cancelar) en modo oscuro */
+body.modo-oscuro .btn-secondary {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #e2e8f0;
+}
+
+body.modo-oscuro .btn-secondary:hover {
+  background-color: #4b5563;
+  border-color: #6b7280;
+}
+
+/* ══════════════════════════════════════════
+   Botones de acción en la tabla
+══════════════════════════════════════════ */
+.tabla-alumnos .btn-sm {
+  font-size: 0.78rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 6px;
+  margin-bottom: 0.25rem;
+}
+
+/* ══════════════════════════════════════════
+   Responsive
+══════════════════════════════════════════ */
+@media (max-width: 576px) {
+  .hero-titulo {
+    font-size: 1.5rem;
+  }
+
+  .action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buscar-input {
+    max-width: 100%;
+  }
+
+  #textoTema {
+    display: none;
+  }
+}

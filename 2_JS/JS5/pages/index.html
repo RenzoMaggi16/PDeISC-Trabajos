@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alumnosDB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/estilos.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-dark bg-dark navbar-sombra">
+    <div class="container">
+      <span class="navbar-brand fw-bold fs-4">alumnosDB</span>
+      <button id="btnTema" class="btn btn-tema" title="Cambiar tema">
+        <span id="iconoTema">🌙</span>
+        <span id="textoTema">Modo oscuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Encabezado hero -->
+  <header class="hero-header">
+    <div class="container">
+      <h1 class="hero-titulo">Gestión de Alumnos</h1>
+      <p class="hero-subtitulo">Visualizá, agregá, editá y eliminá registros de alumnos en tiempo real.</p>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+
+    <!-- Barra de acciones -->
+    <div class="action-bar mb-3">
+      <button id="btnAgregar" class="btn btn-primary fw-semibold">
+        + Agregar Alumno
+      </button>
+      <input
+        id="inputBuscar"
+        type="text"
+        class="form-control buscar-input"
+        placeholder="Buscar por nombre o apellido..."
+      >
+    </div>
+
+    <!-- Barra de estadísticas -->
+    <div class="stats-bar mb-3">
+      <span id="contadorAlumnos" class="stats-texto">Cargando alumnos...</span>
+    </div>
+
+    <!-- Contenedor de la tabla -->
+    <div class="card tabla-card">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table tabla-alumnos mb-0">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estado vacío (oculto por defecto) -->
+    <div id="estadoVacio" class="estado-vacio d-none">
+      <div class="estado-vacio-icono">🔍</div>
+      <h5 class="estado-vacio-titulo">Sin resultados</h5>
+      <p class="estado-vacio-texto">No se encontraron alumnos que coincidan con tu búsqueda.</p>
+    </div>
+
+  </main>
+
+  <!-- Modal — Formulario de Alumno -->
+  <div class="modal fade" id="modalFormulario" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tituloModal">Agregar Alumno</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formularioAlumno" novalidate>
+
+            <!-- Campo oculto para almacenar el id en modo edición -->
+            <input type="hidden" id="alumnoId">
+
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="inputNombre" class="form-label fw-semibold">Nombre</label>
+              <input type="text" class="form-control" id="inputNombre" placeholder="Ingresá el nombre">
+              <div id="errorNombre" class="error-campo d-none"></div>
+            </div>
+
+            <!-- Apellido -->
+            <div class="mb-3">
+              <label for="inputApellido" class="form-label fw-semibold">Apellido</label>
+              <input type="text" class="form-control" id="inputApellido" placeholder="Ingresá el apellido">
+              <div id="errorApellido" class="error-campo d-none"></div>
+            </div>
+
+            <!-- Edad -->
+            <div class="mb-3">
+              <label for="inputEdad" class="form-label fw-semibold">Edad</label>
+              <input type="number" class="form-control" id="inputEdad" placeholder="Ingresá la edad">
+              <div id="errorEdad" class="error-campo d-none"></div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" id="btnGuardar" class="btn btn-primary fw-semibold">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Toast (esquina superior derecha) -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+    <div id="toastNotificacion" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMensaje">
+          Mensaje de notificación
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/scripts/app.js" defer></script>
+</body>
+</html>
