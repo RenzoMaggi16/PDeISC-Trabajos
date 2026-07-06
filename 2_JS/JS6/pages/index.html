@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahorcado - JS6</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="/styles/estilos.css" />
+  <!-- Aplica el tema guardado antes de pintar la página, para evitar parpadeos -->
+  <script src="/scripts/temaUI.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">🎯 Ahorcado</a>
+      <div class="d-flex align-items-center order-lg-2">
+        <button id="btnTema" type="button" class="btn btn-sm btn-tema me-2" aria-label="Cambiar tema claro/oscuro">
+          🌙
+        </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarPrincipal"
+          aria-controls="navbarPrincipal"
+          aria-expanded="false"
+          aria-label="Alternar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#juego">Jugar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ranking">Ranking</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Encabezado / inicio -->
+  <header id="inicio" class="seccion text-center">
+    <div class="container">
+      <h1 class="fw-bold">Juego del Ahorcado</h1>
+      <p class="lead text-secondary">
+        Adivina la palabra antes de que se complete la figura. ¡Compite por el mejor puntaje!
+      </p>
+    </div>
+  </header>
+
+  <!-- Sección del juego -->
+  <main id="juego" class="seccion">
+    <div class="container-fluid px-3 px-lg-5">
+      <div class="tarjeta-juego mx-auto">
+
+        <!-- Pantalla de inicio: se muestra antes de comenzar la partida -->
+        <div id="pantallaInicio" class="text-center py-5">
+          <p class="fs-4 mb-4">¿Listo para jugar?</p>
+          <button id="btnIniciarJuego" type="button" class="btn btn-acento btn-lg">
+            🎮 Iniciar juego
+          </button>
+        </div>
+
+        <!-- Área de juego: oculta hasta que el jugador presiona "Iniciar juego" -->
+        <div id="areaJuego" class="row g-4 align-items-center d-none">
+          <!-- Dibujo -->
+          <div class="col-md-5 text-center">
+            <div id="contenedorDibujo"></div>
+          </div>
+
+          <!-- Juego -->
+          <div class="col-md-7 text-center">
+            <p id="mensajeEstado" class="info-juego text-secondary mb-3"></p>
+
+            <div class="d-flex justify-content-center gap-4 mb-3 info-juego">
+              <span>⏱️ <strong id="temporizador">00:00</strong></span>
+              <span>❤️ Intentos: <strong id="intentosRestantes">6</strong></span>
+            </div>
+
+            <p id="progreso" class="progreso mb-4"></p>
+
+            <div id="teclado" class="teclado mb-4"></div>
+
+            <button id="btnReiniciar" type="button" class="btn btn-outline-secondary">
+              🔄 Nueva palabra
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Sección de ranking -->
+  <section id="ranking" class="seccion seccion-alt border-top">
+    <div class="container">
+      <h2 class="text-center mb-4">🏆 Ranking (Top 10)</h2>
+      <div class="table-responsive">
+        <table id="tablaRanking" class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Puntos</th>
+              <th scope="col">Tiempo</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="tablaRankingBody"></tbody>
+        </table>
+      </div>
+      <p id="rankingVacio" class="text-center text-secondary d-none">
+        Aún no hay puntajes registrados. ¡Sé el primero!
+      </p>
+      <div class="text-center">
+        <a href="#inicio" class="btn btn-outline-secondary">⬆️ Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de resultado -->
+  <div class="modal fade" id="modalResultado" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitulo">Resultado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalCuerpo" class="mb-3"></p>
+
+          <!-- Zona para guardar puntaje (solo si gana) -->
+          <div id="zonaGuardar" class="d-none">
+            <label for="inputNombre" class="form-label">Tu nombre:</label>
+            <input type="text" id="inputNombre" class="form-control" placeholder="Escribe tu nombre" />
+            <div id="errorNombre" class="text-danger small mt-1 d-none"></div>
+            <button id="btnGuardar" type="button" class="btn btn-acento mt-3">💾 Guardar puntaje</button>
+          </div>
+
+          <div id="avisoGuardado" class="alert alert-success mt-3 d-none" role="alert"></div>
+        </div>
+        <div class="modal-footer">
+          <button id="btnDescargarPdf" type="button" class="btn btn-outline-primary">📄 Descargar PDF</button>
+          <button id="btnJugarDeNuevo" type="button" class="btn btn-acento">▶️ Jugar de nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 text-secondary">
+    <small>Ahorcado &middot; JS6 &middot; Node + Express + MySQL</small>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jsPDF (CDN) para exportar el puntaje -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Scripts del juego (orden importa: dependencias primero) -->
+  <script src="/scripts/Ahorcado.js"></script>
+  <script src="/scripts/dibujoAhorcado.js"></script>
+  <script src="/scripts/palabraApi.js"></script>
+  <script src="/scripts/exportarPdf.js"></script>
+  <script src="/scripts/rankingUI.js"></script>
+  <script src="/scripts/juegoUI.js"></script>
+</body>
+</html>

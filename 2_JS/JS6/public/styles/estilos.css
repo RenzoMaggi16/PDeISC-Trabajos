@@ -1,0 +1,234 @@
+/* Estilos del juego del Ahorcado. Estética limpia y moderna, con soporte
+   para modo claro/oscuro mediante el atributo [data-tema] en <html>. */
+
+:root {
+  --color-acento: #4f46e5;
+  --color-acento-oscuro: #4338ca;
+  --color-fondo: #f1f5f9;
+  --color-superficie: #ffffff;
+  --color-texto: #1e293b;
+  --color-texto-suave: #64748b;
+  --color-borde: #e2e8f0;
+  --color-exito: #16a34a;
+  --color-error: #dc2626;
+  --sombra: 0 10px 30px -12px rgba(15, 23, 42, 0.15);
+}
+
+html[data-tema='oscuro'] {
+  --color-acento: #818cf8;
+  --color-acento-oscuro: #a5b4fc;
+  --color-fondo: #0f172a;
+  --color-superficie: #1e293b;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --color-borde: #334155;
+  --sombra: 0 10px 30px -12px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.navbar-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Botón de alternancia de tema */
+.btn-tema {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-tema:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Secciones */
+.seccion {
+  padding: 3rem 0;
+}
+
+.seccion-alt {
+  background-color: var(--color-superficie);
+}
+
+header.seccion h1 {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Tarjeta contenedora del juego */
+.tarjeta-juego {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 1rem;
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  max-width: 1600px;
+  width: 100%;
+}
+
+/* En pantallas grandes, el juego se agranda para aprovechar el espacio */
+@media (min-width: 992px) {
+  .tarjeta-juego {
+    padding: 3rem 3.5rem;
+  }
+
+  .dibujo-ahorcado {
+    max-width: 380px;
+  }
+
+  .progreso {
+    font-size: 3.2rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .teclado {
+    max-width: 760px;
+    gap: 0.5rem;
+  }
+
+  .tecla {
+    width: 52px;
+    height: 52px;
+    font-size: 1.15rem;
+  }
+
+  .info-juego {
+    font-size: 1.3rem;
+  }
+}
+
+/* Palabra en progreso: tipografía tipo terminal */
+.progreso {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  letter-spacing: 0.35rem;
+  font-weight: 700;
+  color: var(--color-acento-oscuro);
+  min-height: 3rem;
+  word-break: break-word;
+}
+
+/* Temporizador e info */
+.info-juego {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--color-texto-suave);
+}
+
+.info-juego strong {
+  color: var(--color-texto);
+}
+
+/* Dibujo del ahorcado (SVG) */
+.dibujo-ahorcado {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+}
+
+.dibujo-ahorcado .palo {
+  stroke: var(--color-texto-suave);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Partes del cuerpo: ocultas por defecto, visibles al fallar */
+.dibujo-ahorcado .parte {
+  stroke: var(--color-error);
+  stroke-width: 4;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+}
+
+.dibujo-ahorcado .parte.visible {
+  opacity: 1;
+}
+
+/* Teclado en pantalla */
+.teclado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.tecla {
+  width: 44px;
+  height: 44px;
+  font-weight: 600;
+  padding: 0;
+  border-radius: 0.5rem;
+}
+
+.tecla:disabled {
+  opacity: 1;
+}
+
+/* Tabla de ranking */
+#tablaRanking {
+  color: var(--color-texto);
+}
+
+#tablaRanking th {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Modal */
+.modal-content {
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  border-radius: 0.75rem;
+}
+
+/* Input de texto (nombre del jugador) */
+.form-control {
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  border-color: var(--color-borde);
+}
+
+.form-control:focus {
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}
+
+/* Botón acento personalizado */
+.btn-acento {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #fff;
+}
+
+.btn-acento:hover {
+  background-color: var(--color-acento-oscuro);
+  border-color: var(--color-acento-oscuro);
+  color: #fff;
+}
+
+footer {
+  color: var(--color-texto-suave);
+}
