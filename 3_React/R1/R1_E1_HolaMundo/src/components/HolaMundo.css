@@ -1,0 +1,175 @@
+/* Estilos específicos para el componente HolaMundo */
+
+/* ── Contenedor principal ── */
+.hola-mundo-container {
+  padding: 2.5rem;
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.hola-subtext {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.style-name-badge {
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+/* ── Campo de nombre personalizado ── */
+.nombre-personalizado-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.hola-input-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: left;
+}
+
+.hola-input {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.65rem;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hola-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+.hola-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* ── Variante Estilo 0: Vidrio Neumórfico / Dark Glass ── */
+.style-glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.style-glass .hola-heading {
+  color: var(--primary-color);
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+/* ── Variante Estilo 1: Gradiente Neón Vibrante ── */
+.style-neon {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(168, 85, 247, 0.15));
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 35px rgba(236, 72, 153, 0.2);
+}
+
+.style-neon .hola-heading {
+  background: linear-gradient(90deg, #ec4899, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.style-neon .style-name-badge {
+  background: rgba(236, 72, 153, 0.2);
+  color: #ec4899;
+  border-color: #ec4899;
+}
+
+.style-neon .hola-input:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.3);
+}
+
+/* ── Variante Estilo 2: Terminal Retro Hacker ── */
+.style-terminal {
+  background: #090d16;
+  border: 1px solid #10b981;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.style-terminal .hola-heading {
+  color: #10b981;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+}
+
+.style-terminal .hola-subtext {
+  color: #34d399;
+}
+
+.style-terminal .style-name-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.style-terminal .hola-input {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #10b981;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.style-terminal .hola-input::placeholder {
+  color: #34d399;
+  opacity: 0.5;
+}
+
+/* ── Botones de acción ── */
+.btn-hola-action {
+  background: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.65rem;
+  padding: 0.65rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-hola-action:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.style-terminal .btn-hola-action {
+  background: transparent;
+  color: #10b981;
+  border: 1px solid #10b981;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+}
+
+.style-terminal .btn-hola-action:hover {
+  background: #10b981;
+  color: #090d16;
+}

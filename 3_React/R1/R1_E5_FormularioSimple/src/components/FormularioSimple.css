@@ -1,0 +1,126 @@
+/* ── Tarjeta principal del formulario ── */
+.form-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ── Labels de campo ── */
+.form-field-label {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* ── Inputs controlados ── */
+.custom-input {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  background: var(--card-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.3);
+  color: var(--text-primary);
+}
+
+/* Placeholder legible en ambos modos */
+.custom-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.65;
+}
+
+/* Estado de error en el input */
+.custom-input.is-invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.custom-input.is-valid {
+  border-color: #10b981;
+}
+
+/* ── Mensajes de error inline ── */
+.field-error {
+  color: #ef4444;
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ── Hint de validación ── */
+.field-hint {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+  opacity: 0.75;
+}
+
+/* ── Botón de envío ── */
+.btn-form-submit {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ea580c 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+  color: #ffffff;
+}
+
+.btn-form-submit:disabled {
+  opacity: 0.5;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* ── Tarjeta de bienvenida ── */
+.welcome-card {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(251, 191, 36, 0.1));
+  border: 1px solid var(--primary-color);
+  border-radius: 1rem;
+  animation: slideUp 0.45s ease-out;
+}
+
+.welcome-name {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+.welcome-detail {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Separador de sección ── */
+.section-divider {
+  border-color: var(--border-color);
+  margin: 1.5rem 0;
+}
