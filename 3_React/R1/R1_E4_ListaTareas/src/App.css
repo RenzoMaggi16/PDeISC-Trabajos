@@ -4,21 +4,52 @@
   flex-direction: column;
   background: var(--bg-gradient);
   color: var(--text-primary);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* Orbs decorativos de fondo */
+.app-wrapper::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(ellipse, rgba(168, 85, 247, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-wrapper::after {
+  content: '';
+  position: fixed;
+  bottom: -15%;
+  right: -5%;
+  width: 45%;
+  height: 50%;
+  background: radial-gradient(ellipse, rgba(34, 211, 238, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .custom-navbar {
   background: var(--nav-bg);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
-  padding: 0.85rem 1.5rem;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  padding: 0.85rem 1.75rem;
+  position: relative;
+  z-index: 10;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .navbar-brand-title {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 1.15rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -29,18 +60,22 @@
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   font-weight: 600;
-  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+  padding: 0.45rem 1.1rem;
   border-radius: 2rem;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
 }
 
 .btn-theme-toggle:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
   color: var(--primary-color);
   border-color: var(--primary-color);
+  box-shadow: 0 0 14px var(--glow-primary);
 }
 
 .app-container {
@@ -48,14 +83,21 @@
   margin: 0 auto;
   padding: 3rem 1.5rem;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .app-title {
-  font-weight: 700;
-  color: var(--text-primary);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 .app-instructions {
   color: var(--text-secondary);
   font-size: 1.05rem;
+  line-height: 1.65;
 }
