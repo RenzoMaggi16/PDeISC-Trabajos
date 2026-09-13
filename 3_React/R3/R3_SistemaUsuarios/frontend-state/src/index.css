@@ -1,0 +1,153 @@
+/* Estilos globales y personalizaciones de diseno para R3 — Arquitectura useState */
+:root {
+  --primary-color: #0d9488; /* Color turquesa / esmeralda distintivo para contrastar con router */
+  --primary-hover: #0f766e;
+  --secondary-color: #0f172a;
+  --accent-color: #3b82f6;
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegacion */
+.navbar-custom {
+  background-color: #0f172a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.85rem 1rem;
+}
+
+.brand-badge {
+  background: linear-gradient(135deg, #0d9488, #0284c7);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
+}
+
+/* Tarjetas y contenedores */
+.custom-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.card-header-custom {
+  background: linear-gradient(135deg, #f8fafc, #edf2f7);
+  border-bottom: 1px solid #e2e8f0;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Botones con estilo refinado */
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+/* Campos de formulario */
+.form-control-custom,
+.form-select-custom {
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 148, 136, 0.15);
+}
+
+/* Mensajes de error en validaciones */
+.validation-feedback {
+  color: #dc2626;
+  font-size: 0.825rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Tablas responsivas */
+.table-custom th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1rem;
+}
+
+.table-custom td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+}
+
+/* Insignias de roles */
+.badge-role-admin {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.4rem;
+}
+
+.badge-role-user {
+  background-color: #ccfbf1;
+  color: #115e59;
+  border: 1px solid #99f6e4;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.4rem;
+}
+
+/* Spinner centrado */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+/* Modal personalizado sin estilos en linea */
+.modal-backdrop-custom {
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.text-truncate-cell {
+  max-width: 160px;
+}

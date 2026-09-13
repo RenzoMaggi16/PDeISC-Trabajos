@@ -1,0 +1,30 @@
+# Archivos y carpetas ignoradas para la raiz de R3_SistemaUsuarios
+
+# Dependencias de Node.js
+**/node_modules/
+
+# Archivos de construccion y salida
+**/dist/
+**/build/
+
+# Variables de entorno y secretos
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Archivos de registro y depuracion
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema operativo e IDEs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.user

@@ -1,0 +1,5 @@
+# Archivos ignorados para backend
+node_modules/
+.env
+*.log
+npm-debug.log*
