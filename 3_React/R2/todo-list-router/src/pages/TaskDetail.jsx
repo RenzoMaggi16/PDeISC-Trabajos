@@ -103,24 +103,28 @@ function TaskDetail({ listaDeTareas, onEliminar }) {
             </h1>
           </div>
 
-          {/* Botones de acción principales */}
+          {/* Botones de acción principales según el estado */}
           <div className="detalle-acciones">
-            <button
-              id="btn-editar-detalle"
-              className="btn-accion-detalle btn-accion-detalle-editar"
-              onClick={handleEditar}
-              aria-label="Editar esta tarea"
-            >
-              ✏️ Editar
-            </button>
-            <button
-              id="btn-eliminar-detalle"
-              className="btn-accion-detalle btn-accion-detalle-eliminar"
-              onClick={handleSolicitarEliminar}
-              aria-label="Eliminar esta tarea"
-            >
-              🗑 Eliminar
-            </button>
+            {!tarea.completa && (
+              <button
+                id="btn-editar-detalle"
+                className="btn-accion-detalle btn-accion-detalle-editar"
+                onClick={handleEditar}
+                aria-label="Editar esta tarea"
+              >
+                ✏️ Editar
+              </button>
+            )}
+            {tarea.completa && (
+              <button
+                id="btn-eliminar-detalle"
+                className="btn-accion-detalle btn-accion-detalle-eliminar"
+                onClick={handleSolicitarEliminar}
+                aria-label="Eliminar esta tarea"
+              >
+                🗑 Eliminar
+              </button>
+            )}
           </div>
         </div>
 

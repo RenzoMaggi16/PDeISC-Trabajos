@@ -7,6 +7,8 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  max-width: 420px;
+  width: 100%;
 }
 
 .profile-card:hover {

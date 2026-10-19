@@ -20,9 +20,44 @@ import { tareasIniciales } from './data/tareasIniciales.js';
 
 // Clave utilizada para guardar en localStorage
 const LOCAL_STORAGE_KEY = 'tareaflow_lista_tareas';
+const LOCAL_STORAGE_THEME_KEY = 'tareaflow_tema_oscuro';
 
 // Componente App: raíz del árbol de componentes
 function App() {
+  // Estado global del tema (oscuro / claro) con persistencia en localStorage
+  const [esModoOscuro, setEsModoOscuro] = useState(() => {
+    try {
+      const temaGuardado = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
+      if (temaGuardado !== null) {
+        return JSON.parse(temaGuardado);
+      }
+      // Opcional: tomar preferencia del sistema operativo si no hay configuración guardada
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch {
+      return false;
+    }
+  });
+
+  // Efecto para actualizar el atributo data-theme en <html> y persistir en localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem(LOCAL_STORAGE_THEME_KEY, JSON.stringify(esModoOscuro));
+    } catch (error) {
+      console.error('Error al guardar tema en localStorage:', error);
+    }
+
+    if (esModoOscuro) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }, [esModoOscuro]);
+
+  // Alterna entre modo oscuro y claro
+  function toggleTema() {
+    setEsModoOscuro((anterior) => !anterior);
+  }
+
   // Estado global de la lista de tareas con inicialización perezosa leyendo de localStorage
   const [listaDeTareas, setListaDeTareas] = useState(() => {
     try {
@@ -70,7 +105,7 @@ function App() {
     // BrowserRouter habilita la navegación sin recargar la página
     <BrowserRouter>
       {/* Navbar se renderiza fuera de Routes para estar presente en todas las rutas */}
-      <Navbar />
+      <Navbar esModoOscuro={esModoOscuro} toggleTema={toggleTema} />
 
       <main className="contenido-principal">
         <Routes>

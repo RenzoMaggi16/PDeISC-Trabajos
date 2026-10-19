@@ -66,6 +66,27 @@ function EditTask({ listaDeTareas, editarTarea }) {
     );
   }
 
+  // Si la tarea está completa/tachada, no se puede editar
+  if (tareaOriginal.completa) {
+    return (
+      <div className="container">
+        <div className="no-encontrada">
+          <p className="no-encontrada-codigo">✓</p>
+          <h1 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '0.5rem' }}>
+            Tarea completada
+          </h1>
+          <p style={{ color: 'var(--color-texto-suave)', marginBottom: '2rem' }}>
+            Las tareas completadas no pueden ser editadas.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link to={`/tarea/${id}`} className="btn-secundario">⬅ Volver al detalle</Link>
+            <Link to="/" className="btn-primario">Ir al inicio</Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Determinar si el formulario está en estado válido
   const formularioValido =
     validarTitulo(titulo) === '' && validarDescripcion(descripcion) === '';

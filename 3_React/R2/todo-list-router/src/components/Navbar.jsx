@@ -16,7 +16,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Componente Navbar: barra superior presente en todas las rutas
-function Navbar() {
+function Navbar({ esModoOscuro, toggleTema }) {
   // Estado que controla si el menú hamburguesa está abierto en móvil
   const [menuAbierto, setMenuAbierto] = useState(false);
 
@@ -85,6 +85,21 @@ function Navbar() {
               >
                 ＋ Nueva Tarea
               </NavLink>
+            </li>
+
+            {/* Botón de alternancia Modo Oscuro / Modo Claro */}
+            <li className="nav-item ms-md-2 mt-2 mt-md-0">
+              <button
+                id="btn-toggle-tema"
+                type="button"
+                className="btn-tema-toggle"
+                onClick={toggleTema}
+                aria-label={esModoOscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+                title={esModoOscuro ? 'Activar modo claro' : 'Activar modo oscuro'}
+              >
+                <span>{esModoOscuro ? '☀️' : '🌙'}</span>
+                <span>{esModoOscuro ? 'Modo Claro' : 'Modo Oscuro'}</span>
+              </button>
             </li>
           </ul>
         </div>

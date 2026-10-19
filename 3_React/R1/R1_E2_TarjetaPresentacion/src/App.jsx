@@ -11,30 +11,14 @@ function App() {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
-  // Datos de perfiles hardcoded en el padre
-  const perfiles = [
-    {
-      nombre: 'Renzo',
-      apellido: 'González',
-      profesion: 'Desarrollador Frontend Senior',
-      imagenUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-      descripcion: 'Especializado en React, TypeScript y diseño de interfaces modernas.'
-    },
-    {
-      nombre: 'Valentina',
-      apellido: 'Morales',
-      profesion: 'UX/UI Designer',
-      imagenUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=400&q=80',
-      descripcion: 'Apasionada por la experiencia del usuario y los sistemas de diseño.'
-    },
-    {
-      nombre: 'Carlos',
-      apellido: 'Ibáñez',
-      profesion: 'Backend Engineer',
-      imagenUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-      descripcion: 'Experto en arquitecturas de microservicios y bases de datos distribuidas.'
-    }
-  ];
+  // Datos del perfil hardcoded en el padre
+  const perfil = {
+    nombre: 'Renzo',
+    apellido: 'Maggi',
+    profesion: 'Desarrollador Web / React',
+    imagenUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+    descripcion: 'Especializado en React, JavaScript y desarrollo de aplicaciones web interactivas y modernas.'
+  };
 
   return (
     <div className="app-wrapper" data-theme={theme}>
@@ -60,20 +44,14 @@ function App() {
           </p>
         </header>
 
-        <main>
-          {/* Renderizado de tarjetas pasando datos por props */}
-          <div className="profiles-grid">
-            {perfiles.map((perfil, index) => (
-              <TarjetaPresentacion
-                key={index}
-                nombre={perfil.nombre}
-                apellido={perfil.apellido}
-                profesion={perfil.profesion}
-                imagenUrl={perfil.imagenUrl}
-                descripcion={perfil.descripcion}
-              />
-            ))}
-          </div>
+        <main className="d-flex justify-content-center">
+          <TarjetaPresentacion
+            nombre={perfil.nombre}
+            apellido={perfil.apellido}
+            profesion={perfil.profesion}
+            imagenUrl={perfil.imagenUrl}
+            descripcion={perfil.descripcion}
+          />
         </main>
       </div>
     </div>

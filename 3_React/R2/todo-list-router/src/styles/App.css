@@ -3,7 +3,7 @@
    Complementa a Bootstrap 5 con toques propios
    ============================================= */
 
-/* --- Variables de diseño --- */
+/* --- Variables de diseño (Tema Claro por defecto) --- */
 :root {
   --color-acento: #6366f1;        /* índigo vibrante */
   --color-acento-hover: #4f46e5;  /* índigo oscuro al pasar el cursor */
@@ -12,7 +12,9 @@
   --color-superficie: #ffffff;    /* tarjetas y formularios */
   --color-texto: #1e1b4b;         /* texto principal oscuro */
   --color-texto-suave: #6b7280;   /* texto secundario */
+  --color-texto-muted: #374151;   /* texto de párrafos */
   --color-borde: #e5e7eb;         /* bordes sutiles */
+  --color-fondo-input: #fafafa;   /* fondo inputs */
   --color-exito: #10b981;         /* verde para tareas completas */
   --color-advertencia: #f59e0b;   /* ámbar para tareas pendientes */
   --color-peligro: #ef4444;       /* rojo para errores de validación */
@@ -22,6 +24,22 @@
   --radio-borde-sm: 10px;
   --transicion: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --fuente-principal: 'Inter', system-ui, sans-serif;
+}
+
+/* --- Variables para Modo Oscuro --- */
+[data-theme="dark"] {
+  --color-acento: #818cf8;
+  --color-acento-hover: #6366f1;
+  --color-acento-suave: rgba(129, 140, 248, 0.18);
+  --color-fondo: #0f172a;         /* azul marino pizarra muy oscuro */
+  --color-superficie: #1e293b;    /* superficie de tarjetas oscura */
+  --color-texto: #f8fafc;         /* texto blanco suave */
+  --color-texto-suave: #94a3b8;   /* texto secundario plateado */
+  --color-texto-muted: #cbd5e1;   /* párrafos claros */
+  --color-borde: #334155;         /* bordes discretos oscuros */
+  --color-fondo-input: #0f172a;   /* fondo inputs en oscuro */
+  --sombra-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --sombra-card-hover: 0 8px 40px rgba(99, 102, 241, 0.25);
 }
 
 /* --- Reset y base --- */
@@ -37,6 +55,7 @@ body {
   color: var(--color-texto);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -56,6 +75,39 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+[data-theme="dark"] .navbar-tareaflow {
+  background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Botón de cambio de tema (Modo Claro / Modo Oscuro) --- */
+.btn-tema-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.42rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transicion);
+  user-select: none;
+}
+
+.btn-tema-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-tema-toggle:active {
+  transform: translateY(0);
 }
 
 .navbar-brand-custom {
@@ -368,6 +420,58 @@ body {
   background-color: var(--color-peligro);
   color: #ffffff;
   transform: translateY(-1px);
+}
+
+/* Confirmación de eliminación en Card */
+.confirmacion-card {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 50px;
+  padding: 0.2rem 0.5rem;
+  animation: fadeInUp 0.2s ease-out;
+}
+
+.confirmacion-card-pregunta {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--color-peligro);
+  margin-right: 0.2rem;
+}
+
+.btn-accion-confirmar {
+  background-color: var(--color-peligro);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.55rem;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.btn-accion-confirmar:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.btn-accion-cancelar {
+  background: transparent;
+  color: var(--color-texto-suave);
+  border: none;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.22rem 0.45rem;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.btn-accion-cancelar:hover {
+  color: var(--color-texto);
 }
 
 /* =============================================
@@ -711,7 +815,7 @@ body {
 
 .detalle-descripcion {
   font-size: 1rem;
-  color: #374151;
+  color: var(--color-texto-muted);
   line-height: 1.75;
   white-space: pre-line;
 }
@@ -743,7 +847,7 @@ body {
   font-size: 0.93rem;
   padding: 0.65rem 1rem;
   color: var(--color-texto);
-  background-color: #fafafa;
+  background-color: var(--color-fondo-input);
   transition: var(--transicion);
 }
 

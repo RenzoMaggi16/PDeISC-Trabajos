@@ -8,6 +8,7 @@
 //   Esto también resuelve el problema de elementos interactivos anidados (<a> o
 //   <button> dentro de un <a>) que genera HTML inválido.
 
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Función utilitaria: recorta el texto a un máximo de caracteres con "..."
@@ -22,9 +23,14 @@ function truncateText(texto, maxChars = 110) {
 function TaskCard({ tarea, onEliminar }) {
   const navegar = useNavigate();
 
-  // Navega al detalle de la tarea al hacer clic en la card
+  // Estado local para confirmar la eliminación de la tarea
+  const [confirmandoEliminar, setConfirmandoEliminar] = useState(false);
+
+  // Navega al detalle de la tarea al hacer clic en la card (solo si no está en modo confirmación)
   function handleClickCard() {
-    navegar(`/tarea/${tarea.id}`);
+    if (!confirmandoEliminar) {
+      navegar(`/tarea/${tarea.id}`);
+    }
   }
 
   // Navega al formulario de edición sin propagar el click a la card
@@ -33,10 +39,22 @@ function TaskCard({ tarea, onEliminar }) {
     navegar(`/editar/${tarea.id}`);
   }
 
-  // Llama al handler de eliminación sin propagar el click a la card
-  function handleEliminar(e) {
+  // Solicita confirmación para eliminar
+  function handleSolicitarEliminar(e) {
+    e.stopPropagation();
+    setConfirmandoEliminar(true);
+  }
+
+  // Confirma la eliminación de la tarea
+  function handleConfirmarEliminar(e) {
     e.stopPropagation();
     onEliminar(tarea.id);
+  }
+
+  // Cancela el paso de confirmación
+  function handleCancelarEliminar(e) {
+    e.stopPropagation();
+    setConfirmandoEliminar(false);
   }
 
   // Clase condicional para el estilo de la card según el estado de la tarea
@@ -71,24 +89,52 @@ function TaskCard({ tarea, onEliminar }) {
 
       {/* Pie de la card: botones de acción */}
       <footer className="task-card-footer">
-        {/* Botones de acción — stopPropagation evita navegar al detalle */}
+        {/* Botones de acción según el estado:
+            - Tareas pendientes: solo se pueden editar (no eliminar)
+            - Tareas completas / tachadas: solo se pueden eliminar (no editar) */}
         <div className="acciones-card">
-          <button
-            className="btn-accion btn-accion-editar"
-            onClick={handleEditar}
-            aria-label={`Editar tarea: ${tarea.titulo}`}
-            title="Editar tarea"
-          >
-            ✏️ Editar
-          </button>
-          <button
-            className="btn-accion btn-accion-eliminar"
-            onClick={handleEliminar}
-            aria-label={`Eliminar tarea: ${tarea.titulo}`}
-            title="Eliminar tarea"
-          >
-            🗑 Eliminar
-          </button>
+          {!tarea.completa && (
+            <button
+              className="btn-accion btn-accion-editar"
+              onClick={handleEditar}
+              aria-label={`Editar tarea: ${tarea.titulo}`}
+              title="Editar tarea"
+            >
+              ✏️ Editar
+            </button>
+          )}
+          {tarea.completa && (
+            confirmandoEliminar ? (
+              <div className="confirmacion-card" onClick={(e) => e.stopPropagation()}>
+                <span className="confirmacion-card-pregunta">¿Eliminar?</span>
+                <button
+                  className="btn-accion-confirmar"
+                  onClick={handleConfirmarEliminar}
+                  aria-label={`Confirmar eliminar tarea: ${tarea.titulo}`}
+                  title="Confirmar eliminación"
+                >
+                  Sí
+                </button>
+                <button
+                  className="btn-accion-cancelar"
+                  onClick={handleCancelarEliminar}
+                  aria-label="Cancelar eliminación"
+                  title="Cancelar"
+                >
+                  No
+                </button>
+              </div>
+            ) : (
+              <button
+                className="btn-accion btn-accion-eliminar"
+                onClick={handleSolicitarEliminar}
+                aria-label={`Eliminar tarea: ${tarea.titulo}`}
+                title="Eliminar tarea"
+              >
+                🗑 Eliminar
+              </button>
+            )
+          )}
         </div>
 
         <span className="task-card-flecha" aria-hidden="true">→</span>
